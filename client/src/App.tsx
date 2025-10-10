@@ -35,6 +35,8 @@ import Multinacionais from "@/pages/segments/Multinacionais";
 
 // Blog
 import BlogPost from "@/pages/BlogPost";
+import IndicadoresFinanceirosCEO from "@/pages/blog/IndicadoresFinanceirosCEO";
+import HoldingFamiliar from "@/pages/blog/HoldingFamiliar";
 
 import NotFound from "@/pages/not-found";
 
@@ -70,6 +72,8 @@ function Router() {
       <Route path="/segmentos/multinacionais" component={Multinacionais} />
       
       {/* Blog Posts */}
+      <Route path="/blog/indicadores-financeiros-ceo" component={IndicadoresFinanceirosCEO} />
+      <Route path="/blog/holding-familiar-quando-estruturar" component={HoldingFamiliar} />
       <Route path="/blog/:slug" component={BlogPost} />
       
       <Route component={NotFound} />
