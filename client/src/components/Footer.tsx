@@ -51,11 +51,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Soluções</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/solucoes/osp360" className="text-muted-foreground hover:text-foreground transition-colors">OSP360</Link></li>
-              <li><Link href="/solucoes/fundar360" className="text-muted-foreground hover:text-foreground transition-colors">FUNDAR360</Link></li>
-              <li><Link href="/solucoes/tributa360" className="text-muted-foreground hover:text-foreground transition-colors">TRIBUTA360</Link></li>
-              <li><Link href="/solucoes/gestao360" className="text-muted-foreground hover:text-foreground transition-colors">GESTÃO360</Link></li>
-              <li><Link href="/solucoes/holding360" className="text-muted-foreground hover:text-foreground transition-colors">HOLDING360</Link></li>
+              <li><Link href="/solucoes/osp360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-osp360">OSP360</Link></li>
+              <li><Link href="/solucoes/fundar360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-fundar360">FUNDAR360</Link></li>
+              <li><Link href="/solucoes/tributa360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tributa360">TRIBUTA360</Link></li>
+              <li><Link href="/solucoes/gestao360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-gestao360">GESTÃO360</Link></li>
+              <li><Link href="/solucoes/holding360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-holding360">HOLDING360</Link></li>
             </ul>
           </div>
 
@@ -63,10 +63,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors">Sobre Nós</Link></li>
-              <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors">Resultados</Link></li>
-              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors">Trabalhe Conosco</Link></li>
+              <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">Sobre Nós</Link></li>
+              <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">Resultados</Link></li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">Blog</Link></li>
+              <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">Trabalhe Conosco</Link></li>
             </ul>
           </div>
 
@@ -80,13 +80,13 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <a href="https://wa.me/5519993216091" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://wa.me/5519993216091" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-phone">
                   +55 (19) 99321-6091
                 </a>
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <a href="mailto:contato@ospcontabilidade.com.br" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:contato@ospcontabilidade.com.br" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-email">
                   contato@ospcontabilidade.com.br
                 </a>
               </li>
@@ -103,10 +103,10 @@ export default function Footer() {
               © {new Date().getFullYear()} OSP Contabilidade Digital. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacidade" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/privacidade" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-privacidade">
                 Política de Privacidade
               </Link>
-              <Link href="/termos" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/termos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-termos">
                 Termos de Uso
               </Link>
             </div>

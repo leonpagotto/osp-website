@@ -42,26 +42,26 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2" data-testid="link-logo">
             <div className="text-2xl font-bold text-primary">OSP</div>
             <div className="hidden sm:block text-sm text-muted-foreground">Contabilidade Digital</div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/") ? "text-primary" : "text-foreground"}`}>
+            <Link href="/" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/") ? "text-primary" : "text-foreground"}`} data-testid="link-home">
               Home
             </Link>
             
             <div className="relative group">
-              <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors" data-testid="button-solucoes-menu">
                 Soluções
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="absolute left-0 mt-2 w-80 bg-card border border-card-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-4 grid grid-cols-1 gap-2">
                   {solutions.map((solution) => (
-                    <Link key={solution.href} href={solution.href}>
+                    <Link key={solution.href} href={solution.href} data-testid={`link-${solution.name.toLowerCase().replace(/\s+/g, '-')}`}>
                       <div className="p-3 rounded-md hover-elevate active-elevate-2 cursor-pointer">
                         <div className="font-medium text-sm">{solution.name}</div>
                         <div className="text-xs text-muted-foreground mt-1">{solution.description}</div>
@@ -73,14 +73,14 @@ export default function Header() {
             </div>
 
             <div className="relative group">
-              <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors" data-testid="button-segmentos-menu">
                 Segmentos
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="absolute left-0 mt-2 w-72 bg-card border border-card-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-4 grid grid-cols-1 gap-2">
                   {segments.map((segment) => (
-                    <Link key={segment.href} href={segment.href}>
+                    <Link key={segment.href} href={segment.href} data-testid={`link-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}>
                       <div className="p-2 rounded-md hover-elevate active-elevate-2 cursor-pointer text-sm">
                         {segment.name}
                       </div>
@@ -90,16 +90,16 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/resultados" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/resultados") ? "text-primary" : "text-foreground"}`}>
+            <Link href="/resultados" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/resultados") ? "text-primary" : "text-foreground"}`} data-testid="link-resultados">
               Resultados
             </Link>
-            <Link href="/sobre-nos" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/sobre-nos") ? "text-primary" : "text-foreground"}`}>
+            <Link href="/sobre-nos" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/sobre-nos") ? "text-primary" : "text-foreground"}`} data-testid="link-sobre-nos">
               Sobre Nós
             </Link>
-            <Link href="/blog" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/blog") ? "text-primary" : "text-foreground"}`}>
+            <Link href="/blog" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/blog") ? "text-primary" : "text-foreground"}`} data-testid="link-blog">
               Blog
             </Link>
-            <Link href="/contato" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contato") ? "text-primary" : "text-foreground"}`}>
+            <Link href="/contato" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contato") ? "text-primary" : "text-foreground"}`} data-testid="link-contato">
               Contato
             </Link>
           </nav>
@@ -125,22 +125,22 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
-              <Link href="/" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-home">
                 Home
               </Link>
-              <Link href="/solucoes" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/solucoes" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-solucoes">
                 Soluções
               </Link>
-              <Link href="/segmentos" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/segmentos" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-segmentos">
                 Segmentos
               </Link>
-              <Link href="/resultados" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/resultados" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-resultados">
                 Resultados
               </Link>
-              <Link href="/sobre-nos" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/sobre-nos" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-sobre-nos">
                 Sobre Nós
               </Link>
-              <Link href="/blog" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/blog" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-blog">
                 Blog
               </Link>
               <Link href="/contato" onClick={() => setMobileMenuOpen(false)}>

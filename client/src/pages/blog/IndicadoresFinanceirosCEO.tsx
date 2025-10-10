@@ -1,4 +1,3 @@
-import HeroSection from "@/components/HeroSection";
 import CTASection from "@/components/CTASection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, User, TrendingUp } from "lucide-react";
