@@ -137,14 +137,20 @@ export function BlogPostTemplate({
 
         {/* Hero Image */}
         {heroImage && (
-          <div className="w-full h-[400px] md:h-[500px] relative overflow-hidden bg-muted">
-            <img
-              src={heroImage}
-              alt={heroImageAlt || title}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          <div className="w-full bg-muted">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="max-w-4xl mx-auto">
+                <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden bg-muted shadow-lg">
+                  <img
+                    src={heroImage}
+                    alt={heroImageAlt || title}
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                </div>
+              </div>
+            </div>
           </div>
         )}
 

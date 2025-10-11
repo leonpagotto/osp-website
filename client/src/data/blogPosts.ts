@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-18",
     readingTime: "7 min de leitura",
     keywords: "tributação dividendos, PL 1.087/2025, IRPF, lucros acumulados, reforma tributária, holding, OSP",
-    featuredImage: "/images/blog/tributacao-dividendos.jpg",
+    featuredImage: "/images/blog/tributacao-dividendos.png",
     featured: true,
   },
   {
@@ -42,7 +42,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-13",
     readingTime: "6 min de leitura",
     keywords: "cashback tributário, cesta básica, CBS, IBS, reforma tributária, NCM, classificação fiscal",
-    featuredImage: "/images/blog/cashback-cesta-basica.jpg",
+    featuredImage: "/images/blog/cashback-cesta-basica.png",
     featured: true,
   },
   {
@@ -55,7 +55,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-13",
     readingTime: "8 min de leitura",
     keywords: "CBS, IBS, reforma tributária, não cumulativo, crédito tributário, EC 132/2023",
-    featuredImage: "/images/blog/cbs-ibs.jpg",
+    featuredImage: "/images/blog/cbs-ibs.png",
     featured: true,
   },
   {
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-13",
     readingTime: "10 min de leitura",
     keywords: "reforma tributária 2025, guia empresarial, CBS, IBS, planejamento tributário",
-    featuredImage: "/images/blog/reforma-tributaria-guia.jpg",
+    featuredImage: "/images/blog/reforma-tributaria-guia.png",
   },
   {
     slug: "checklist-osp-como-preparar-sua-empresa-para-reforma-tributaria",
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-11",
     readingTime: "9 min de leitura",
     keywords: "checklist reforma tributária, preparação empresas, CBS IBS, adequação fiscal",
-    featuredImage: "/images/blog/checklist-reforma.jpg",
+    featuredImage: "/images/blog/checklist-reforma.png",
   },
   {
     slug: "imposto-seletivo-e-regimes-diferenciados-na-reforma-tributaria",
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-13",
     readingTime: "7 min de leitura",
     keywords: "imposto seletivo, regimes diferenciados, reforma tributária, tributação específica",
-    featuredImage: "/images/blog/imposto-seletivo.jpg",
+    featuredImage: "/images/blog/imposto-seletivo.png",
   },
   {
     slug: "reforma-tributaria-2025-impactos-praticos-da-ec-132-para-empresas-em-crescimento",
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-13",
     readingTime: "8 min de leitura",
     keywords: "EC 132, reforma tributária, empresas crescimento, expansão empresarial",
-    featuredImage: "/images/blog/ec-132-crescimento.jpg",
+    featuredImage: "/images/blog/ec-132-crescimento.png",
   },
   {
     slug: "lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber",
@@ -116,7 +116,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-11",
     readingTime: "9 min de leitura",
     keywords: "lucro real, regime tributário, planejamento tributário, apuração fiscal",
-    featuredImage: "/images/blog/lucro-real-estrategia.jpg",
+    featuredImage: "/images/blog/lucro-real-estrategia.png",
   },
   {
     slug: "sua-contabilidade-esta-impulsionando-ou-travando-o-crescimento-do-seu-negocio",
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-07-11",
     readingTime: "6 min de leitura",
     keywords: "contabilidade estratégica, crescimento empresarial, gestão contábil, contabilidade consultiva",
-    featuredImage: "/images/blog/contabilidade-crescimento.jpg",
+    featuredImage: "/images/blog/contabilidade-crescimento.png",
   },
   {
     slug: "holding-patrimonial-por-que-ainda-em-2025",
@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-06-29",
     readingTime: "7 min de leitura",
     keywords: "holding patrimonial, planejamento sucessório, ITCMD, 2025, urgência fiscal",
-    featuredImage: "/images/blog/holding-2025.jpg",
+    featuredImage: "/images/blog/holding-2025.png",
   },
   {
     slug: "estudo-tributario-tomar-decisoes",
@@ -152,7 +152,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-06-28",
     readingTime: "8 min de leitura",
     keywords: "estudo tributário, planejamento fiscal, economia tributária, decisões fiscais",
-    featuredImage: "/images/blog/estudo-tributario.jpg",
+    featuredImage: "/images/blog/estudo-tributario.png",
   },
   {
     slug: "contabilidade-lucro-real-por-que-mudar-de-regime",
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-06-28",
     readingTime: "7 min de leitura",
     keywords: "mudança regime tributário, lucro real, transição fiscal, organização contábil",
-    featuredImage: "/images/blog/mudanca-lucro-real.jpg",
+    featuredImage: "/images/blog/mudanca-lucro-real.png",
   },
   {
     slug: "holding-familiar-quando-estruturar",
@@ -176,7 +176,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-03-05",
     readingTime: "8 min de leitura",
     keywords: "holding familiar, planejamento patrimonial, sucessão familiar, proteção patrimonial",
-    featuredImage: "/images/blog/holding-familiar.jpg",
+    featuredImage: "/images/blog/holding-familiar.png",
   },
   {
     slug: "indicadores-financeiros-ceo",
@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: "2025-02-15",
     readingTime: "10 min de leitura",
     keywords: "indicadores financeiros, KPIs, gestão financeira, CEO, tomada de decisão",
-    featuredImage: "/images/blog/indicadores-ceo.jpg",
+    featuredImage: "/images/blog/indicadores-ceo.png",
   },
 ];
 
