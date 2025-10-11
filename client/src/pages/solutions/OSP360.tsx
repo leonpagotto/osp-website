@@ -2,7 +2,9 @@ import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Target, FileSearch, BarChart3, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2, Target, FileSearch, BarChart3, Users, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const benefits = [
   "Visão 360° completa da saúde tributária e financeira",
@@ -66,7 +68,7 @@ export default function OSP360() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-section-mobile md:text-section mb-8 text-center">Benefícios do OSP360</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3" data-testid={`benefit-${index}`}>
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -74,6 +76,30 @@ export default function OSP360() {
                 </div>
               ))}
             </div>
+
+            {/* Mid-page CTA */}
+            <Card className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-primary/20">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-3">Sua empresa está pronta para crescer?</h3>
+                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                  Em apenas 45 dias, você terá um roadmap completo para maximizar seus resultados. 
+                  O diagnóstico OSP360 é gratuito e sem compromisso.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Link href="/contato">
+                    <Button size="lg" className="gap-2">
+                      Solicitar Diagnóstico Gratuito
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/contato">
+                    <Button size="lg" variant="outline">
+                      Falar com Especialista
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

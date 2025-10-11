@@ -4,6 +4,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import { motion } from "framer-motion";
 import {
   Target,
   Building2,
@@ -60,7 +61,13 @@ export default function Home() {
       />
 
       {/* O Que Fazemos */}
-      <section className="py-20">
+      <motion.section 
+        className="py-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">O que fazemos</h2>
@@ -94,10 +101,16 @@ export default function Home() {
             columns={4}
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Soluções Estratégicas */}
-      <section className="py-20 bg-card">
+      <motion.section 
+        className="py-20 bg-card"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">Soluções Estratégicas</h2>
@@ -156,7 +169,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Section */}
       <StatsSection
@@ -169,7 +182,13 @@ export default function Home() {
       />
 
       {/* Testimonials */}
-      <section className="py-20">
+      <motion.section 
+        className="py-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">O que dizem nossos clientes</h2>
@@ -179,14 +198,28 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <TestimonialCard {...testimonial} />
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technology Partners */}
-      <section className="py-20 bg-card">
+      <motion.section 
+        className="py-20 bg-card"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-section-mobile md:text-section mb-4">Tecnologia e Integração</h2>
@@ -195,17 +228,22 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {["TOTVS", "SAP", "Sankhya", "Omie", "Power BI", "Qlik", "Tableau", "Conta Azul"].map((partner) => (
-              <div
+            {["TOTVS", "SAP", "Sankhya", "Omie", "Power BI", "Qlik", "Tableau", "Conta Azul"].map((partner, index) => (
+              <motion.div
                 key={partner}
                 className="flex items-center justify-center p-6 bg-background border border-border rounded-lg hover-elevate"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <span className="text-lg font-semibold text-muted-foreground">{partner}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
       <CTASection

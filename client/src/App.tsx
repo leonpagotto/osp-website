@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 import Home from "@/pages/Home";
 import Solucoes from "@/pages/Solucoes";
 import Segmentos from "@/pages/Segmentos";
@@ -94,6 +95,7 @@ function App() {
             </main>
             <Footer />
           </div>
+          <FloatingCTA />
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>

@@ -33,6 +33,8 @@ const segments = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileSegmentsOpen, setMobileSegmentsOpen] = useState(false);
   const [location] = useLocation();
 
   const isActive = (path: string) => location === path;
@@ -121,8 +123,9 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden"
+            className="lg:hidden p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
             data-testid="button-mobile-menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -131,28 +134,106 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
-              <Link href="/" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-home">
+          <div className="lg:hidden py-4 border-t border-border max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div className="flex flex-col space-y-2">
+              <Link 
+                href="/" 
+                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
+                onClick={() => setMobileMenuOpen(false)} 
+                data-testid="link-mobile-home"
+              >
                 Home
               </Link>
-              <Link href="/solucoes" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-solucoes">
-                Soluções
-              </Link>
-              <Link href="/segmentos" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-segmentos">
-                Segmentos
-              </Link>
-              <Link href="/resultados" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-resultados">
+              
+              {/* Soluções Dropdown */}
+              <div>
+                <button
+                  className="w-full text-left text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center justify-between"
+                  onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                  data-testid="button-mobile-solucoes"
+                >
+                  Soluções
+                  <ChevronDown className={`h-5 w-5 transition-transform ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileSolutionsOpen && (
+                  <div className="ml-4 mt-2 space-y-1">
+                    {solutions.map((solution) => (
+                      <Link 
+                        key={solution.href} 
+                        href={solution.href}
+                        className="py-2 px-3 text-sm rounded-md hover:bg-accent transition-colors min-h-[44px] flex flex-col justify-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                        data-testid={`link-mobile-${solution.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        <div className="font-medium">{solution.name}</div>
+                        <div className="text-xs text-muted-foreground">{solution.description}</div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Segmentos Dropdown */}
+              <div>
+                <button
+                  className="w-full text-left text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center justify-between"
+                  onClick={() => setMobileSegmentsOpen(!mobileSegmentsOpen)}
+                  data-testid="button-mobile-segmentos"
+                >
+                  Segmentos
+                  <ChevronDown className={`h-5 w-5 transition-transform ${mobileSegmentsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileSegmentsOpen && (
+                  <div className="ml-4 mt-2 space-y-1">
+                    {segments.map((segment) => (
+                      <Link 
+                        key={segment.href} 
+                        href={segment.href}
+                        className="py-2 px-3 text-sm rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                        data-testid={`link-mobile-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        {segment.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link 
+                href="/resultados" 
+                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
+                onClick={() => setMobileMenuOpen(false)} 
+                data-testid="link-mobile-resultados"
+              >
                 Resultados
               </Link>
-              <Link href="/sobre-nos" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-sobre-nos">
+              <Link 
+                href="/sobre-nos" 
+                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
+                onClick={() => setMobileMenuOpen(false)} 
+                data-testid="link-mobile-sobre-nos"
+              >
                 Sobre Nós
               </Link>
-              <Link href="/blog" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-blog">
+              <Link 
+                href="/blog" 
+                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
+                onClick={() => setMobileMenuOpen(false)} 
+                data-testid="link-mobile-blog"
+              >
                 Blog
               </Link>
-              <Link href="/contato" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full" data-testid="button-mobile-contact">Fale com Especialista</Button>
+              <Link 
+                href="/contato" 
+                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
+                onClick={() => setMobileMenuOpen(false)} 
+                data-testid="link-mobile-contato"
+              >
+                Contato
+              </Link>
+              <Link href="/contato" onClick={() => setMobileMenuOpen(false)} className="pt-2">
+                <Button className="w-full min-h-[48px]" size="lg" data-testid="button-mobile-contact">Fale com Especialista</Button>
               </Link>
             </div>
           </div>
