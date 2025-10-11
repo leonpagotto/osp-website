@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Team Placeholder Images</title>
+</head>
+<body>
+    <h1>Team Member Placeholders</h1>
+    <p>Right-click each canvas and "Save Image As" to save the placeholders</p>
+    
+    <div>
+        <h3>Gervásio de Souza (Founder & President)</h3>
+        <canvas id="gervasio" width="400" height="400"></canvas>
+    </div>
+    
+    <div>
+        <h3>Jonas Marinho (CEO)</h3>
+        <canvas id="jonas" width="400" height="400"></canvas>
+    </div>
+    
+    <div>
+        <h3>Guilherme Pagotto (Executive Director)</h3>
+        <canvas id="guilherme" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+        function createPlaceholder(canvasId, initials, color) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 400, 400);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, '#1e40af');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 400);
+            
+            // Initials
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 120px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(initials, 200, 200);
+        }
+        
+        createPlaceholder('gervasio', 'GS', '#3b82f6');
+        createPlaceholder('jonas', 'JM', '#2563eb');
+        createPlaceholder('guilherme', 'GP', '#1d4ed8');
+    </script>
+</body>
+</html>

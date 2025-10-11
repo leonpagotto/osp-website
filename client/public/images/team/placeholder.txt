@@ -1,0 +1,20 @@
+# Team Member Placeholder Images
+
+Place professional headshot photos here:
+
+Required Images:
+- gervasio-souza.jpg (400x400px, optimized)
+- jonas-marinho.jpg (400x400px, optimized)
+- guilherme-pagotto.jpg (400x400px, optimized)
+
+Image Specifications:
+- Format: JPG (optimized for web)
+- Dimensions: 400px × 400px (1:1 aspect ratio)
+- File Size: Under 100KB each
+- Professional business headshot style
+- Neutral or office background
+- Good lighting, clear face
+- Color Space: sRGB
+
+Temporary placeholders have been created using a simple colored circle with initials.
+Replace these with actual professional photos when available.

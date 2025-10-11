@@ -15,9 +15,24 @@ const timeline = [
 ];
 
 const team = [
-  { name: "Gervásio de Souza", role: "Fundador & Presidente", bio: "47 anos de experiência em contabilidade estratégica" },
-  { name: "Jonas Marinho", role: "CEO", bio: "Líder em transformação digital e governança" },
-  { name: "Guilherme Pagotto", role: "Diretor Executivo", bio: "Especialista em planejamento tributário" },
+  { 
+    name: "Gervásio de Souza", 
+    role: "Fundador & Presidente", 
+    bio: "47 anos de experiência em contabilidade estratégica",
+    image: "/images/team/gervasio-souza.jpg"
+  },
+  { 
+    name: "Jonas Marinho", 
+    role: "CEO", 
+    bio: "Líder em transformação digital e governança",
+    image: "/images/team/jonas-marinho.jpg"
+  },
+  { 
+    name: "Guilherme Pagotto", 
+    role: "Diretor Executivo", 
+    bio: "Especialista em planejamento tributário",
+    image: "/images/team/guilherme-pagotto.jpg"
+  },
 ];
 
 export default function SobreNos() {
@@ -84,8 +99,21 @@ export default function SobreNos() {
             {team.map((member, index) => (
               <Card key={index} data-testid={`team-member-${index}`}>
                 <CardContent className="pt-6 text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-10 w-10 text-primary" />
+                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 bg-primary/10">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to gradient placeholder if image not found
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = `
+                          <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary to-blue-700">
+                            <span class="text-white text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>
+                          </div>
+                        `;
+                      }}
+                    />
                   </div>
                   <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
                   <p className="text-sm text-primary font-medium mb-3">{member.role}</p>

@@ -1,5 +1,6 @@
 import { Switch, Route, useLocation } from "wouter";
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from 'react-helmet-async';
@@ -8,6 +9,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import PageTransition from "@/components/PageTransition";
 import Home from "@/pages/Home";
 import Solucoes from "@/pages/Solucoes";
 import Segmentos from "@/pages/Segmentos";
@@ -120,6 +122,8 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+  
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
@@ -128,7 +132,11 @@ function App() {
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">
-              <Router />
+              <AnimatePresence mode="wait">
+                <PageTransition key={location}>
+                  <Router />
+                </PageTransition>
+              </AnimatePresence>
             </main>
             <Footer />
           </div>
