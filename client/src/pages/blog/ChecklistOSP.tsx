@@ -54,11 +54,11 @@ export default function ChecklistOSP() {
         </h3>
         <div className="space-y-2 text-sm">
           <div className="flex items-center gap-3">
-            <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-medium">URGENTE</span>
+            <span className="px-2 py-1 bg-destructive/15 text-destructive rounded text-xs font-medium">URGENTE</span>
             <span>Ações para concluir até final de 2025</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="px-2 py-1 bg-amber-100 text-amber-700 rounded text-xs font-medium">2026</span>
+            <span className="px-2 py-1 bg-primary/15 text-primary rounded text-xs font-medium">2026</span>
             <span>Ações para o primeiro ano de vigência</span>
           </div>
           <div className="flex items-center gap-3">
@@ -71,7 +71,7 @@ export default function ChecklistOSP() {
       <h2>Checklist de Preparação</h2>
 
       <h3 className="flex items-center gap-2 mt-8 mb-4">
-        <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-medium">URGENTE</span>
+        <span className="px-2 py-1 bg-destructive/15 text-destructive rounded text-xs font-medium">URGENTE</span>
         Até Final de 2025
       </h3>
 
@@ -88,8 +88,8 @@ export default function ChecklistOSP() {
               Se há lucros acumulados e o PL 1.087/2025 for aprovado, distribua antes de 31/12/2025 
               para evitar tributação.
             </p>
-            <div className="bg-amber-50 border border-amber-200 rounded p-3 mt-3">
-              <p className="text-amber-800 text-xs">
+            <div className="bg-primary/10 border border-primary/30 rounded p-3 mt-3">
+              <p className="text-foreground text-xs">
                 <strong>Ação:</strong> Levantar saldo de lucros acumulados e avaliar capacidade de distribuição
               </p>
             </div>
@@ -108,8 +108,8 @@ export default function ChecklistOSP() {
               Calcule o impacto real de CBS/IBS no seu negócio considerando créditos fiscais e 
               margem de agregação de valor.
             </p>
-            <div className="bg-amber-50 border border-amber-200 rounded p-3 mt-3">
-              <p className="text-amber-800 text-xs">
+            <div className="bg-primary/10 border border-primary/30 rounded p-3 mt-3">
+              <p className="text-foreground text-xs">
                 <strong>Ação:</strong> Contratar especialista ou consultoria para simulação detalhada
               </p>
             </div>
@@ -127,8 +127,8 @@ export default function ChecklistOSP() {
             <p className="text-muted-foreground">
               Considere estruturação de holding patrimonial antes das mudanças em ITCMD e dividendos.
             </p>
-            <div className="bg-amber-50 border border-amber-200 rounded p-3 mt-3">
-              <p className="text-amber-800 text-xs">
+            <div className="bg-primary/10 border border-primary/30 rounded p-3 mt-3">
+              <p className="text-foreground text-xs">
                 <strong>Ação:</strong> Consultar especialista em planejamento patrimonial
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function ChecklistOSP() {
       </div>
 
       <h3 className="flex items-center gap-2 mt-8 mb-4">
-        <span className="px-2 py-1 bg-amber-100 text-amber-700 rounded text-xs font-medium">2026</span>
+        <span className="px-2 py-1 bg-primary/15 text-primary rounded text-xs font-medium">2026</span>
         Primeiro Ano de Vigência
       </h3>
 
@@ -323,7 +323,7 @@ export default function ChecklistOSP() {
         </ul>
       </div>
 
-      <Card className="my-8 border-amber-200 bg-amber-50/50">
+      <Card className="my-8 border-primary/30 bg-primary/5">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-3">
             <AlertTriangle className="h-5 w-5 text-amber-600" />
@@ -341,7 +341,7 @@ export default function ChecklistOSP() {
             <li>• Perda de competitividade frente a concorrentes preparados</li>
             <li>• Problemas de fluxo de caixa por surpresas tributárias</li>
           </ul>
-          <p className="font-medium text-amber-800 pt-2">
+          <p className="font-medium text-foreground pt-2">
             O custo de se preparar é infinitamente menor que o custo de não estar preparado.
           </p>
         </CardContent>

@@ -73,7 +73,7 @@ export default function EstudoTributario() {
               Muitas empresas operam no Simples ou Presumido quando o Lucro Real seria mais vantajoso 
               (ou vice-versa).
             </p>
-            <p className="bg-amber-50 border border-amber-200 rounded p-3 text-xs">
+            <p className="bg-primary/10 border border-primary/30 rounded p-3 text-xs">
               <strong>Exemplo real:</strong> Empresa de serviços com R$ 5 milhões de receita anual, 
               operando no Presumido, descobriu que Lucro Real geraria <strong>economia de R$ 280 mil/ano</strong>.
             </p>
@@ -158,7 +158,7 @@ export default function EstudoTributario() {
       <h2>Casos Reais de Economia</h2>
 
       <div className="space-y-4 my-8">
-        <Card className="border-green-200 bg-green-50/30">
+        <Card className="border-primary/40 bg-accent/80">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <CheckCircle2 className="h-5 w-5 text-green-600" />
@@ -178,7 +178,7 @@ export default function EstudoTributario() {
           </CardContent>
         </Card>
 
-        <Card className="border-green-200 bg-green-50/30">
+        <Card className="border-primary/40 bg-accent/80">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <CheckCircle2 className="h-5 w-5 text-green-600" />
@@ -198,7 +198,7 @@ export default function EstudoTributario() {
           </CardContent>
         </Card>
 
-        <Card className="border-green-200 bg-green-50/30">
+        <Card className="border-primary/40 bg-accent/80">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <CheckCircle2 className="h-5 w-5 text-green-600" />
@@ -261,7 +261,7 @@ export default function EstudoTributario() {
         </div>
       </div>
 
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-6">
+      <div className="bg-accent border border-primary/40 rounded-lg p-6 my-6">
         <h3 className="text-lg font-semibold text-green-800 mb-3">ROI Típico:</h3>
         <p className="text-sm text-green-900 mb-2">
           Um estudo tributário bem executado costuma identificar economia de <strong>2% a 8% da receita anual</strong>.

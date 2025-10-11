@@ -85,7 +85,7 @@ export default function ImpostoSeletivo() {
       <h2>Impactos Por Setor</h2>
 
       <div className="grid gap-4 not-prose my-8">
-        <Card className="border-orange-200 bg-orange-50/30">
+        <Card className="border-primary/30 bg-primary/5">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <Ban className="h-5 w-5 text-orange-600" />
@@ -104,7 +104,7 @@ export default function ImpostoSeletivo() {
           </CardContent>
         </Card>
 
-        <Card className="border-amber-200 bg-amber-50/30">
+        <Card className="border-primary/30 bg-primary/5">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <Flame className="h-5 w-5 text-amber-600" />
@@ -251,7 +251,7 @@ export default function ImpostoSeletivo() {
         <li>Regras de transição</li>
       </ul>
 
-      <p className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm my-6">
+      <p className="bg-primary/10 border border-primary/30 rounded-lg p-4 text-sm my-6">
         <strong>Importante:</strong> Acompanhe as regulamentações que serão publicadas entre 2025 e 2026. 
         As listas podem mudar com base em estudos técnicos e pressão de setores afetados.
       </p>

@@ -184,7 +184,7 @@ export default function EC132Impactos() {
       <h2>Cenários de Impacto Por Setor</h2>
 
       <div className="space-y-4 my-8">
-        <Card className="border-green-200 bg-green-50/30">
+        <Card className="border-primary/40 bg-accent/80">
           <CardHeader>
             <CardTitle className="text-lg">Setores Potencialmente Beneficiados</CardTitle>
           </CardHeader>
@@ -198,7 +198,7 @@ export default function EC132Impactos() {
           </CardContent>
         </Card>
 
-        <Card className="border-red-200 bg-red-50/30">
+        <Card className="border-destructive/30 bg-destructive/5">
           <CardHeader>
             <CardTitle className="text-lg">Setores com Possível Aumento de Carga</CardTitle>
           </CardHeader>

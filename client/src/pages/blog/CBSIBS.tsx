@@ -133,7 +133,7 @@ export default function CBSIBS() {
         <li>Reconciliar mensalmente os saldos de créditos</li>
       </ul>
 
-      <Card className="my-6 border-amber-200 bg-amber-50/50">
+      <Card className="my-6 border-primary/30 bg-primary/5">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-3">
             <RefreshCcw className="h-5 w-5 text-amber-600" />

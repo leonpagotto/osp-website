@@ -101,7 +101,7 @@ export default function ContabilidadeCrescimento() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 not-prose my-8">
-        <Card className="border-green-200 bg-green-50/30">
+        <Card className="border-primary/40 bg-accent/80">
           <CardHeader>
             <CardTitle className="text-lg">0-2 marcadas</CardTitle>
           </CardHeader>
@@ -113,24 +113,24 @@ export default function ContabilidadeCrescimento() {
           </CardContent>
         </Card>
 
-        <Card className="border-amber-200 bg-amber-50/30">
+        <Card className="border-primary/30 bg-primary/5">
           <CardHeader>
             <CardTitle className="text-lg">3-5 marcadas</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-amber-700">
+            <p className="text-sm text-primary">
               <strong>Contabilidade Mediana</strong>
               <br />Cumpre obrigações, mas não agrega valor estratégico.
             </p>
           </CardContent>
         </Card>
 
-        <Card className="border-red-200 bg-red-50/30">
+        <Card className="border-destructive/30 bg-destructive/5">
           <CardHeader>
             <CardTitle className="text-lg">6+ marcadas</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-red-700">
+            <p className="text-sm text-destructive">
               <strong>Contabilidade Burocrática</strong>
               <br />Está travando seu crescimento. Hora de mudar.
             </p>
@@ -146,7 +146,7 @@ export default function ContabilidadeCrescimento() {
             <TrendingDown className="h-5 w-5" />
             Contabilidade Burocrática (Trava Crescimento)
           </h3>
-          <Card className="border-red-200">
+          <Card className="border-destructive/30">
             <CardContent className="pt-6">
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• Foco apenas em obrigações legais e fiscais</li>
@@ -166,7 +166,7 @@ export default function ContabilidadeCrescimento() {
             <TrendingUp className="h-5 w-5" />
             Contabilidade Estratégica (Impulsiona Crescimento)
           </h3>
-          <Card className="border-green-200">
+          <Card className="border-primary/40">
             <CardContent className="pt-6">
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• Parceira ativa nas decisões empresariais</li>
@@ -269,7 +269,7 @@ export default function ContabilidadeCrescimento() {
 
       <h2>Quando Mudar de Contabilidade?</h2>
 
-      <Card className="my-6 border-amber-200 bg-amber-50/50">
+      <Card className="my-6 border-primary/30 bg-primary/5">
         <CardHeader>
           <CardTitle className="text-lg">Sinais de Que É Hora de Mudar</CardTitle>
         </CardHeader>

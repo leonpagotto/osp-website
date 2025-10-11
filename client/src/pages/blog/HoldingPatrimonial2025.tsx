@@ -53,7 +53,7 @@ export default function HoldingPatrimonial2025() {
       </p>
 
       <div className="grid gap-4 not-prose my-8">
-        <Card className="border-red-200 bg-red-50/30">
+        <Card className="border-destructive/30 bg-destructive/5">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <Calendar className="h-5 w-5 text-red-600" />
@@ -69,7 +69,7 @@ export default function HoldingPatrimonial2025() {
           </CardContent>
         </Card>
 
-        <Card className="border-amber-200 bg-amber-50/30">
+        <Card className="border-primary/30 bg-primary/5">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-3">
               <Building2 className="h-5 w-5 text-amber-600" />
@@ -119,7 +119,7 @@ export default function HoldingPatrimonial2025() {
 
       <h2>Cenário Urgente: Dividendos</h2>
 
-      <div className="bg-red-50 border border-red-200 rounded-lg p-6 my-6">
+      <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-6 my-6">
         <h3 className="text-lg font-semibold text-red-800 mb-3 flex items-center gap-2">
           <Calendar className="h-5 w-5" />
           Janela de Oportunidade: Até 31/12/2025
@@ -161,7 +161,7 @@ export default function HoldingPatrimonial2025() {
           </CardContent>
         </Card>
 
-        <Card className="border-red-200">
+        <Card className="border-destructive/30">
           <CardHeader>
             <CardTitle className="text-base">Proposta Futura (SP)</CardTitle>
           </CardHeader>
@@ -265,7 +265,7 @@ export default function HoldingPatrimonial2025() {
         <li>Velocidade na sucessão: <strong>meses vs. anos</strong> de inventário</li>
       </ul>
 
-      <p className="bg-green-50 border border-green-200 rounded-lg p-4 text-sm my-6">
+      <p className="bg-accent border border-primary/40 rounded-lg p-4 text-sm my-6">
         <strong>ROI Típico:</strong> Para patrimônios acima de R$ 5 milhões, o retorno sobre investimento 
         (economia tributária + agilidade sucessória) geralmente paga os custos de estruturação em 2 a 5 anos.
       </p>
@@ -319,7 +319,7 @@ export default function HoldingPatrimonial2025() {
         </Card>
       </div>
 
-      <p className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm my-6">
+      <p className="bg-primary/10 border border-primary/30 rounded-lg p-4 text-sm my-6">
         <strong>Prazo realista:</strong> Contar com 3 a 6 meses do início ao final. Para garantir 
         conclusão em 2025, <strong>inicie o processo até julho/agosto</strong> no máximo.
       </p>

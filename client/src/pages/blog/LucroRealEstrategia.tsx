@@ -96,7 +96,7 @@ export default function LucroRealEstrategia() {
               Se sua margem de lucro real é <strong>menor que a presumida</strong> (8% para comércio/indústria 
               ou 32% para serviços), o Lucro Real pode gerar economia significativa.
             </p>
-            <div className="bg-green-50 border border-green-200 rounded p-3 mt-3 text-xs">
+            <div className="bg-accent border border-primary/40 rounded p-3 mt-3 text-xs">
               <strong>Exemplo:</strong> Empresa de serviços com receita de R$ 10 milhões e lucro real de 
               R$ 1,5 milhão (15%) pagará menos no Lucro Real do que no Presumido.
             </div>

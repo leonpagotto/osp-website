@@ -123,7 +123,7 @@ export default function TributacaoDividendos() {
         Distribuir esses valores antes de 31/12/2025 garante a isenção total de IRPF.
       </p>
 
-      <Card className="my-6 border-amber-200 bg-amber-50/50">
+      <Card className="my-6 border-primary/30 bg-primary/5">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-3">
             <AlertCircle className="h-5 w-5 text-amber-600" />
@@ -135,7 +135,7 @@ export default function TributacaoDividendos() {
             Empresas com <strong>lucros acumulados significativos</strong> devem agir rapidamente. 
             A partir de 2026, a distribuição desses mesmos lucros será tributada.
           </p>
-          <p className="font-medium text-amber-800">
+          <p className="font-medium text-foreground">
             Exemplo: R$ 1 milhão em lucros acumulados distribuídos em 2025 = R$ 0 de IR. 
             Os mesmos R$ 1 milhão distribuídos em 2026 = até R$ 150 mil de IR.
           </p>
