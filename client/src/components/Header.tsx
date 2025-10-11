@@ -151,7 +151,7 @@ export default function Header() {
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
           <div 
-            className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+            className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-[60]"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
@@ -159,7 +159,7 @@ export default function Header() {
 
         {/* Mobile Sidebar Menu */}
         <div 
-          className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-background border-l border-border z-50 transform transition-transform duration-300 ease-in-out ${
+          className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-background border-l border-border shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
