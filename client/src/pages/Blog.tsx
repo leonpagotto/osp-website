@@ -95,11 +95,11 @@ export default function Blog() {
                 {featuredPosts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`}>
                     <article className="group cursor-pointer h-full flex flex-col">
-                      <div className="relative h-48 rounded-lg overflow-hidden mb-4 bg-gray-800">
+                      <div className="relative h-58 rounded-lg overflow-hidden mb-4 bg-gray-800">
                         <OptimizedImage
                           src={post.featuredImage}
                           alt={post.title}
-                          className="w-full h-full group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                         <Badge
@@ -155,11 +155,11 @@ export default function Blog() {
                   {filteredPosts.map((post) => (
                     <Link key={post.slug} href={`/blog/${post.slug}`}>
                       <article className="group cursor-pointer h-full flex flex-col bg-card rounded-lg border border-border hover:border-primary transition-all">
-                        <div className="relative h-48 rounded-t-lg overflow-hidden bg-gray-800">
+                        <div className="relative h-58 rounded-t-lg overflow-hidden bg-gray-800">
                           <OptimizedImage
                             src={post.featuredImage}
                             alt={post.title}
-                            className="w-full h-full group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                         </div>
