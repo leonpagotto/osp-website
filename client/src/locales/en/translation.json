@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "segments": "Segments",
+    "results": "Results",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "careers": "Join Us",
+    "materials": "Resources"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "contact": "Talk to a Specialist",
+    "scheduleCall": "Schedule a Call",
+    "requestDiagnostic": "Request Diagnostic",
+    "readMore": "Read More",
+    "back": "Back",
+    "share": "Share",
+    "close": "Close"
+  },
+  "hero": {
+    "tagline": "Strategic accounting for companies planning to grow",
+    "subtitle": "47 years transforming tax obligations into business opportunities"
+  },
+  "footer": {
+    "tagline": "Transforming accounting into strategy for 47 years",
+    "quickLinks": "Quick Links",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "© 2025 OSP Contabilidade. All rights reserved."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Soluções",
+    "segments": "Segmentos",
+    "results": "Resultados",
+    "about": "Sobre Nós",
+    "blog": "Blog",
+    "contact": "Contato",
+    "careers": "Faça Parte",
+    "materials": "Materiais"
+  },
+  "common": {
+    "learnMore": "Saiba Mais",
+    "contact": "Falar com Especialista",
+    "scheduleCall": "Agendar Conversa",
+    "requestDiagnostic": "Solicitar Diagnóstico",
+    "readMore": "Ler Mais",
+    "back": "Voltar",
+    "share": "Compartilhar",
+    "close": "Fechar"
+  },
+  "hero": {
+    "tagline": "Contabilidade estratégica para empresas que planejam crescer",
+    "subtitle": "47 anos transformando obrigações fiscais em oportunidades de negócio"
+  },
+  "footer": {
+    "tagline": "Transformando contabilidade em estratégia há 47 anos",
+    "quickLinks": "Links Rápidos",
+    "solutions": "Soluções",
+    "contact": "Contato",
+    "followUs": "Siga-nos",
+    "rights": "© 2025 OSP Contabilidade. Todos os direitos reservados."
+  }
+}
