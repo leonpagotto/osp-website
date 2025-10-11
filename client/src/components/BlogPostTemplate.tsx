@@ -185,7 +185,7 @@ export function BlogPostTemplate({
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg prose-invert max-w-none">
+            <div className="prose prose-lg dark:prose-invert max-w-none">
               {children}
             </div>
 

@@ -347,3 +347,52 @@
     inset: -1px;
   }
 }
+
+/* Blog Post Prose Styles */
+@layer components {
+  /* Ensure prose content is always visible and well-formatted */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-3xl font-bold mt-12 mb-6 text-foreground;
+  }
+
+  .prose h3 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-foreground;
+  }
+
+  .prose h4 {
+    @apply text-xl font-semibold mt-6 mb-3 text-foreground;
+  }
+
+  .prose p {
+    @apply mb-4 text-base leading-relaxed text-foreground;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-6 pl-6 space-y-2;
+  }
+
+  .prose li {
+    @apply text-base leading-relaxed text-foreground;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose a {
+    @apply text-primary hover:underline;
+  }
+
+  .prose .lead {
+    @apply text-xl text-muted-foreground leading-relaxed mb-8;
+  }
+
+  /* Ensure not-prose sections maintain proper visibility */
+  .not-prose * {
+    @apply text-foreground;
+  }
+}
