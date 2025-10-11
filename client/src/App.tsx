@@ -40,6 +40,18 @@ import Multinacionais from "@/pages/segments/Multinacionais";
 import BlogPost from "@/pages/BlogPost";
 import IndicadoresFinanceirosCEO from "@/pages/blog/IndicadoresFinanceirosCEO";
 import HoldingFamiliar from "@/pages/blog/HoldingFamiliar";
+import TributacaoDividendos from "@/pages/blog/TributacaoDividendos";
+import CashbackCestaBasica from "@/pages/blog/CashbackCestaBasica";
+import CBSIBS from "@/pages/blog/CBSIBS";
+import ReformaTributaria2025 from "@/pages/blog/ReformaTributaria2025";
+import ChecklistOSP from "@/pages/blog/ChecklistOSP";
+import ImpostoSeletivo from "@/pages/blog/ImpostoSeletivo";
+import EC132Impactos from "@/pages/blog/EC132Impactos";
+import LucroRealEstrategia from "@/pages/blog/LucroRealEstrategia";
+import ContabilidadeCrescimento from "@/pages/blog/ContabilidadeCrescimento";
+import HoldingPatrimonial2025 from "@/pages/blog/HoldingPatrimonial2025";
+import EstudoTributario from "@/pages/blog/EstudoTributario";
+import ContabilidadeLucroReal from "@/pages/blog/ContabilidadeLucroReal";
 
 import NotFound from "@/pages/not-found";
 
@@ -86,8 +98,20 @@ function Router() {
       <Route path="/segmentos/multinacionais" component={Multinacionais} />
       
       {/* Blog Posts */}
-      <Route path="/blog/indicadores-financeiros-ceo" component={IndicadoresFinanceirosCEO} />
+      <Route path="/blog/tributacao-de-dividendos-o-que-muda-em-2026-e-como-se-preparar" component={TributacaoDividendos} />
+      <Route path="/blog/cashback-cesta-basica-e-justica-fiscal-o-que-muda-na-tributacao" component={CashbackCestaBasica} />
+      <Route path="/blog/cbs-e-ibs-na-reforma-tributaria-impactos-praticos-para-empresas-em-2025" component={CBSIBS} />
+      <Route path="/blog/reforma-tributaria-2025-guia-pratico-para-empresarios" component={ReformaTributaria2025} />
+      <Route path="/blog/checklist-osp-como-preparar-sua-empresa-para-reforma-tributaria" component={ChecklistOSP} />
+      <Route path="/blog/imposto-seletivo-e-regimes-diferenciados-na-reforma-tributaria" component={ImpostoSeletivo} />
+      <Route path="/blog/reforma-tributaria-2025-impactos-praticos-da-ec-132-para-empresas-em-crescimento" component={EC132Impactos} />
+      <Route path="/blog/lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber" component={LucroRealEstrategia} />
+      <Route path="/blog/sua-contabilidade-esta-impulsionando-ou-travando-o-crescimento-do-seu-negocio" component={ContabilidadeCrescimento} />
+      <Route path="/blog/holding-patrimonial-por-que-ainda-em-2025" component={HoldingPatrimonial2025} />
+      <Route path="/blog/estudo-tributario-tomar-decisoes" component={EstudoTributario} />
+      <Route path="/blog/contabilidade-lucro-real-por-que-mudar-de-regime" component={ContabilidadeLucroReal} />
       <Route path="/blog/holding-familiar-quando-estruturar" component={HoldingFamiliar} />
+      <Route path="/blog/indicadores-financeiros-ceo" component={IndicadoresFinanceirosCEO} />
       <Route path="/blog/:slug" component={BlogPost} />
       
       <Route component={NotFound} />
