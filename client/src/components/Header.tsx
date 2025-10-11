@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -39,6 +39,25 @@ export default function Header() {
 
   const isActive = (path: string) => location === path;
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setMobileSolutionsOpen(false);
+    setMobileSegmentsOpen(false);
+  }, [location]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,10 +70,7 @@ export default function Header() {
               className="h-10 w-10 shrink-0"
               style={{ filter: 'brightness(0) saturate(100%) invert(33%) sepia(97%) saturate(1947%) hue-rotate(198deg) brightness(94%) contrast(101%)' }}
             />
-            <div className="flex flex-col">
-              <div className="text-2xl font-bold text-primary leading-tight">OSP</div>
-              <div className="hidden sm:block text-xs text-muted-foreground leading-tight">Contabilidade Digital</div>
-            </div>
+            <div className="text-2xl font-bold text-primary leading-tight">OSP</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -132,112 +148,173 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <div className="flex flex-col space-y-2">
+          <div 
+            className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
+        {/* Mobile Sidebar Menu */}
+        <div 
+          className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-background border-l border-border z-50 transform transition-transform duration-300 ease-in-out ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          {/* Sidebar Header */}
+          <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center gap-2">
+              <img 
+                src="/images/osp-logo-white.svg" 
+                alt="OSP Logo" 
+                className="h-8 w-8"
+                style={{ filter: 'brightness(0) saturate(100%) invert(33%) sepia(97%) saturate(1947%) hue-rotate(198deg) brightness(94%) contrast(101%)' }}
+              />
+              <span className="text-xl font-bold text-primary">OSP</span>
+            </div>
+            <button
+              className="p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md hover:bg-accent"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+              data-testid="button-mobile-menu-close"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Sidebar Navigation */}
+          <nav className="flex flex-col h-[calc(100%-73px)] overflow-y-auto">
+            <div className="flex-1 py-4 px-4 space-y-1">
               <Link 
                 href="/" 
-                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
-                onClick={() => setMobileMenuOpen(false)} 
+                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                  isActive("/") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
+                }`}
                 data-testid="link-mobile-home"
               >
                 Home
+                <ChevronRight className="h-5 w-5" />
               </Link>
               
               {/* Soluções Dropdown */}
               <div>
                 <button
-                  className="w-full text-left text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center justify-between"
+                  className="w-full flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg hover:bg-accent transition-colors min-h-[48px]"
                   onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                   data-testid="button-mobile-solucoes"
                 >
                   Soluções
-                  <ChevronDown className={`h-5 w-5 transition-transform ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {mobileSolutionsOpen && (
-                  <div className="ml-4 mt-2 space-y-1">
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ${
+                    mobileSolutionsOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="pl-4 pr-2 py-2 space-y-1">
                     {solutions.map((solution) => (
                       <Link 
                         key={solution.href} 
                         href={solution.href}
-                        className="py-2 px-3 text-sm rounded-md hover:bg-accent transition-colors min-h-[44px] flex flex-col justify-center"
-                        onClick={() => setMobileMenuOpen(false)}
+                        className={`block py-3 px-4 text-sm rounded-lg transition-colors min-h-[48px] ${
+                          isActive(solution.href) ? "bg-primary/10 text-primary" : "hover:bg-accent"
+                        }`}
                         data-testid={`link-mobile-${solution.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         <div className="font-medium">{solution.name}</div>
-                        <div className="text-xs text-muted-foreground">{solution.description}</div>
+                        <div className="text-xs text-muted-foreground mt-0.5">{solution.description}</div>
                       </Link>
                     ))}
                   </div>
-                )}
+                </div>
               </div>
 
               {/* Segmentos Dropdown */}
               <div>
                 <button
-                  className="w-full text-left text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center justify-between"
+                  className="w-full flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg hover:bg-accent transition-colors min-h-[48px]"
                   onClick={() => setMobileSegmentsOpen(!mobileSegmentsOpen)}
                   data-testid="button-mobile-segmentos"
                 >
                   Segmentos
-                  <ChevronDown className={`h-5 w-5 transition-transform ${mobileSegmentsOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${mobileSegmentsOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {mobileSegmentsOpen && (
-                  <div className="ml-4 mt-2 space-y-1">
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ${
+                    mobileSegmentsOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="pl-4 pr-2 py-2 space-y-1">
                     {segments.map((segment) => (
                       <Link 
                         key={segment.href} 
                         href={segment.href}
-                        className="py-2 px-3 text-sm rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center"
-                        onClick={() => setMobileMenuOpen(false)}
+                        className={`block py-3 px-4 text-sm rounded-lg transition-colors min-h-[48px] ${
+                          isActive(segment.href) ? "bg-primary/10 text-primary" : "hover:bg-accent"
+                        }`}
                         data-testid={`link-mobile-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         {segment.name}
                       </Link>
                     ))}
                   </div>
-                )}
+                </div>
               </div>
 
               <Link 
                 href="/resultados" 
-                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
-                onClick={() => setMobileMenuOpen(false)} 
+                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                  isActive("/resultados") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
+                }`}
                 data-testid="link-mobile-resultados"
               >
                 Resultados
+                <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
                 href="/sobre-nos" 
-                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
-                onClick={() => setMobileMenuOpen(false)} 
+                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                  isActive("/sobre-nos") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
+                }`}
                 data-testid="link-mobile-sobre-nos"
               >
                 Sobre Nós
+                <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
                 href="/blog" 
-                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
-                onClick={() => setMobileMenuOpen(false)} 
+                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                  isActive("/blog") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
+                }`}
                 data-testid="link-mobile-blog"
               >
                 Blog
+                <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
                 href="/contato" 
-                className="text-base font-medium py-3 px-2 rounded-md hover:bg-accent transition-colors min-h-[44px] flex items-center" 
-                onClick={() => setMobileMenuOpen(false)} 
+                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                  isActive("/contato") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
+                }`}
                 data-testid="link-mobile-contato"
               >
                 Contato
-              </Link>
-              <Link href="/contato" onClick={() => setMobileMenuOpen(false)} className="pt-2">
-                <Button className="w-full min-h-[48px]" size="lg" data-testid="button-mobile-contact">Fale com Especialista</Button>
+                <ChevronRight className="h-5 w-5" />
               </Link>
             </div>
-          </div>
-        )}
+
+            {/* Sidebar Footer CTA */}
+            <div className="p-4 border-t border-border">
+              <Link href="/contato">
+                <Button className="w-full min-h-[52px] text-base font-semibold" size="lg" data-testid="button-mobile-contact">
+                  Fale com Especialista
+                </Button>
+              </Link>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );
