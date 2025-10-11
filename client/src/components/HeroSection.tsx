@@ -48,6 +48,10 @@ export default function HeroSection({
             className="absolute inset-0 bg-gray-900"
             style={{ opacity: overlayOpacity }}
           />
+          {/* Subtle Gradient Overlay */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10"
+          />
         </>
       )}
       
