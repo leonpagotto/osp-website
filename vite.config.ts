@@ -1,23 +1,26 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
   plugins: [
     react(),
-    runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
-      : []),
+    // Image optimization for better performance
+    ViteImageOptimizer({
+      png: {
+        quality: 85,
+      },
+      jpeg: {
+        quality: 85,
+      },
+      jpg: {
+        quality: 85,
+      },
+      webp: {
+        quality: 85,
+      },
+    }),
   ],
   resolve: {
     alias: {

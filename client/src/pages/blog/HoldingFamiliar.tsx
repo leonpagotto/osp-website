@@ -1,40 +1,45 @@
-import CTASection from "@/components/CTASection";
+import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, User, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
 export default function HoldingFamiliar() {
   return (
-    <div className="min-h-screen">
-      <section className="py-12 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <div className="mb-6">
-              <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
-                Planejamento Patrimonial
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Holding Familiar: quando estruturar?</h1>
-            <div className="flex items-center gap-6 text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span className="text-sm">5 de Março, 2025</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                <span className="text-sm">Guilherme Pagotto</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
-            <p className="text-xl text-muted-foreground">
-              A criação de uma holding familiar é uma das decisões mais estratégicas para proteção patrimonial 
-              e planejamento sucessório. Mas qual o momento certo para estruturá-la?
-            </p>
+    <BlogPostTemplate
+      title="Holding Familiar: quando estruturar?"
+      description="A criação de uma holding familiar é uma das decisões mais estratégicas para proteção patrimonial e planejamento sucessório. Descubra qual o momento certo para estruturá-la."
+      keywords="holding familiar, planejamento patrimonial, sucessão familiar, proteção patrimonial, ITCMD, governança familiar, OSP contabilidade"
+      canonicalUrl="/blog/holding-familiar-quando-estruturar"
+      ogImage="/images/blog/holding-familiar.jpg"
+      category="Planejamento Patrimonial"
+      categorySlug="planejamento-patrimonial"
+      author={{
+        name: "Guilherme Pagotto",
+        bio: "Advogado, contador e empresário, atua no mercado contábil há mais de 25 anos. É consultor estrategista da OSP Soluções de Negócio. Também é diretor do Sescon e juiz do Tribunal de Impostos e Taxas (TIT) de Campinas.",
+        role: "Consultor Estrategista - OSP",
+      }}
+      publishedDate="2025-03-05"
+      readingTime="8 min de leitura"
+      heroImage="/images/blog/holding-familiar.jpg"
+      heroImageAlt="Família discutindo planejamento patrimonial e holding familiar"
+      relatedPosts={[
+        {
+          title: "HOLDING360: Estrutura patrimonial estratégica",
+          slug: "../solucoes/holding360",
+          category: "Soluções"
+        },
+        {
+          title: "Indicadores Financeiros que todo CEO deveria acompanhar",
+          slug: "indicadores-financeiros-ceo",
+          category: "Gestão"
+        }
+      ]}
+    >
+      <p className="text-xl text-muted-foreground lead">
+        A criação de uma holding familiar é uma das decisões mais estratégicas para proteção patrimonial 
+        e planejamento sucessório. Mas qual o momento certo para estruturá-la?
+      </p>
 
             <h2>O que é uma Holding Familiar?</h2>
             <p>
@@ -188,21 +193,21 @@ export default function HoldingFamiliar() {
               proporciona proteção, eficiência fiscal e governança familiar sólida.
             </p>
             <p>
-              Na OSP, acumulamos décadas de experiência em estruturação de holdings familiares, 
-              garantindo segurança jurídica, eficiência tributária e governança adequada para 
-              perpetuar o patrimônio familiar através das gerações.
-            </p>
-          </div>
-        </div>
-      </section>
+            Na OSP, acumulamos décadas de experiência em estruturação de holdings familiares, 
+            garantindo segurança jurídica, eficiência tributária e governança adequada para 
+            perpetuar o patrimônio familiar através das gerações.
+          </p>
 
-      <CTASection
-        title="Pense na estruturação da sua holding familiar"
-        description="Agende uma consultoria especializada com nossos experts em planejamento patrimonial"
-        primaryButton={{ text: "Agendar Consultoria", href: "/contato" }}
-        secondaryButton={{ text: "Conhecer HOLDING360", href: "/solucoes/holding360" }}
-        variant="accent"
-      />
-    </div>
-  );
-}
+          <div className="not-prose mt-8 p-6 bg-card rounded-lg border border-border">
+            <h3 className="text-lg font-semibold mb-3">Quer saber mais sobre nossa solução HOLDING360?</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Conheça nossa solução especializada em estruturação patrimonial e planejamento sucessório.
+            </p>
+          <Link href="/solucoes/holding360">
+            <Button>Conhecer HOLDING360</Button>
+          </Link>
+        </div>
+      </BlogPostTemplate>
+    );
+  }
+    

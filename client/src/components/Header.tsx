@@ -42,9 +42,17 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2" data-testid="link-logo">
-            <div className="text-2xl font-bold text-primary">OSP</div>
-            <div className="hidden sm:block text-sm text-muted-foreground">Contabilidade Digital</div>
+          <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
+            <img 
+              src="/images/osp-logo-white.svg" 
+              alt="OSP Logo" 
+              className="h-10 w-10 shrink-0"
+              style={{ filter: 'brightness(0) saturate(100%) invert(33%) sepia(97%) saturate(1947%) hue-rotate(198deg) brightness(94%) contrast(101%)' }}
+            />
+            <div className="flex flex-col">
+              <div className="text-2xl font-bold text-primary leading-tight">OSP</div>
+              <div className="hidden sm:block text-xs text-muted-foreground leading-tight">Contabilidade Digital</div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -18,6 +18,8 @@ interface HeroSectionProps {
     label: string;
   }>;
   showGradient?: boolean;
+  backgroundImage?: string;
+  overlayOpacity?: number;
 }
 
 export default function HeroSection({
@@ -27,10 +29,29 @@ export default function HeroSection({
   secondaryCTA,
   stats,
   showGradient = true,
+  backgroundImage,
+  overlayOpacity = 0.85,
 }: HeroSectionProps) {
   return (
-    <section className={`relative py-20 lg:py-32 ${showGradient ? 'bg-gradient-to-br from-primary/10 via-background to-background' : 'bg-background'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`relative py-20 lg:py-32 overflow-hidden ${showGradient && !backgroundImage ? 'bg-gradient-to-br from-primary/10 via-background to-background' : 'bg-background'}`}>
+      {/* Background Image */}
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+            }}
+          />
+          {/* Dark Overlay */}
+          <div 
+            className="absolute inset-0 bg-gray-900"
+            style={{ opacity: overlayOpacity }}
+          />
+        </>
+      )}
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-hero-mobile md:text-hero font-bold mb-6 leading-tight">
             {title}

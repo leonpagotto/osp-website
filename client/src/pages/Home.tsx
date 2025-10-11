@@ -48,6 +48,8 @@ export default function Home() {
       <HeroSection
         title="Inteligência contábil para decisões que transformam negócios"
         subtitle="O braço técnico e consultivo de empresas no Lucro Real"
+        backgroundImage="/images/backgrounds/osp-building.jpg"
+        overlayOpacity={0.82}
         primaryCTA={{ text: "Fale com Especialista", href: "/contato" }}
         secondaryCTA={{ text: "Diagnóstico Gratuito", href: "/solucoes/osp360" }}
         stats={[
