@@ -30,13 +30,13 @@ export default function EstudoTributario() {
       description="Entenda a importância de um estudo tributário profundo para tomar decisões estratégicas com segurança e gerar economia real."
       keywords="estudo tributário, planejamento fiscal, economia tributária, decisões fiscais"
       canonicalUrl="/blog/estudo-tributario-tomar-decisoes"
-      ogImage="/images/blog/estudo-tributario.jpg"
+      ogImage="/images/blog/estudo-tributario.png"
       category="Lucro Real"
       categorySlug="lucro-real"
       author={authorInfo}
       publishedDate="2025-06-28"
       readingTime="8 min de leitura"
-      heroImage="/images/blog/estudo-tributario.jpg"
+      heroImage="/images/blog/estudo-tributario.png"
       heroImageAlt="Estudo tributário profundo para decisões fiscais estratégicas"
       relatedPosts={relatedPosts}
     >

@@ -30,13 +30,13 @@ export default function ContabilidadeCrescimento() {
       description="Descubra se sua contabilidade é uma parceira estratégica ou apenas uma obrigação burocrática."
       keywords="contabilidade estratégica, crescimento empresarial, gestão contábil, contabilidade consultiva"
       canonicalUrl="/blog/sua-contabilidade-esta-impulsionando-ou-travando-o-crescimento-do-seu-negocio"
-      ogImage="/images/blog/contabilidade-crescimento.jpg"
+      ogImage="/images/blog/contabilidade-crescimento.png"
       category="Lucro Real"
       categorySlug="lucro-real"
       author={authorInfo}
       publishedDate="2025-07-11"
       readingTime="6 min de leitura"
-      heroImage="/images/blog/contabilidade-crescimento.jpg"
+      heroImage="/images/blog/contabilidade-crescimento.png"
       heroImageAlt="Contabilidade estratégica para crescimento empresarial"
       relatedPosts={relatedPosts}
     >

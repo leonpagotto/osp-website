@@ -30,13 +30,13 @@ export default function LucroRealEstrategia() {
       description="Guia completo sobre o regime de Lucro Real: quando optar, vantagens, desafios e como maximizar benefícios fiscais."
       keywords="lucro real, regime tributário, planejamento tributário, apuração fiscal"
       canonicalUrl="/blog/lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber"
-      ogImage="/images/blog/lucro-real-estrategia.jpg"
+      ogImage="/images/blog/lucro-real-estrategia.png"
       category="Lucro Real"
       categorySlug="lucro-real"
       author={authorInfo}
       publishedDate="2025-07-11"
       readingTime="9 min de leitura"
-      heroImage="/images/blog/lucro-real-estrategia.jpg"
+      heroImage="/images/blog/lucro-real-estrategia.png"
       heroImageAlt="Estratégias para Lucro Real e planejamento tributário"
       relatedPosts={relatedPosts}
     >

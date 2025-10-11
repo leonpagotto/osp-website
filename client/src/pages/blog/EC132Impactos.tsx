@@ -30,13 +30,13 @@ export default function EC132Impactos() {
       description="Análise detalhada dos impactos da Emenda Constitucional 132/2023 para empresas que estão expandindo suas operações."
       keywords="EC 132, reforma tributária, empresas crescimento, expansão empresarial"
       canonicalUrl="/blog/reforma-tributaria-2025-impactos-praticos-da-ec-132-para-empresas-em-crescimento"
-      ogImage="/images/blog/ec-132-impactos.jpg"
+      ogImage="/images/blog/ec-132-impactos.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-13"
       readingTime="8 min de leitura"
-      heroImage="/images/blog/ec-132-impactos.jpg"
+      heroImage="/images/blog/ec-132-impactos.png"
       heroImageAlt="Impactos da EC 132 para empresas em crescimento"
       relatedPosts={relatedPosts}
     >

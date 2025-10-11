@@ -28,13 +28,13 @@ export default function IndicadoresFinanceirosCEO() {
       description="Conheça os principais indicadores financeiros que CEOs e executivos devem monitorar para tomar decisões estratégicas baseadas em dados."
       keywords="indicadores financeiros, KPIs, gestão financeira, CEO, tomada de decisão, EBITDA, FCF, ROI, ROIC, fluxo de caixa"
       canonicalUrl="/blog/indicadores-financeiros-ceo"
-      ogImage="/images/blog/indicadores-ceo.jpg"
+      ogImage="/images/blog/indicadores-ceo.png"
       category="Gestão Financeira"
       categorySlug="gestao-financeira"
       publishedDate="2025-02-15"
       readingTime="10 min de leitura"
       author={authorInfo}
-      heroImage="/images/blog/indicadores-ceo.jpg"
+      heroImage="/images/blog/indicadores-ceo.png"
       relatedPosts={relatedPosts}
       ctaTitle="Precisa de ajuda com indicadores financeiros?"
       ctaDescription="Nossa equipe pode implementar um dashboard executivo personalizado para sua empresa"

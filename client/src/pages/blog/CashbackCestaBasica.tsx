@@ -25,13 +25,13 @@ export default function CashbackCestaBasica() {
       description="Cashback tributário e Cesta Básica Nacional representam avanços de justiça fiscal. Entenda os impactos operacionais para sua empresa."
       keywords="cashback tributário, cesta básica, CBS, IBS, reforma tributária, NCM, classificação fiscal"
       canonicalUrl="/blog/cashback-cesta-basica-e-justica-fiscal-o-que-muda-na-tributacao"
-      ogImage="/images/blog/cashback-cesta-basica.jpg"
+      ogImage="/images/blog/cashback-cesta-basica.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-13"
       readingTime="6 min de leitura"
-      heroImage="/images/blog/cashback-cesta-basica.jpg"
+      heroImage="/images/blog/cashback-cesta-basica.png"
       heroImageAlt="Cesta básica e cashback fiscal para famílias de baixa renda"
       relatedPosts={relatedPosts}
     >

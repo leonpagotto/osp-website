@@ -25,13 +25,13 @@ export default function ImpostoSeletivo() {
       description="Entenda o Imposto Seletivo e os regimes diferenciados da Reforma Tributária e seus impactos em setores específicos."
       keywords="imposto seletivo, regimes diferenciados, reforma tributária, tributação específica"
       canonicalUrl="/blog/imposto-seletivo-e-regimes-diferenciados-na-reforma-tributaria"
-      ogImage="/images/blog/imposto-seletivo.jpg"
+      ogImage="/images/blog/imposto-seletivo.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-13"
       readingTime="7 min de leitura"
-      heroImage="/images/blog/imposto-seletivo.jpg"
+      heroImage="/images/blog/imposto-seletivo.png"
       heroImageAlt="Imposto seletivo e regimes diferenciados da reforma tributária"
       relatedPosts={relatedPosts}
     >

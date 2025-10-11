@@ -11,7 +11,7 @@ export default function HoldingFamiliar() {
       description="A criação de uma holding familiar é uma das decisões mais estratégicas para proteção patrimonial e planejamento sucessório. Descubra qual o momento certo para estruturá-la."
       keywords="holding familiar, planejamento patrimonial, sucessão familiar, proteção patrimonial, ITCMD, governança familiar, OSP contabilidade"
       canonicalUrl="/blog/holding-familiar-quando-estruturar"
-      ogImage="/images/blog/holding-familiar.jpg"
+      ogImage="/images/blog/holding-familiar.png"
       category="Planejamento Patrimonial"
       categorySlug="planejamento-patrimonial"
       author={{
@@ -21,7 +21,7 @@ export default function HoldingFamiliar() {
       }}
       publishedDate="2025-03-05"
       readingTime="8 min de leitura"
-      heroImage="/images/blog/holding-familiar.jpg"
+      heroImage="/images/blog/holding-familiar.png"
       heroImageAlt="Família discutindo planejamento patrimonial e holding familiar"
       relatedPosts={[
         {

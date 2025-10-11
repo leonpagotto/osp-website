@@ -25,13 +25,13 @@ export default function CBSIBS() {
       description="CBS substitui PIS/Cofins/IPI e IBS substitui ICMS/ISS. Entenda o novo modelo não cumulativo e seus impactos práticos."
       keywords="CBS, IBS, reforma tributária, não cumulativo, crédito tributário, EC 132/2023"
       canonicalUrl="/blog/cbs-e-ibs-na-reforma-tributaria-impactos-praticos-para-empresas-em-2025"
-      ogImage="/images/blog/cbs-ibs-reforma.jpg"
+      ogImage="/images/blog/cbs-ibs-reforma.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-13"
       readingTime="8 min de leitura"
-      heroImage="/images/blog/cbs-ibs-reforma.jpg"
+      heroImage="/images/blog/cbs-ibs-reforma.png"
       heroImageAlt="Novos tributos CBS e IBS da reforma tributária"
       relatedPosts={relatedPosts}
     >

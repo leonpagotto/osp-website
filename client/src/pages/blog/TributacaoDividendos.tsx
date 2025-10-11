@@ -30,13 +30,13 @@ export default function TributacaoDividendos() {
       description="O PL 1.087/2025 prevê mudanças significativas na tributação de dividendos a partir de 2026. Entenda os impactos para sua empresa e lucros acumulados."
       keywords="tributação dividendos, PL 1.087/2025, IRPF, lucros acumulados, reforma tributária, holding, OSP"
       canonicalUrl="/blog/tributacao-de-dividendos-o-que-muda-em-2026-e-como-se-preparar"
-      ogImage="/images/blog/tributacao-dividendos.jpg"
+      ogImage="/images/blog/tributacao-dividendos.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-18"
       readingTime="7 min de leitura"
-      heroImage="/images/blog/tributacao-dividendos.jpg"
+      heroImage="/images/blog/tributacao-dividendos.png"
       heroImageAlt="Análise de tributação de dividendos e impactos fiscais"
       relatedPosts={relatedPosts}
     >
