@@ -137,15 +137,14 @@ export function BlogPostTemplate({
 
         {/* Hero Image */}
         {heroImage && (
-          <div className="w-full h-[400px] md:h-[500px] relative overflow-hidden bg-gray-900">
-            <OptimizedImage
+          <div className="w-full h-[400px] md:h-[500px] relative overflow-hidden bg-muted">
+            <img
               src={heroImage}
               alt={heroImageAlt || title}
-              priority={true}
-              objectFit="cover"
-              className="w-full h-full"
+              className="w-full h-full object-cover"
+              loading="eager"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           </div>
         )}
 
