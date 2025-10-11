@@ -30,13 +30,13 @@ export default function ReformaTributaria2025() {
       description="Guia completo e prático sobre a Reforma Tributária 2025 para líderes empresariais tomarem decisões estratégicas."
       keywords="reforma tributária 2025, guia empresarial, CBS, IBS, planejamento tributário"
       canonicalUrl="/blog/reforma-tributaria-2025-guia-pratico-para-empresarios"
-      ogImage="/images/blog/reforma-tributaria-2025.png"
+      ogImage="/images/blog/reforma-tributaria-guia.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-13"
       readingTime="10 min de leitura"
-      heroImage="/images/blog/reforma-tributaria-2025.png"
+      heroImage="/images/blog/reforma-tributaria-guia.png"
       heroImageAlt="Guia prático da reforma tributária 2025 para empresários"
       relatedPosts={relatedPosts}
     >

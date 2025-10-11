@@ -25,13 +25,13 @@ export default function ChecklistOSP() {
       description="Checklist completo para preparar sua empresa para as mudanças da Reforma Tributária com ações práticas e mensuráveis."
       keywords="checklist reforma tributária, preparação empresas, CBS IBS, adequação fiscal"
       canonicalUrl="/blog/checklist-osp-como-preparar-sua-empresa-para-reforma-tributaria"
-      ogImage="/images/blog/checklist-osp.png"
+      ogImage="/images/blog/checklist-reforma.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-07-11"
       readingTime="9 min de leitura"
-      heroImage="/images/blog/checklist-osp.png"
+      heroImage="/images/blog/checklist-reforma.png"
       heroImageAlt="Checklist de preparação para reforma tributária"
       relatedPosts={relatedPosts}
     >

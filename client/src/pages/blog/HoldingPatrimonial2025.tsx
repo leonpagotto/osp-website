@@ -30,13 +30,13 @@ export default function HoldingPatrimonial2025() {
       description="A janela de oportunidade para estruturar holdings patrimoniais com vantagens fiscais pode estar se fechando. Entenda os motivos da urgência."
       keywords="holding patrimonial, planejamento sucessório, ITCMD, 2025, urgência fiscal"
       canonicalUrl="/blog/holding-patrimonial-por-que-ainda-em-2025"
-      ogImage="/images/blog/holding-patrimonial-2025.png"
+      ogImage="/images/blog/holding-2025.png"
       category="Reforma Tributária"
       categorySlug="reforma-tributaria"
       author={authorInfo}
       publishedDate="2025-06-29"
       readingTime="7 min de leitura"
-      heroImage="/images/blog/holding-patrimonial-2025.png"
+      heroImage="/images/blog/holding-2025.png"
       heroImageAlt="Urgência em estruturar holding patrimonial em 2025"
       relatedPosts={relatedPosts}
     >

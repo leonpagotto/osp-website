@@ -30,13 +30,13 @@ export default function ContabilidadeLucroReal() {
       description="Mudança para Lucro Real exige preparação adequada. Saiba como se organizar para uma transição bem-sucedida."
       keywords="mudança regime tributário, lucro real, transição fiscal, organização contábil"
       canonicalUrl="/blog/contabilidade-lucro-real-por-que-mudar-de-regime"
-      ogImage="/images/blog/contabilidade-lucro-real.png"
+      ogImage="/images/blog/mudanca-lucro-real.png"
       category="Lucro Real"
       categorySlug="lucro-real"
       author={authorInfo}
       publishedDate="2025-06-28"
       readingTime="7 min de leitura"
-      heroImage="/images/blog/contabilidade-lucro-real.png"
+      heroImage="/images/blog/mudanca-lucro-real.png"
       heroImageAlt="Preparação para mudança para regime de Lucro Real"
       relatedPosts={relatedPosts}
     >

@@ -137,10 +137,10 @@ export function BlogPostTemplate({
 
         {/* Hero Image */}
         {heroImage && (
-          <div className="w-full bg-muted">
+          <div className="w-full bg-background">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
               <div className="max-w-4xl mx-auto">
-                <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden bg-muted shadow-lg">
+                <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden bg-background shadow-lg">
                   <img
                     src={heroImage}
                     alt={heroImageAlt || title}
