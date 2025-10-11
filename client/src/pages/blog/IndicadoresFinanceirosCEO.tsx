@@ -38,8 +38,6 @@ export default function IndicadoresFinanceirosCEO() {
       relatedPosts={relatedPosts}
       ctaTitle="Precisa de ajuda com indicadores financeiros?"
       ctaDescription="Nossa equipe pode implementar um dashboard executivo personalizado para sua empresa"
-      ctaButtonText="Falar com Especialista"
-      ctaButtonLink="/contato"
     >
       <p className="text-xl text-muted-foreground mb-8">
         A tomada de decisão estratégica exige mais do que intuição. CEOs bem-sucedidos baseiam suas escolhas em dados 

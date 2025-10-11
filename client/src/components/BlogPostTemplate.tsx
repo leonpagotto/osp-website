@@ -49,8 +49,6 @@ interface BlogPostTemplateProps {
   // CTA
   ctaTitle?: string;
   ctaDescription?: string;
-  ctaButtonText?: string;
-  ctaButtonLink?: string;
 }
 
 export function BlogPostTemplate({
@@ -71,8 +69,6 @@ export function BlogPostTemplate({
   relatedPosts,
   ctaTitle = "Precisa de ajuda com sua contabilidade?",
   ctaDescription = "Fale com um especialista da OSP e descubra como podemos ajudar sua empresa.",
-  ctaButtonText = "Falar com Especialista",
-  ctaButtonLink = "https://wa.me/5519993216091?text=Ol%C3%A1!%20Vim%20do%20blog%20e%20gostaria%20de%20saber%20mais",
 }: BlogPostTemplateProps) {
   
   const handleShare = async () => {
@@ -219,13 +215,7 @@ export function BlogPostTemplate({
             <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-xl border border-primary/20">
               <div className="text-center max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-3">{ctaTitle}</h3>
-                <p className="text-muted-foreground mb-6">{ctaDescription}</p>
-                <a href={ctaButtonLink} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="gap-2">
-                    {ctaButtonText}
-                    <ArrowLeft className="w-4 h-4 rotate-180" />
-                  </Button>
-                </a>
+                <p className="text-muted-foreground">{ctaDescription}</p>
               </div>
             </div>
 
