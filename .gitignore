@@ -14,4 +14,4 @@ vite.config.ts.*
 .firebase/
 firebase-debug.log
 firebase-debug.*.log
-.cache/
+.cache/client/.env
