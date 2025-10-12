@@ -199,6 +199,13 @@ export function BlogPostTemplate({
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
               <div className="flex items-center gap-2">
+                {author.image && (
+                  <img
+                    src={author.image}
+                    alt={author.name}
+                    className="w-8 h-8 rounded-full object-cover border-2 border-border"
+                  />
+                )}
                 <User className="w-4 h-4" />
                 <span>{t('blogPost.by')} {author.name}</span>
               </div>

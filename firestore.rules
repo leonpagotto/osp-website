@@ -1,0 +1,33 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Contact form submissions
+    // Allow anyone to create (submit forms)
+    // Only allow reading/updating/deleting from Firebase Console or authenticated admin users
+    match /contact_submissions/{document} {
+      // Allow anyone to submit a contact form
+      allow create: if true;
+      
+      // Only allow reading from authenticated users (for admin dashboard)
+      allow read, update, delete: if false; // Use Firebase Console to manage
+    }
+    
+    // Newsletter subscriptions
+    // Allow anyone to subscribe
+    // Only allow reading/updating/deleting from Firebase Console or authenticated admin users
+    match /newsletter_subscriptions/{document} {
+      // Allow anyone to subscribe
+      allow create: if true;
+      
+      // Only allow reading from authenticated users (for admin dashboard)
+      allow read, update, delete: if false; // Use Firebase Console to manage
+    }
+    
+    // Deny all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

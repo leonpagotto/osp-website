@@ -342,6 +342,7 @@
       "message": "Como podemos ajudar?",
       "messagePlaceholder": "Conte-nos sobre seus desafios e objetivos...",
       "submit": "Enviar Mensagem",
+      "sending": "Enviando...",
       "successTitle": "Mensagem enviada!",
       "successDescription": "Entraremos em contato em breve.",
       "required": "*"
@@ -350,8 +351,17 @@
       "title": "Informações de Contato",
       "addresses": {
         "title": "Endereços",
-        "campinas": "Campinas/SP",
-        "saoPaulo": "São Paulo/SP"
+        "campinas": "Rua Doutor Barbosa de Andrade, 541\nJardim Chapadão, Campinas/SP\nCEP 13070-158",
+        "saoPaulo": "Av. Paulista, 1636 – 15º Andar\nCequeira César, São Paulo/SP\nCEP 01310-200"
+      },
+      "phones": {
+        "title": "Telefones",
+        "commercial": "+55 (19) 9 9321-6091",
+        "commercialLabel": "Comercial / WhatsApp",
+        "saoPaulo": "+55 (11) 5242-4407",
+        "saoPauloLabel": "São Paulo",
+        "sac": "+55 (19) 3272-5747",
+        "sacLabel": "SAC"
       },
       "whatsapp": {
         "title": "WhatsApp"
@@ -383,7 +393,9 @@
       "placeholder": "Seu melhor e-mail",
       "button": "Inscrever",
       "formLabel": "Formulário de inscrição na newsletter",
-      "inputLabel": "Endereço de e-mail para newsletter"
+      "inputLabel": "Endereço de e-mail para newsletter",
+      "successTitle": "Inscrição realizada!",
+      "successDescription": "Obrigado por se inscrever em nossa newsletter."
     },
     "socialMedia": "Redes sociais",
     "linkedinLabel": "Visite nosso LinkedIn",
@@ -392,7 +404,7 @@
     "solutionsNav": "Navegação de soluções",
     "companyNav": "Navegação da empresa",
     "careers": "Trabalhe Conosco",
-    "locations": "Campinas/SP | São Paulo/SP",
+    "locations": "Campinas/SP: R. Dr. Barbosa de Andrade, 541 | São Paulo/SP: Av. Paulista, 1636 – 15º Andar",
     "phoneLabel": "Ligue para OSP via WhatsApp",
     "emailLabel": "Envie um e-mail para OSP",
     "copyright": "© {{year}} OSP. Todos os direitos reservados.",

@@ -342,6 +342,7 @@
       "message": "How can we help?",
       "messagePlaceholder": "Tell us about your challenges and goals...",
       "submit": "Send Message",
+      "sending": "Sending...",
       "successTitle": "Message sent!",
       "successDescription": "We'll get in touch soon.",
       "required": "*"
@@ -350,8 +351,17 @@
       "title": "Contact Information",
       "addresses": {
         "title": "Addresses",
-        "campinas": "Campinas/SP",
-        "saoPaulo": "São Paulo/SP"
+        "campinas": "541 Dr. Barbosa de Andrade Street\nJardim Chapadão, Campinas/SP\nZIP 13070-158",
+        "saoPaulo": "1636 Paulista Avenue – 15th Floor\nCequeira César, São Paulo/SP\nZIP 01310-200"
+      },
+      "phones": {
+        "title": "Phone Numbers",
+        "commercial": "+55 (19) 9 9321-6091",
+        "commercialLabel": "Commercial / WhatsApp",
+        "saoPaulo": "+55 (11) 5242-4407",
+        "saoPauloLabel": "São Paulo",
+        "sac": "+55 (19) 3272-5747",
+        "sacLabel": "Customer Service"
       },
       "whatsapp": {
         "title": "WhatsApp"
@@ -383,7 +393,9 @@
       "placeholder": "Your best email",
       "button": "Subscribe",
       "formLabel": "Newsletter subscription form",
-      "inputLabel": "Email address for newsletter"
+      "inputLabel": "Email address for newsletter",
+      "successTitle": "Successfully subscribed!",
+      "successDescription": "Thank you for subscribing to our newsletter."
     },
     "socialMedia": "Social media",
     "linkedinLabel": "Visit our LinkedIn",
@@ -392,7 +404,7 @@
     "solutionsNav": "Solutions navigation",
     "companyNav": "Company navigation",
     "careers": "Join Us",
-    "locations": "Campinas/SP | São Paulo/SP",
+    "locations": "Campinas/SP: 541 Dr. Barbosa de Andrade St. | São Paulo/SP: 1636 Paulista Ave. – 15th Floor",
     "phoneLabel": "Call OSP via WhatsApp",
     "emailLabel": "Send an email to OSP",
     "copyright": "© {{year}} OSP. All rights reserved.",

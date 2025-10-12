@@ -22,6 +22,10 @@ import {
   Zap,
   Shield,
   BarChart3,
+  Compass,
+  Rocket,
+  Scale,
+  LayoutDashboard,
 } from "lucide-react";
 
 export default function Home() {
@@ -128,25 +132,25 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <SolutionCard
-              icon={Target}
+              icon={Compass}
               title={t('solutions.osp360.name')}
               description={t('solutions.osp360.description')}
               href="/solucoes/osp360"
             />
             <SolutionCard
-              icon={Building2}
+              icon={Rocket}
               title={t('solutions.fundar360.name')}
               description={t('solutions.fundar360.description')}
               href="/solucoes/fundar360"
             />
             <SolutionCard
-              icon={Calculator}
+              icon={Scale}
               title={t('solutions.tributa360.name')}
               description={t('solutions.tributa360.description')}
               href="/solucoes/tributa360"
             />
             <SolutionCard
-              icon={TrendingUp}
+              icon={LayoutDashboard}
               title={t('solutions.gestao360.name')}
               description={t('solutions.gestao360.description')}
               href="/solucoes/gestao360"

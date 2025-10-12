@@ -82,13 +82,28 @@ export function createOrganizationSchema(): OrganizationSchema {
     url: 'https://ospcontabilidade.com.br',
     logo: 'https://ospcontabilidade.com.br/logo.png',
     description: 'Consultoria contábil, fiscal e tributária para empresas de médio e grande porte no Brasil e exterior.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Paulista, 1636 – 15º Andar',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      postalCode: '01310-200',
+      addressCountry: 'BR'
+    },
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+55-11-XXXX-XXXX',
+        telephone: '+55-19-99321-6091',
         contactType: 'customer service',
         areaServed: 'BR',
         availableLanguage: ['Portuguese', 'English', 'Spanish'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+55-11-5242-4407',
+        contactType: 'sales',
+        areaServed: 'BR',
+        availableLanguage: ['Portuguese', 'English'],
       },
     ],
     sameAs: [
@@ -190,19 +205,19 @@ export function createLocalBusinessSchema() {
     image: `${siteUrl}/logo.png`,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Rua Exemplo, 123',
+      streetAddress: 'Av. Paulista, 1636 – 15º Andar',
       addressLocality: 'São Paulo',
       addressRegion: 'SP',
-      postalCode: '01234-567',
+      postalCode: '01310-200',
       addressCountry: 'BR'
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: -23.5505,
-      longitude: -46.6333
+      latitude: -23.5617,
+      longitude: -46.6563
     },
     url: siteUrl,
-    telephone: '+55-11-1234-5678',
+    telephone: '+55-11-5242-4407',
     priceRange: '$$',
     openingHoursSpecification: [
       {

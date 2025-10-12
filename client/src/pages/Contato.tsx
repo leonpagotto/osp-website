@@ -109,12 +109,12 @@ export default function Contato() {
                         <div>
                           <h3 className="font-semibold mb-1">{t('contact.info.email.title')}</h3>
                           <a
-                            href="mailto:contato@ospcontabilidade.com.br"
+                            href="mailto:atendimento@osp.com.br"
                             className="text-sm text-primary hover:underline"
                             data-testid="link-email"
                             aria-label={t('footer.emailLabel')}
                           >
-                            contato@ospcontabilidade.com.br
+                            atendimento@osp.com.br
                           </a>
                         </div>
                       </div>

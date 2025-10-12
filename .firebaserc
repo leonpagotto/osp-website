@@ -1,7 +1,5 @@
-# Firebase cache files
-.firebase/
-firebase-debug.log
-firebase-debug.*.log
-
-# Firebase local hosting cache
-.cache/
+{
+  "projects": {
+    "default": "osp-website-2026"
+  }
+}

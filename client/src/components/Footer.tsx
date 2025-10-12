@@ -1,11 +1,47 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useTranslation } from 'react-i18next';
+import { useState } from "react";
+import { submitNewsletterSubscription } from "@/lib/firestore";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await submitNewsletterSubscription(email);
+      
+      toast({
+        title: t('footer.newsletter.successTitle') || "Inscrição realizada!",
+        description: t('footer.newsletter.successDescription') || "Obrigado por se inscrever em nossa newsletter.",
+      });
+      
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Erro ao inscrever",
+        description: "Não foi possível realizar sua inscrição. Por favor, tente novamente.",
+        variant: "destructive",
+      });
+      console.error("Error subscribing to newsletter:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer className="bg-secondary border-t border-border" role="contentinfo" aria-label="Site footer">
@@ -17,7 +53,7 @@ export default function Footer() {
             <p className="text-muted-foreground mb-6">{t('footer.newsletter.subtitle')}</p>
             <form 
               className="flex gap-4 max-w-md mx-auto" 
-              onSubmit={(e) => { e.preventDefault(); console.log('Newsletter signup'); }}
+              onSubmit={handleNewsletterSubmit}
               aria-label={t('footer.newsletter.formLabel')}
             >
               <Input
@@ -27,9 +63,20 @@ export default function Footer() {
                 data-testid="input-newsletter-email"
                 aria-label={t('footer.newsletter.inputLabel')}
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
               />
-              <Button type="submit" data-testid="button-newsletter-submit">
-                {t('footer.newsletter.button')}
+              <Button 
+                type="submit" 
+                data-testid="button-newsletter-submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  t('footer.newsletter.button')
+                )}
               </Button>
             </form>
           </div>
@@ -126,12 +173,12 @@ export default function Footer() {
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
                 <a 
-                  href="mailto:contato@ospcontabilidade.com.br" 
+                  href="mailto:atendimento@osp.com.br" 
                   className="text-muted-foreground hover:text-foreground transition-colors" 
                   data-testid="link-footer-email"
                   aria-label={t('footer.emailLabel')}
                 >
-                  contato@ospcontabilidade.com.br
+                  atendimento@osp.com.br
                 </a>
               </li>
             </ul>

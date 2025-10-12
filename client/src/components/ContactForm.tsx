@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import { submitContactForm } from "@/lib/firestore";
+import { Loader2 } from "lucide-react";
 
 export default function ContactForm() {
   const { t } = useTranslation();
@@ -16,24 +18,43 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: t('contact.form.successTitle'),
-      description: t('contact.form.successDescription'),
-    });
-    // Reset form
-    setFormData({
-      name: "",
-      company: "",
-      role: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Submit to Firestore
+      await submitContactForm(formData);
+      
+      // Show success message
+      toast({
+        title: t('contact.form.successTitle'),
+        description: t('contact.form.successDescription'),
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        role: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      // Show error message
+      toast({
+        title: "Erro ao enviar",
+        description: "Não foi possível enviar sua mensagem. Por favor, tente novamente.",
+        variant: "destructive",
+      });
+      console.error("Error submitting contact form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -135,8 +156,21 @@ export default function ContactForm() {
         />
       </div>
 
-      <Button type="submit" size="lg" className="w-full md:w-auto" data-testid="button-submit-contact">
-        {t('contact.form.submit')}
+      <Button 
+        type="submit" 
+        size="lg" 
+        className="w-full md:w-auto" 
+        data-testid="button-submit-contact"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            {t('contact.form.sending') || 'Enviando...'}
+          </>
+        ) : (
+          t('contact.form.submit')
+        )}
       </Button>
     </form>
   );

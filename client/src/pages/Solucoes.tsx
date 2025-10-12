@@ -10,6 +10,10 @@ import {
   PieChart,
   Home as HomeIcon,
   FileText,
+  Compass,
+  Rocket,
+  Scale,
+  LayoutDashboard,
 } from "lucide-react";
 
 export default function Solucoes() {
@@ -25,25 +29,25 @@ export default function Solucoes() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <SolutionCard
-              icon={Target}
+              icon={Compass}
               title="OSP360"
               description="Diagnóstico estratégico completo em 45 dias para identificar riscos, oportunidades e definir plano de ação"
               href="/solucoes/osp360"
             />
             <SolutionCard
-              icon={Building2}
+              icon={Rocket}
               title="FUNDAR360"
               description="Estruturação técnica, societária e tributária para novos negócios ou reestruturação empresarial"
               href="/solucoes/fundar360"
             />
             <SolutionCard
-              icon={Calculator}
+              icon={Scale}
               title="TRIBUTA360"
               description="Planejamento tributário estratégico e migração segura para Lucro Real com máxima eficiência fiscal"
               href="/solucoes/tributa360"
             />
             <SolutionCard
-              icon={TrendingUp}
+              icon={LayoutDashboard}
               title="GESTÃO360"
               description="Relatórios executivos, KPIs e BI personalizado para suporte à decisão estratégica"
               href="/solucoes/gestao360"

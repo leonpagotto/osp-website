@@ -40,6 +40,10 @@ This folder contains all project documentation organized by category.
 ### 🚢 Deployment & Git
 - **[FIREBASE_DEPLOYMENT_GUIDE.md](./FIREBASE_DEPLOYMENT_GUIDE.md)** - Complete Firebase Hosting setup
 - **[FIREBASE_QUICK_START.md](./FIREBASE_QUICK_START.md)** - Deploy in 10 minutes
+- **[FIREBASE_SETUP_COMPLETE.md](./FIREBASE_SETUP_COMPLETE.md)** - Firebase setup status
+- **[FIRESTORE_FORMS_SETUP.md](./FIRESTORE_FORMS_SETUP.md)** - Complete Firestore form setup guide
+- **[FIRESTORE_QUICK_START.md](./FIRESTORE_QUICK_START.md)** - Firestore 5-minute quick start
+- **[FIRESTORE_IMPLEMENTATION.md](./FIRESTORE_IMPLEMENTATION.md)** - Form submission implementation summary
 - **[WORDPRESS_MIGRATION_PLAN.md](./WORDPRESS_MIGRATION_PLAN.md)** - WordPress to React migration guide
 - **[GITHUB_SETUP.md](./GITHUB_SETUP.md)** - GitHub repository setup
 - **[PUSH_INSTRUCTIONS.md](./PUSH_INSTRUCTIONS.md)** - Git workflow instructions
@@ -64,6 +68,7 @@ This folder contains all project documentation organized by category.
 2. Review **I18N_IMPLEMENTATION_GUIDE.md** for translation system
 3. Check **BLOG_IMPLEMENTATION_COMPLETE.md** for blog system
 4. Refer to **SEO_ENHANCEMENT_COMPLETE.md** for SEO best practices
+5. **NEW:** Follow **FIRESTORE_QUICK_START.md** for form submissions
 
 ### For Designers
 1. Review **design_guidelines.md** for design system
@@ -93,5 +98,5 @@ When creating new documentation:
 
 ---
 
-**Last Updated:** October 12, 2025  
-**Total Documents:** 30
+**Last Updated:** January 12, 2025  
+**Total Documents:** 33

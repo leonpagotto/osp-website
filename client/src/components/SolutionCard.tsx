@@ -20,11 +20,14 @@ export default function SolutionCard({ icon: Icon, title, description, href }: S
         <Card className="h-full hover-elevate active-elevate-2 cursor-pointer transition-all duration-300 group" data-testid={`card-solution-${title.toLowerCase().replace(/\s+/g, '-')}`}>
           <CardHeader>
             <motion.div 
-              className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+              className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 via-primary/10 to-accent/10 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:via-accent/20 group-hover:to-primary/20 transition-all duration-300 backdrop-blur-sm border border-primary/10"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ duration: 0.2 }}
             >
-              <Icon className="h-6 w-6 text-primary" />
+              <div className="relative">
+                <Icon className="h-6 w-6 text-primary group-hover:text-accent transition-colors duration-300" strokeWidth={2.5} />
+                <div className="absolute inset-0 bg-gradient-primary-vivid opacity-40 blur-lg group-hover:opacity-60 transition-opacity" />
+              </div>
             </motion.div>
             <CardTitle className="text-xl">{title}</CardTitle>
           </CardHeader>
