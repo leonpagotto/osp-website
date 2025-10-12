@@ -38,6 +38,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [mobileSegmentsOpen, setMobileSegmentsOpen] = useState(false);
+  const [desktopSolutionsOpen, setDesktopSolutionsOpen] = useState(false);
+  const [desktopSegmentsOpen, setDesktopSegmentsOpen] = useState(false);
   const [location] = useLocation();
 
   const isActive = (path: string) => location === path;
@@ -82,16 +84,36 @@ export default function Header() {
               {t('nav.home')}
             </Link>
             
-            <div className="relative group">
-              <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors" data-testid="button-solucoes-menu">
+            {/* Solutions Dropdown with Keyboard Support */}
+            <div className="relative" 
+              onMouseEnter={() => setDesktopSolutionsOpen(true)}
+              onMouseLeave={() => setDesktopSolutionsOpen(false)}
+            >
+              <button 
+                className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none focus:text-primary" 
+                data-testid="button-solucoes-menu"
+                onClick={() => setDesktopSolutionsOpen(!desktopSolutionsOpen)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setDesktopSolutionsOpen(!desktopSolutionsOpen);
+                  } else if (e.key === 'Escape') {
+                    setDesktopSolutionsOpen(false);
+                  }
+                }}
+                aria-expanded={desktopSolutionsOpen}
+                aria-haspopup="true"
+              >
                 {t('nav.solutions')}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-80 bg-card border border-card-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className={`absolute left-0 mt-2 w-80 bg-card border border-card-border rounded-lg shadow-lg transition-all duration-200 z-50 ${
+                desktopSolutionsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}>
                 <div className="p-4 grid grid-cols-1 gap-2">
                   {solutions.map((solution) => (
                     <Link key={solution.href} href={solution.href} data-testid={`link-${solution.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <div className="p-3 rounded-md hover-elevate active-elevate-2 cursor-pointer">
+                      <div className="p-3 rounded-md hover-elevate active-elevate-2 cursor-pointer focus-within:ring-2 focus-within:ring-primary">
                         <div className="font-medium text-sm">{t(`solutions.${solution.name}.name`)}</div>
                         <div className="text-xs text-muted-foreground mt-1">{t(`solutions.${solution.name}.description`)}</div>
                       </div>
@@ -101,16 +123,36 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="relative group">
-              <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors" data-testid="button-segmentos-menu">
+            {/* Segments Dropdown with Keyboard Support */}
+            <div className="relative"
+              onMouseEnter={() => setDesktopSegmentsOpen(true)}
+              onMouseLeave={() => setDesktopSegmentsOpen(false)}
+            >
+              <button 
+                className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none focus:text-primary" 
+                data-testid="button-segmentos-menu"
+                onClick={() => setDesktopSegmentsOpen(!desktopSegmentsOpen)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setDesktopSegmentsOpen(!desktopSegmentsOpen);
+                  } else if (e.key === 'Escape') {
+                    setDesktopSegmentsOpen(false);
+                  }
+                }}
+                aria-expanded={desktopSegmentsOpen}
+                aria-haspopup="true"
+              >
                 {t('nav.segments')}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-72 bg-card border border-card-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className={`absolute left-0 mt-2 w-72 bg-card border border-card-border rounded-lg shadow-lg transition-all duration-200 z-50 ${
+                desktopSegmentsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}>
                 <div className="p-4 grid grid-cols-1 gap-2">
                   {segments.map((segment) => (
                     <Link key={segment.href} href={segment.href} data-testid={`link-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <div className="p-2 rounded-md hover-elevate active-elevate-2 cursor-pointer text-sm">
+                      <div className="p-2 rounded-md hover-elevate active-elevate-2 cursor-pointer text-sm focus-within:ring-2 focus-within:ring-primary">
                         {t(`segments.${segment.name}`)}
                       </div>
                     </Link>

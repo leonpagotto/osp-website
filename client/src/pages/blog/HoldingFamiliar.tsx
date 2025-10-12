@@ -1,11 +1,15 @@
 import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 import { BlogContentRenderer } from "@/components/BlogContentRenderer";
+import { authorInfo } from "@/data/blogPosts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from 'react-i18next';
 
 export default function HoldingFamiliar() {
+  const { t } = useTranslation();
+
   // Fallback content for if translations aren't loaded
   const fallbackContent = (
     <>
@@ -55,11 +59,7 @@ export default function HoldingFamiliar() {
       ogImage="/images/blog/holding-familiar.png"
       category="Planejamento Patrimonial"
       categorySlug="planejamento-patrimonial"
-      author={{
-        name: "Guilherme Pagotto",
-        bio: "Advogado, contador e empresário, atua no mercado contábil há mais de 25 anos. É consultor estrategista da OSP Soluções de Negócio. Também é diretor do Sescon e juiz do Tribunal de Impostos e Taxas (TIT) de Campinas.",
-        role: "Consultor Estrategista - OSP",
-      }}
+      author={authorInfo}
       publishedDate="2025-03-05"
       readingTime="8 min de leitura"
       heroImage="/images/blog/holding-familiar.png"
@@ -83,12 +83,14 @@ export default function HoldingFamiliar() {
       />
 
       <div className="not-prose mt-8 p-6 bg-card rounded-lg border border-border">
-        <h3 className="text-lg font-semibold mb-3">Quer saber mais sobre nossa solução HOLDING360?</h3>
+        <h3 className="text-lg font-semibold mb-3">
+          {t('solutions.holding360.cta.title')}
+        </h3>
         <p className="text-sm text-muted-foreground mb-4">
-          Conheça nossa solução especializada em estruturação patrimonial e planejamento sucessório.
+          {t('solutions.holding360.cta.description')}
         </p>
         <Link href="/solucoes/holding360">
-          <Button>Conhecer HOLDING360</Button>
+          <Button>{t('solutions.holding360.hero.title')}</Button>
         </Link>
       </div>
     </BlogPostTemplate>

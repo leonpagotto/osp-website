@@ -154,11 +154,29 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">{t('nav.contact')}</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
-                <span className="text-muted-foreground">{t('footer.locations')}</span>
+            <ul className="space-y-4 text-sm">
+              {/* Campinas Office */}
+              <li>
+                <div className="flex items-start space-x-2 mb-2">
+                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
+                  <span className="font-medium text-foreground">{t('footer.campinasOffice')}</span>
+                </div>
+                <p className="text-muted-foreground ml-6 whitespace-pre-line leading-relaxed">
+                  {t('footer.campinasAddress')}
+                </p>
               </li>
+              
+              {/* São Paulo Office */}
+              <li>
+                <div className="flex items-start space-x-2 mb-2">
+                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
+                  <span className="font-medium text-foreground">{t('footer.saoPauloOffice')}</span>
+                </div>
+                <p className="text-muted-foreground ml-6 whitespace-pre-line leading-relaxed">
+                  {t('footer.saoPauloAddress')}
+                </p>
+              </li>
+              
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
                 <a 
