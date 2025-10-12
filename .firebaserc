@@ -1,0 +1,7 @@
+# Firebase cache files
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# Firebase local hosting cache
+.cache/

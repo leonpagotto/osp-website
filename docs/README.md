@@ -38,9 +38,11 @@ This folder contains all project documentation organized by category.
 - **[PERFORMANCE_OPTIMIZATION_COMPLETE.md](./PERFORMANCE_OPTIMIZATION_COMPLETE.md)** - Performance optimization guide
 
 ### 🚢 Deployment & Git
+- **[FIREBASE_DEPLOYMENT_GUIDE.md](./FIREBASE_DEPLOYMENT_GUIDE.md)** - Complete Firebase Hosting setup
+- **[FIREBASE_QUICK_START.md](./FIREBASE_QUICK_START.md)** - Deploy in 10 minutes
+- **[WORDPRESS_MIGRATION_PLAN.md](./WORDPRESS_MIGRATION_PLAN.md)** - WordPress to React migration guide
 - **[GITHUB_SETUP.md](./GITHUB_SETUP.md)** - GitHub repository setup
 - **[PUSH_INSTRUCTIONS.md](./PUSH_INSTRUCTIONS.md)** - Git workflow instructions
-- **[WORDPRESS_MIGRATION_PLAN.md](./WORDPRESS_MIGRATION_PLAN.md)** - WordPress to React migration guide
 
 ### 📊 Project Status
 - **[POST_LAUNCH_ENHANCEMENTS_COMPLETE.md](./POST_LAUNCH_ENHANCEMENTS_COMPLETE.md)** - Post-launch enhancements summary
