@@ -10,6 +10,198 @@
     "careers": "Faça Parte",
     "materials": "Materiais"
   },
+  "home": {
+    "hero": {
+      "title": "Inteligência contábil para decisões que transformam negócios",
+      "subtitle": "O braço técnico e consultivo de empresas no Lucro Real",
+      "primaryCTA": "Fale com Especialista",
+      "secondaryCTA": "Diagnóstico Gratuito",
+      "stats": {
+        "companies": "Empresas Atendidas",
+        "states": "Estados",
+        "countries": "Países"
+      }
+    },
+    "whatWeDo": {
+      "title": "O que fazemos",
+      "subtitle": "Somos o braço técnico e consultivo de empresas no Lucro Real, oferecendo muito mais que contabilidade tradicional",
+      "features": {
+        "consulting": {
+          "title": "Atendimento Consultivo",
+          "description": "Relacionamento direto com sócios e gestores especializados em seu segmento"
+        },
+        "integration": {
+          "title": "Integração Total",
+          "description": "Conexão completa entre ERP, sistemas contábeis e financeiros"
+        },
+        "bi": {
+          "title": "BI Personalizado",
+          "description": "Indicadores e dashboards customizados para sua tomada de decisão"
+        },
+        "security": {
+          "title": "Segurança Tributária",
+          "description": "Especialização em Lucro Real com SLA e entrega de marcos claros"
+        }
+      }
+    },
+    "strategicSolutions": {
+      "title": "Soluções Estratégicas",
+      "subtitle": "Metodologias especializadas para cada desafio da sua empresa"
+    },
+    "stats": {
+      "savings": "Em economia tributária gerada",
+      "migrations": "Migrações seguras para Lucro Real",
+      "retention": "Taxa de retenção de clientes",
+      "experience": "De experiência e tradição"
+    },
+    "testimonials": {
+      "title": "O que dizem nossos clientes",
+      "subtitle": "Casos reais de empresas que transformaram sua gestão com a OSP",
+      "items": [
+        {
+          "quote": "A OSP nos ajudou a gerar caixa já nos primeiros 45 dias de trabalho. A estruturação tributária foi fundamental para nossa expansão.",
+          "author": "Diretor Financeiro",
+          "company": "Tubesteel",
+          "role": "Indústria Metalúrgica"
+        },
+        {
+          "quote": "Com a OSP conseguimos aumentar margem em +10% e expandir para todo Brasil com segurança tributária total.",
+          "author": "CEO",
+          "company": "Borabella",
+          "role": "Rede de Franquias"
+        },
+        {
+          "quote": "35 anos de parceria. A OSP é essencial para nossa estratégia de negócios e compliance tributário.",
+          "author": "Sócio-Diretor",
+          "company": "Galena",
+          "role": "Grupo Empresarial"
+        }
+      ]
+    },
+    "technology": {
+      "title": "Tecnologia e Integração",
+      "subtitle": "Integração nativa com os principais ERPs e ferramentas de BI do mercado"
+    },
+    "cta": {
+      "title": "Pronto para transformar sua gestão contábil?",
+      "description": "Agende uma conversa com nossos especialistas e descubra como podemos ajudar sua empresa a crescer de forma sustentável",
+      "primaryButton": "Falar com Especialista",
+      "secondaryButton": "Solicitar Diagnóstico OSP360"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Sobre a OSP",
+      "subtitle": "47 anos transformando a contabilidade em instrumento estratégico de negócios"
+    },
+    "essence": {
+      "title": "Nossa Essência",
+      "paragraph1": "A OSP nasceu em 1977 com uma visão clara: ser mais do que um escritório de contabilidade. Desde o início, nos posicionamos como o braço técnico e consultivo de empresas que buscam excelência em gestão tributária e financeira.",
+      "paragraph2": "Hoje, somos referência nacional em atendimento a empresas no regime de Lucro Real, combinando tradição com inovação para entregar resultados que transformam negócios."
+    },
+    "history": {
+      "title": "Nossa História",
+      "timeline": [
+        { "year": "1977", "event": "Fundação da OSP por Gervásio de Souza" },
+        { "year": "1990", "event": "Especialização em empresas de médio e grande porte" },
+        { "year": "2000", "event": "Expansão nacional - atendimento em 14 estados" },
+        { "year": "2010", "event": "Desenvolvimento de metodologias 360" },
+        { "year": "2020", "event": "Atuação internacional em 12 países" },
+        { "year": "2025", "event": "Liderança em Lucro Real com +600 empresas" }
+      ]
+    },
+    "leadership": {
+      "title": "Liderança",
+      "subtitle": "Time executivo com décadas de experiência em contabilidade estratégica",
+      "team": [
+        {
+          "name": "Gervásio de Souza",
+          "role": "Fundador & Presidente",
+          "bio": "47 anos de experiência em contabilidade estratégica"
+        },
+        {
+          "name": "Jonas Marinho",
+          "role": "CEO",
+          "bio": "Líder em transformação digital e governança"
+        },
+        {
+          "name": "Guilherme Pagotto",
+          "role": "Diretor Executivo",
+          "bio": "Especialista em planejamento tributário"
+        }
+      ]
+    },
+    "values": {
+      "title": "Nossos Valores",
+      "subtitle": "Princípios que guiam nossa atuação e relacionamento com clientes",
+      "items": {
+        "specialization": {
+          "title": "Especialização",
+          "description": "Foco total em Lucro Real e empresas de médio e grande porte"
+        },
+        "partnership": {
+          "title": "Parceria",
+          "description": "Relacionamento consultivo e de longo prazo com nossos clientes"
+        },
+        "excellence": {
+          "title": "Excelência",
+          "description": "Entrega de qualidade com SLA e marcos claros"
+        },
+        "results": {
+          "title": "Resultados",
+          "description": "Compromisso com a geração de valor mensurável"
+        }
+      }
+    },
+    "cta": {
+      "title": "Conheça melhor a OSP",
+      "description": "Agende uma visita ou videoconferência com nossa equipe",
+      "primaryButton": "Agendar Conversa",
+      "secondaryButton": "Trabalhe Conosco"
+    }
+  },
+  "solutions": {
+    "osp360": {
+      "name": "OSP360",
+      "description": "Diagnóstico estratégico completo"
+    },
+    "fundar360": {
+      "name": "FUNDAR360",
+      "description": "Estruturação de negócios"
+    },
+    "tributa360": {
+      "name": "TRIBUTA360",
+      "description": "Planejamento tributário"
+    },
+    "gestao360": {
+      "name": "GESTÃO360",
+      "description": "Suporte à gestão executiva"
+    },
+    "bpoFinanceiro": {
+      "name": "BPO Financeiro",
+      "description": "Terceirização financeira"
+    },
+    "precifica360": {
+      "name": "PRECIFICA360",
+      "description": "Análise de margem e precificação"
+    },
+    "holding360": {
+      "name": "HOLDING360",
+      "description": "Estrutura patrimonial"
+    },
+    "contabilidade": {
+      "name": "Contabilidade",
+      "description": "Serviços contábeis especializados"
+    }
+  },
+  "segments": {
+    "estruturaComplexa": "Estrutura Complexa",
+    "operacaoIntensiva": "Operação Intensiva",
+    "servicosEspecializados": "Serviços Especializados",
+    "expansaoPatrimonial": "Expansão Patrimonial",
+    "industrias": "Indústrias",
+    "multinacionais": "Multinacionais"
+  },
   "common": {
     "learnMore": "Saiba Mais",
     "contact": "Falar com Especialista",
@@ -24,12 +216,692 @@
     "tagline": "Contabilidade estratégica para empresas que planejam crescer",
     "subtitle": "47 anos transformando obrigações fiscais em oportunidades de negócio"
   },
+  "segmentPages": {
+    "estruturaComplexa": {
+      "hero": {
+        "title": "Estrutura Complexa",
+        "subtitle": "Soluções para empresas com múltiplas entidades, CNPJs, sócios ou operações que exigem governança e visão consolidada",
+        "primaryCTA": "Falar com Especialista"
+      },
+      "what": {
+        "title": "Gestão integrada de estruturas complexas",
+        "description": "Empresas com múltiplos CNPJs, filiais em diferentes estados, sócios com participação cruzada ou holdings exigem uma gestão contábil e tributária integrada e estratégica."
+      },
+      "cta": {
+        "title": "Simplifique a gestão da sua estrutura",
+        "description": "Converse com nossos especialistas em grupos empresariais",
+        "primaryButton": "Agendar Consultoria"
+      }
+    },
+    "operacaoIntensiva": {
+      "hero": {
+        "title": "Operação Intensiva",
+        "subtitle": "Soluções para empresas com alto volume de notas fiscais, transações e complexidade operacional",
+        "primaryCTA": "Falar com Especialista"
+      },
+      "what": {
+        "title": "Gestão de operações de alto volume",
+        "description": "Empresas com milhares de transações mensais, múltiplos centros de custo, alta rotatividade de estoque ou operações 24/7 exigem processos automatizados e controles rigorosos."
+      },
+      "cta": {
+        "title": "Automatize sua operação contábil",
+        "description": "Converse com nossos especialistas em operações de alto volume",
+        "primaryButton": "Agendar Consultoria"
+      }
+    },
+    "servicosEspecializados": {
+      "hero": {
+        "title": "Serviços Especializados",
+        "subtitle": "Soluções para empresas de consultoria, tecnologia, saúde e outros serviços de alto valor agregado",
+        "primaryCTA": "Falar com Especialista"
+      },
+      "what": {
+        "title": "Especialização em serviços de alta complexidade",
+        "description": "Empresas de serviços especializados têm particularidades tributárias: ISS, retenções na fonte, regime de caixa, margens elevadas e estrutura de custos diferenciada."
+      },
+      "cta": {
+        "title": "Otimize a tributação dos seus serviços",
+        "description": "Converse com nossos especialistas em empresas de serviços",
+        "primaryButton": "Agendar Consultoria"
+      }
+    },
+    "expansaoPatrimonial": {
+      "hero": {
+        "title": "Expansão Patrimonial",
+        "subtitle": "Soluções para famílias e empresários com foco em proteção patrimonial e planejamento sucessório",
+        "primaryCTA": "Falar com Especialista"
+      },
+      "what": {
+        "title": "Proteção e estruturação patrimonial",
+        "description": "Famílias empresárias e empreendedores de sucesso precisam estruturar seu patrimônio: holdings patrimoniais, planejamento sucessório, proteção de ativos e governança familiar."
+      },
+      "cta": {
+        "title": "Proteja e organize seu patrimônio",
+        "description": "Converse com nossos especialistas em planejamento patrimonial",
+        "primaryButton": "Agendar Consultoria"
+      }
+    },
+    "industrias": {
+      "hero": {
+        "title": "Indústrias",
+        "subtitle": "Soluções para indústrias com créditos de ICMS, IPI, benefícios fiscais e complexidade de custos",
+        "primaryCTA": "Falar com Especialista"
+      },
+      "stats": [
+        { "value": "50+", "label": "Indústrias atendidas" },
+        { "value": "23%", "label": "Redução média de carga tributária" },
+        { "value": "100%", "label": "Aproveitamento de créditos fiscais" },
+        { "value": "R$ 50M+", "label": "Em economia gerada" }
+      ],
+      "what": {
+        "title": "Especialização em operações industriais",
+        "description": "Indústrias têm particularidades tributárias e contábeis: apuração de ICMS/IPI, créditos presumidos, incentivos fiscais, custos de produção e controle de estoque."
+      },
+      "cta": {
+        "title": "Maximize seus créditos tributários",
+        "description": "Converse com nossos especialistas em indústrias",
+        "primaryButton": "Agendar Consultoria"
+      }
+    },
+    "multinacionais": {
+      "hero": {
+        "title": "Multinacionais e Grupos Internacionais",
+        "subtitle": "Soluções para empresas com operações cross-border e complexidade fiscal internacional",
+        "primaryCTA": "Falar com Especialista"
+      },
+      "stats": [
+        { "value": "12", "label": "Países atendidos" },
+        { "value": "50+", "label": "Empresas internacionais" },
+        { "value": "100%", "label": "Compliance internacional" },
+        { "value": "Transfer Pricing", "label": "Expertise especializada" }
+      ],
+      "what": {
+        "title": "Especialização internacional",
+        "description": "Empresas com operações internacionais enfrentam desafios tributários complexos: transfer pricing, tratados internacionais, planejamento fiscal global e compliance multi-jurisdicional."
+      },
+      "cta": {
+        "title": "Expanda globalmente com segurança tributária",
+        "description": "Converse com nossos especialistas em tributação internacional",
+        "primaryButton": "Agendar Consultoria"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Entre em Contato",
+      "subtitle": "Estamos prontos para ajudar sua empresa a alcançar novos patamares"
+    },
+    "form": {
+      "title": "Envie sua mensagem",
+      "name": "Nome Completo",
+      "company": "Empresa",
+      "role": "Cargo",
+      "email": "E-mail",
+      "phone": "Telefone / WhatsApp",
+      "phonePlaceholder": "(00) 00000-0000",
+      "message": "Como podemos ajudar?",
+      "messagePlaceholder": "Conte-nos sobre seus desafios e objetivos...",
+      "submit": "Enviar Mensagem",
+      "successTitle": "Mensagem enviada!",
+      "successDescription": "Entraremos em contato em breve.",
+      "required": "*"
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "addresses": {
+        "title": "Endereços",
+        "campinas": "Campinas/SP",
+        "saoPaulo": "São Paulo/SP"
+      },
+      "whatsapp": {
+        "title": "WhatsApp"
+      },
+      "email": {
+        "title": "E-mail"
+      },
+      "hours": {
+        "title": "Horário de Atendimento",
+        "schedule": "Segunda a Sexta: 8h às 18h"
+      },
+      "coverage": {
+        "title": "Atendimento Nacional e Internacional",
+        "description": "Atendemos empresas em todo Brasil (14 estados) e em 12 países. Nossa equipe está preparada para atender suas necessidades onde quer que você esteja."
+      }
+    }
+  },
   "footer": {
-    "tagline": "Transformando contabilidade em estratégia há 47 anos",
+    "tagline": "Inteligência contábil para decisões que transformam negócios",
     "quickLinks": "Links Rápidos",
     "solutions": "Soluções",
+    "company": "Empresa",
     "contact": "Contato",
     "followUs": "Siga-nos",
-    "rights": "© 2025 OSP Contabilidade. Todos os direitos reservados."
+    "rights": "© 2025 OSP Contabilidade. Todos os direitos reservados.",
+    "newsletter": {
+      "title": "Fique por dentro das novidades",
+      "subtitle": "Receba insights sobre gestão tributária e contábil direto no seu e-mail",
+      "placeholder": "Seu melhor e-mail",
+      "button": "Inscrever",
+      "formLabel": "Formulário de inscrição na newsletter",
+      "inputLabel": "Endereço de e-mail para newsletter"
+    },
+    "socialMedia": "Redes sociais",
+    "linkedinLabel": "Visite nosso LinkedIn",
+    "instagramLabel": "Visite nosso Instagram",
+    "facebookLabel": "Visite nosso Facebook",
+    "solutionsNav": "Navegação de soluções",
+    "companyNav": "Navegação da empresa",
+    "careers": "Trabalhe Conosco",
+    "locations": "Campinas/SP | São Paulo/SP",
+    "phoneLabel": "Ligue para OSP via WhatsApp",
+    "emailLabel": "Envie um e-mail para OSP",
+    "copyright": "© {{year}} OSP. Todos os direitos reservados.",
+    "legalNav": "Links legais",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "solutionPages": {
+    "osp360": {
+      "hero": {
+        "title": "OSP360",
+        "subtitle": "Diagnóstico estratégico completo em 45 dias para transformar a gestão da sua empresa",
+        "primaryCTA": "Solicitar Diagnóstico",
+        "secondaryCTA": "Agendar Apresentação"
+      },
+      "what": {
+        "title": "O que é o OSP360?",
+        "description": "É a nossa metodologia proprietária de diagnóstico empresarial que analisa todos os aspectos tributários, financeiros e operacionais da sua empresa em 45 dias, gerando um plano de ação estratégico para maximizar resultados."
+      },
+      "features": [
+        {
+          "title": "Análise Profunda",
+          "description": "Revisão completa de documentos fiscais, contratos e processos"
+        },
+        {
+          "title": "Identificação de Gaps",
+          "description": "Mapeamento de riscos, ineficiências e oportunidades"
+        },
+        {
+          "title": "Plano Estratégico",
+          "description": "Roadmap detalhado com priorização e cronograma"
+        },
+        {
+          "title": "Acompanhamento",
+          "description": "Suporte na implementação das recomendações"
+        }
+      ],
+      "benefits": {
+        "title": "Benefícios do OSP360",
+        "items": [
+          "Visão 360° completa da saúde tributária e financeira",
+          "Identificação de riscos fiscais e oportunidades de economia",
+          "Plano de ação estruturado para os próximos 12 meses",
+          "Análise de viabilidade de migração para Lucro Real",
+          "Diagnóstico de margem e precificação",
+          "Mapeamento de processos e controles internos"
+        ]
+      },
+      "midCTA": {
+        "title": "Sua empresa está pronta para crescer?",
+        "description": "Em apenas 45 dias, você terá um roadmap completo para maximizar seus resultados. O diagnóstico OSP360 é gratuito e sem compromisso.",
+        "primaryButton": "Solicitar Diagnóstico Gratuito",
+        "secondaryButton": "Falar com Especialista"
+      },
+      "howItWorks": {
+        "title": "Como Funciona",
+        "steps": [
+          {
+            "title": "Kick-off e Coleta (Dias 1-10)",
+            "description": "Reunião inicial, definição de escopo e coleta de documentação fiscal, contábil e operacional"
+          },
+          {
+            "title": "Análise e Diagnóstico (Dias 11-30)",
+            "description": "Análise tributária, financeira e operacional com identificação de riscos e oportunidades"
+          },
+          {
+            "title": "Plano de Ação (Dias 31-45)",
+            "description": "Apresentação executiva com roadmap priorizado e cronograma de implementação"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Pronto para transformar sua gestão?",
+        "description": "Solicite um diagnóstico OSP360 e descubra como podemos ajudar sua empresa",
+        "primaryButton": "Solicitar Diagnóstico Gratuito",
+        "secondaryButton": "Falar com Especialista"
+      }
+    },
+    "holding360": {
+      "hero": {
+        "title": "HOLDING360",
+        "subtitle": "Estruturação patrimonial, proteção de ativos e planejamento sucessório para grupos familiares",
+        "primaryCTA": "Agendar Consultoria"
+      },
+      "what": {
+        "title": "Proteja e organize seu patrimônio",
+        "description": "Criação de holdings patrimoniais e empresariais, planejamento sucessório, proteção de ativos e governança familiar com total segurança jurídica e tributária."
+      },
+      "features": [
+        {
+          "title": "Holding Patrimonial",
+          "description": "Estruturação de imóveis e ativos para proteção"
+        },
+        {
+          "title": "Proteção de Ativos",
+          "description": "Blindagem patrimonial e segregação de riscos"
+        },
+        {
+          "title": "Planejamento Sucessório",
+          "description": "Sucessão familiar estruturada e sem conflitos"
+        },
+        {
+          "title": "Governança",
+          "description": "Acordo de sócios e regras de família"
+        }
+      ],
+      "urgency": {
+        "title": "Por que estruturar sua holding em 2025?",
+        "subtitle": "Três fatores convergem para tornar 2025 o ano decisivo para quem tem patrimônio acima de R$ 5 milhões",
+        "factors": [
+          {
+            "title": "PL 1.087/2025 - Tributação de Dividendos",
+            "description": "Dividendos passam a ser tributados progressivamente (0-15%). Estruturar antes de 2026 permite aproveitamento de lucros acumulados sem IR.",
+            "impact": "CRÍTICO"
+          },
+          {
+            "title": "Aumentos de ITCMD Estaduais",
+            "description": "Estados como SP podem aumentar ITCMD de 4% para 8%. Doações via holding hoje evitam taxas futuras mais altas.",
+            "impact": "ALTO"
+          },
+          {
+            "title": "Reforma Tributária em vigor",
+            "description": "CBS/IBS alteram tributação de aluguéis. Holdings estruturadas em 2025 têm vantagem no novo regime.",
+            "impact": "MÉDIO"
+          }
+        ],
+        "deadline": {
+          "title": "Janela de oportunidade: até 31/12/2025",
+          "description": "Holdings estruturadas até dezembro de 2025 aproveitam regras atuais antes da tributação de dividendos e possíveis aumentos de ITCMD.",
+          "button": "Agendar Consultoria Urgente"
+        }
+      },
+      "benefits": {
+        "title": "Benefícios da Holding Patrimonial",
+        "items": [
+          "Redução de ITCMD (Imposto sobre Herança) em até 4-8%",
+          "Proteção contra penhoras e riscos empresariais",
+          "Organização da sucessão familiar sem conflitos",
+          "Economia de IR sobre aluguéis (Lucro Real na holding)",
+          "Blindagem patrimonial com segurança jurídica",
+          "Governança clara para decisões familiares"
+        ]
+      },
+      "cta": {
+        "title": "Estruture sua holding com segurança",
+        "description": "Agende uma consultoria com nossos especialistas em planejamento patrimonial",
+        "primaryButton": "Agendar Consultoria",
+        "secondaryButton": "Ver Cases de Sucesso"
+      }
+    },
+    "fundar360": {
+      "hero": {
+        "title": "FUNDAR360",
+        "subtitle": "Estruturação jurídica e tributária completa para abertura de empresas no Lucro Real",
+        "primaryCTA": "Agendar Consultoria",
+        "secondaryCTA": "Simular Economia"
+      },
+      "what": {
+        "title": "Abra sua empresa no regime certo desde o início",
+        "description": "Fundação de empresas no Lucro Real com planejamento tributário estratégico, escolha da melhor estrutura societária e preparação para crescimento escalável."
+      },
+      "cta": {
+        "title": "Funde sua empresa com inteligência estratégica",
+        "description": "Comece certo desde o primeiro dia com nossa consultoria especializada",
+        "primaryButton": "Agendar Consultoria",
+        "secondaryButton": "Conhecer Nossa Metodologia"
+      }
+    },
+    "tributa360": {
+      "hero": {
+        "title": "TRIBUTA360",
+        "subtitle": "Planejamento tributário estratégico para empresas no Lucro Real com economia comprovada",
+        "primaryCTA": "Simular Economia",
+        "secondaryCTA": "Agendar Análise"
+      },
+      "what": {
+        "title": "Maximize sua lucratividade com gestão tributária inteligente",
+        "description": "Planejamento tributário ativo para empresas no Lucro Real, com análise de incentivos fiscais, estruturação de operações e recuperação de créditos tributários."
+      },
+      "features": [
+        {
+          "title": "Análise de Viabilidade",
+          "description": "Simulação comparativa entre regimes tributários"
+        },
+        {
+          "title": "Redução de Carga",
+          "description": "Identificação de créditos, incentivos e oportunidades"
+        },
+        {
+          "title": "Migração Segura",
+          "description": "Processo estruturado com zero risco de autuação"
+        },
+        {
+          "title": "Compliance Total",
+          "description": "Entrega de obrigações acessórias no prazo"
+        }
+      ],
+      "cta": {
+        "title": "Reduza sua carga tributária legalmente",
+        "description": "Nossa equipe especializada pode identificar oportunidades de economia em sua operação",
+        "primaryButton": "Simular Economia Tributária",
+        "secondaryButton": "Falar com Especialista"
+      }
+    },
+    "gestao360": {
+      "hero": {
+        "title": "GESTÃO360",
+        "subtitle": "Gestão financeira e operacional completa com BI customizado para tomada de decisão estratégica",
+        "primaryCTA": "Conhecer Solução",
+        "secondaryCTA": "Ver Demo"
+      },
+      "what": {
+        "title": "Transforme dados em decisões estratégicas",
+        "description": "Gestão completa com dashboards personalizados, KPIs por segmento, integração total de sistemas e relatórios gerenciais para sócios e conselho."
+      },
+      "cta": {
+        "title": "Tenha visibilidade total do seu negócio",
+        "description": "Dashboards personalizados e indicadores precisos para decisões mais rápidas e assertivas",
+        "primaryButton": "Agendar Demonstração",
+        "secondaryButton": "Conhecer Cases"
+      }
+    },
+    "bpoFinanceiro": {
+      "hero": {
+        "title": "BPO Financeiro",
+        "subtitle": "Terceirização completa da área financeira com equipe especializada e tecnologia de ponta",
+        "primaryCTA": "Solicitar Proposta",
+        "secondaryCTA": "Conhecer Modelo"
+      },
+      "what": {
+        "title": "Seu departamento financeiro completo como serviço",
+        "description": "Operação financeira terceirizada (contas a pagar/receber, conciliações, tesouraria) com equipe dedicada, processos estruturados e tecnologia integrada."
+      },
+      "features": [
+        {
+          "title": "Tesouraria Completa",
+          "description": "Gestão de contas a pagar e receber"
+        },
+        {
+          "title": "Conciliação Bancária",
+          "description": "Automatização e controle total dos extratos"
+        },
+        {
+          "title": "Fluxo de Caixa",
+          "description": "Projeções e controle rigoroso do cash"
+        },
+        {
+          "title": "Relacionamento Bancário",
+          "description": "Negociação e gestão de linhas de crédito"
+        }
+      ],
+      "cta": {
+        "title": "Foque no seu core business",
+        "description": "Deixe a gestão financeira operacional com quem entende: nossa equipe especializada",
+        "primaryButton": "Solicitar Proposta Comercial",
+        "secondaryButton": "Agendar Conversa"
+      }
+    },
+    "precifica360": {
+      "hero": {
+        "title": "PRECIFICA360",
+        "subtitle": "Metodologia de precificação estratégica para maximizar margem e competitividade",
+        "primaryCTA": "Simular Impacto",
+        "secondaryCTA": "Entender Metodologia"
+      },
+      "what": {
+        "title": "Defina preços que maximizam lucro e vendas",
+        "description": "Análise de estrutura de custos, margem por produto/serviço, posicionamento competitivo e simulações de cenários para precificação estratégica."
+      },
+      "cta": {
+        "title": "Precifique com inteligência, não no feeling",
+        "description": "Descubra o potencial de margem que você pode estar deixando na mesa",
+        "primaryButton": "Fazer Diagnóstico de Margem",
+        "secondaryButton": "Ver Metodologia"
+      }
+    },
+    "contabilidade": {
+      "hero": {
+        "title": "Contabilidade Lucro Real",
+        "subtitle": "Contabilidade consultiva especializada para empresas no Lucro Real com SLA e marcos de entrega",
+        "primaryCTA": "Migrar para OSP",
+        "secondaryCTA": "Comparar Serviços"
+      },
+      "what": {
+        "title": "Contabilidade que vai além dos números",
+        "description": "Serviço contábil completo para Lucro Real com atendimento consultivo, integração de sistemas, compliance fiscal e suporte estratégico para sócios e CFOs."
+      },
+      "features": [
+        {
+          "title": "Compliance Total",
+          "description": "100% de conformidade fiscal e tributária"
+        },
+        {
+          "title": "Atendimento Consultivo",
+          "description": "Relacionamento próximo com especialistas"
+        },
+        {
+          "title": "Segurança",
+          "description": "Processos auditados e certificados"
+        },
+        {
+          "title": "Tecnologia",
+          "description": "Integração com principais ERPs e sistemas"
+        }
+      ],
+      "services": {
+        "title": "Nossos Planos",
+        "types": [
+          {
+            "title": "Contabilidade Standard",
+            "description": "Serviços contábeis completos para empresas em crescimento",
+            "features": [
+              "Escrituração contábil e fiscal",
+              "Obrigações acessórias",
+              "Folha de pagamento",
+              "Atendimento consultivo"
+            ]
+          },
+          {
+            "title": "Contabilidade Consultiva",
+            "description": "Atendimento diferenciado com foco em gestão estratégica",
+            "features": [
+              "Tudo da Standard +",
+              "Reuniões mensais de resultados",
+              "Relatórios executivos personalizados",
+              "Planejamento tributário contínuo"
+            ]
+          },
+          {
+            "title": "Lucro Real Especializado",
+            "description": "Para empresas no regime de Lucro Real com alta complexidade",
+            "features": [
+              "Tudo da Consultiva +",
+              "Gestão completa do Lucro Real",
+              "SLA e marcos de entrega",
+              "Integração com sistemas corporativos"
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "title": "Migre para uma contabilidade de alto nível",
+        "description": "Atendimento consultivo, SLA garantido e suporte estratégico que sua empresa merece",
+        "primaryButton": "Solicitar Migração",
+        "secondaryButton": "Comparar com Atual"
+      }
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "Blog Contábil OSP",
+      "description": "Blog sobre Contabilidade com as melhores dicas para empreendedores, notícias do mercado e informações úteis para que você se mantenha sempre atualizado."
+    },
+    "search": {
+      "placeholder": "Pesquisar artigos..."
+    },
+    "categories": {
+      "all": "Todos",
+      "featured": "Artigos em Destaque",
+      "allArticles": "Todos os Artigos"
+    },
+    "readingInfo": {
+      "articles": "artigos",
+      "article": "artigo",
+      "readingTime": "min de leitura"
+    },
+    "actions": {
+      "read": "Ler",
+      "clearFilters": "Limpar filtros"
+    },
+    "noResults": {
+      "title": "Nenhum artigo encontrado",
+      "description": "Tente ajustar sua pesquisa ou limpar os filtros"
+    },
+    "cta": {
+      "title": "Precisa de assessoria contábil especializada?",
+      "description": "Fale com nossos especialistas e descubra como a OSP pode ajudar sua empresa a crescer com segurança tributária e eficiência fiscal.",
+      "primaryButton": "Falar com Especialista",
+      "secondaryButton": "Conhecer Soluções"
+    }
+  },
+  "materiaisPage": {
+    "hero": {
+      "title": "Materiais Gratuitos",
+      "subtitle": "Recursos práticos para aprimorar a gestão contábil, tributária e financeira da sua empresa"
+    },
+    "description": "Baixe gratuitamente nossos guias, checklists e ferramentas desenvolvidas por especialistas com mais de 47 anos de experiência em contabilidade estratégica",
+    "downloadButton": "Baixar Grátis",
+    "cta": {
+      "title": "Precisa de algo específico?",
+      "description": "Nossa equipe pode desenvolver análises e materiais personalizados para o seu negócio",
+      "button": "Solicitar Material Customizado"
+    }
+  },
+  "resultadosPage": {
+    "hero": {
+      "title": "Resultados Comprovados",
+      "subtitle": "Casos reais de empresas que transformaram sua gestão contábil e tributária com a OSP"
+    },
+    "stats": [
+      {
+        "value": "R$ 100M+",
+        "label": "Em economia tributária gerada"
+      },
+      {
+        "value": "100+",
+        "label": "Migrações seguras para Lucro Real"
+      },
+      {
+        "value": "600+",
+        "label": "Empresas atendidas"
+      },
+      {
+        "value": "98%",
+        "label": "Taxa de retenção de clientes"
+      }
+    ],
+    "caseStudies": {
+      "title": "Casos de Sucesso",
+      "description": "Desafios reais resolvidos com nossas metodologias especializadas",
+      "challengeLabel": "Desafio",
+      "solutionLabel": "Solução",
+      "resultsLabel": "Resultados"
+    },
+    "testimonials": {
+      "title": "Depoimentos",
+      "description": "O que nossos clientes falam sobre a parceria com a OSP"
+    },
+    "cta": {
+      "title": "Quer resultados como esses?",
+      "description": "Agende uma conversa e descubra como podemos transformar a gestão da sua empresa",
+      "primaryButton": "Falar com Especialista",
+      "secondaryButton": "Solicitar Diagnóstico"
+    }
+  },
+  "facaPartePage": {
+    "hero": {
+      "title": "Faça Parte da OSP",
+      "subtitle": "Junte-se a um time de especialistas que transformam a contabilidade em instrumento estratégico de negócios",
+      "primaryCTA": "Ver Vagas Abertas"
+    },
+    "whyOSP": {
+      "title": "Por que trabalhar na OSP?",
+      "description": "Somos referência em contabilidade estratégica para empresas de médio e grande porte. Aqui, você terá a oportunidade de trabalhar com clientes complexos e desafiadores, crescendo profissionalmente em um ambiente de excelência."
+    },
+    "benefits": {
+      "title": "Nossos Benefícios",
+      "description": "Cuidamos do nosso time com benefícios competitivos e ambiente de trabalho diferenciado",
+      "items": [
+        {
+          "title": "Plano de Saúde e Odontológico",
+          "description": "Cobertura completa para você e sua família"
+        },
+        {
+          "title": "Vale Refeição/Alimentação",
+          "description": "Benefício flexível para suas necessidades"
+        },
+        {
+          "title": "Home Office",
+          "description": "Estrutura para trabalho remoto quando necessário"
+        },
+        {
+          "title": "Bônus por Desempenho",
+          "description": "Reconhecimento pelos resultados alcançados"
+        },
+        {
+          "title": "Desenvolvimento Contínuo",
+          "description": "Treinamentos, certificações e cursos especializados"
+        },
+        {
+          "title": "Ambiente Colaborativo",
+          "description": "Cultura de parceria e crescimento conjunto"
+        }
+      ]
+    },
+    "careerAreas": {
+      "title": "Áreas de Atuação",
+      "description": "Oportunidades em diversas áreas especializadas",
+      "areas": [
+        "Contabilidade",
+        "Fiscal e Tributário",
+        "Departamento Pessoal",
+        "BPO Financeiro",
+        "Consultoria",
+        "Tecnologia e Automação"
+      ]
+    },
+    "howToApply": {
+      "title": "Como se Candidatar",
+      "description": "Envie seu currículo e carta de apresentação para nosso time de talentos. Analisaremos seu perfil e entraremos em contato caso haja oportunidades alinhadas com sua experiência.",
+      "primaryButton": "Enviar Currículo",
+      "secondaryButton": "Ver no LinkedIn",
+      "contactInfo": {
+        "email": "E-mail:",
+        "emailValue": "talentos@ospcontabilidade.com.br",
+        "subject": "Assunto:",
+        "subjectValue": "Candidatura - [Sua Área de Interesse]"
+      }
+    }
+  },
+  "blogPost": {
+    "backToBlog": "Voltar ao Blog",
+    "share": "Compartilhar",
+    "shareSuccess": "Link copiado para a área de transferência!",
+    "by": "Por",
+    "relatedPosts": "Artigos Relacionados",
+    "defaultCTA": {
+      "title": "Precisa de ajuda com sua contabilidade?",
+      "description": "Fale com um especialista da OSP e descubra como podemos ajudar sua empresa."
+    }
   }
 }

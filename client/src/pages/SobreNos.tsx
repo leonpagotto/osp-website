@@ -1,62 +1,59 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import { SEOHead } from "@/components/SEO/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Award, TrendingUp } from "lucide-react";
-
-//todo: remove mock data - timeline and team
-const timeline = [
-  { year: "1977", event: "Fundação da OSP por Gervásio de Souza" },
-  { year: "1990", event: "Especialização em empresas de médio e grande porte" },
-  { year: "2000", event: "Expansão nacional - atendimento em 14 estados" },
-  { year: "2010", event: "Desenvolvimento de metodologias 360" },
-  { year: "2020", event: "Atuação internacional em 12 países" },
-  { year: "2025", event: "Liderança em Lucro Real com +600 empresas" },
-];
-
-const team = [
-  { 
-    name: "Gervásio de Souza", 
-    role: "Fundador & Presidente", 
-    bio: "47 anos de experiência em contabilidade estratégica",
-    image: "/images/team/gervasio-souza.jpg"
-  },
-  { 
-    name: "Jonas Marinho", 
-    role: "CEO", 
-    bio: "Líder em transformação digital e governança",
-    image: "/images/team/jonas-marinho.jpg"
-  },
-  { 
-    name: "Guilherme Pagotto", 
-    role: "Diretor Executivo", 
-    bio: "Especialista em planejamento tributário",
-    image: "/images/team/guilherme-pagotto.jpg"
-  },
-];
+import { useTranslation } from 'react-i18next';
+import i18n from '@/i18n';
 
 export default function SobreNos() {
+  const { t } = useTranslation();
+  const currentLang = i18n.language as 'pt-BR' | 'en';
+  const isEnglish = currentLang === 'en';
+  
+  const timeline = t('about.history.timeline', { returnObjects: true }) as Array<{ year: string; event: string }>;
+  const team = t('about.leadership.team', { returnObjects: true }) as Array<{ name: string; role: string; bio: string }>;
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={isEnglish ? "About OSP - 47 Years of Excellence" : "Sobre a OSP - 47 Anos de Excelência"}
+        description={isEnglish
+          ? "OSP Digital Accounting: 47 years of history, +600 clients, presence in 14 states and 12 countries. Specialized team in accounting, tax, and management for growing companies."
+          : "OSP Contabilidade Digital: 47 anos de história, +600 clientes, presença em 14 estados e 12 países. Time especializado em contabilidade, fiscal e gestão para empresas em crescimento."
+        }
+        keywords={isEnglish
+          ? "about OSP, accounting history, professional team, digital accounting, business consulting, 47 years experience"
+          : "sobre OSP, história contabilidade, equipe profissional, contabilidade digital, consultoria empresarial, 47 anos experiência"
+        }
+        canonicalUrl={isEnglish ? "/en/about" : "/sobre-nos"}
+        locale={currentLang}
+        alternateUrls={{
+          'pt-BR': '/sobre-nos',
+          'en': '/en/about'
+        }}
+        ogImage="/images/og/about.jpg"
+      />
+      
       <HeroSection
-        title="Sobre a OSP"
-        subtitle="47 anos transformando a contabilidade em instrumento estratégico de negócios"
-        showGradient={false}
+        title={t('about.hero.title')}
+        subtitle={t('about.hero.subtitle')}
+        showGradient={true}
+        gradientVariant="indigo"
       />
 
       {/* Essência */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-section-mobile md:text-section mb-6 text-center">Nossa Essência</h2>
+            <h2 className="text-section-mobile md:text-section mb-6 text-center">{t('about.essence.title')}</h2>
             <div className="prose prose-lg max-w-none text-center text-muted-foreground">
               <p className="text-body-lg leading-relaxed mb-4">
-                A OSP nasceu em 1977 com uma visão clara: ser mais do que um escritório de contabilidade. 
-                Desde o início, nos posicionamos como o braço técnico e consultivo de empresas que buscam excelência em gestão tributária e financeira.
+                {t('about.essence.paragraph1')}
               </p>
               <p className="text-body-lg leading-relaxed">
-                Hoje, somos referência nacional em atendimento a empresas no regime de Lucro Real, 
-                combinando tradição com inovação para entregar resultados que transformam negócios.
+                {t('about.essence.paragraph2')}
               </p>
             </div>
           </div>
@@ -66,7 +63,7 @@ export default function SobreNos() {
       {/* Timeline */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-section-mobile md:text-section mb-12 text-center">Nossa História</h2>
+          <h2 className="text-section-mobile md:text-section mb-12 text-center">{t('about.history.title')}</h2>
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
               {timeline.map((item, index) => (
@@ -90,37 +87,40 @@ export default function SobreNos() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Liderança</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('about.leadership.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Time executivo com décadas de experiência em contabilidade estratégica
+              {t('about.leadership.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {team.map((member, index) => (
-              <Card key={index} data-testid={`team-member-${index}`}>
-                <CardContent className="pt-6 text-center">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 bg-primary/10">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback to gradient placeholder if image not found
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.parentElement!.innerHTML = `
-                          <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary to-blue-700">
-                            <span class="text-white text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>
-                          </div>
-                        `;
-                      }}
-                    />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
-                  <p className="text-sm text-primary font-medium mb-3">{member.role}</p>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {team.map((member, index) => {
+              const imagePath = `/images/team/${member.name.toLowerCase().replace(' ', '-')}.jpg`;
+              return (
+                <Card key={index} data-testid={`team-member-${index}`}>
+                  <CardContent className="pt-6 text-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 bg-primary/10">
+                      <img 
+                        src={imagePath}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to gradient placeholder if image not found
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.parentElement!.innerHTML = `
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary to-blue-700">
+                              <span class="text-white text-3xl font-bold">${member.name.split(' ').map((n: string) => n[0]).join('')}</span>
+                            </div>
+                          `;
+                        }}
+                      />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
+                    <p className="text-sm text-primary font-medium mb-3">{member.role}</p>
+                    <p className="text-sm text-muted-foreground">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -129,32 +129,32 @@ export default function SobreNos() {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Nossos Valores</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('about.values.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Princípios que guiam nossa atuação e relacionamento com clientes
+              {t('about.values.subtitle')}
             </p>
           </div>
           <FeatureGrid
             features={[
               {
                 icon: Target,
-                title: "Especialização",
-                description: "Foco total em Lucro Real e empresas de médio e grande porte",
+                title: t('about.values.items.specialization.title'),
+                description: t('about.values.items.specialization.description'),
               },
               {
                 icon: Users,
-                title: "Parceria",
-                description: "Relacionamento consultivo e de longo prazo com nossos clientes",
+                title: t('about.values.items.partnership.title'),
+                description: t('about.values.items.partnership.description'),
               },
               {
                 icon: Award,
-                title: "Excelência",
-                description: "Entrega de qualidade com SLA e marcos claros",
+                title: t('about.values.items.excellence.title'),
+                description: t('about.values.items.excellence.description'),
               },
               {
                 icon: TrendingUp,
-                title: "Resultados",
-                description: "Compromisso com a geração de valor mensurável",
+                title: t('about.values.items.results.title'),
+                description: t('about.values.items.results.description'),
               },
             ]}
             columns={4}
@@ -163,10 +163,10 @@ export default function SobreNos() {
       </section>
 
       <CTASection
-        title="Conheça melhor a OSP"
-        description="Agende uma visita ou videoconferência com nossa equipe"
-        primaryButton={{ text: "Agendar Conversa", href: "/contato" }}
-        secondaryButton={{ text: "Trabalhe Conosco", href: "/faca-parte" }}
+        title={t('about.cta.title')}
+        description={t('about.cta.description')}
+        primaryButton={{ text: t('about.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('about.cta.secondaryButton'), href: "/faca-parte" }}
       />
     </div>
   );

@@ -1,80 +1,81 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import { SEOHead } from "@/components/SEO/SEOHead";
+import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Home, Shield, Users, FileText, CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-
-const benefits = [
-  "Redução de ITCMD (Imposto sobre Herança) em até 4-8%",
-  "Proteção contra penhoras e riscos empresariais",
-  "Organização da sucessão familiar sem conflitos",
-  "Economia de IR sobre aluguéis (Lucro Real na holding)",
-  "Blindagem patrimonial com segurança jurídica",
-  "Governança clara para decisões familiares",
-];
-
-const urgencyFactors = [
-  {
-    title: "PL 1.087/2025 - Tributação de Dividendos",
-    description: "Dividendos passam a ser tributados progressivamente (0-15%). Estruturar antes de 2026 permite aproveitamento de lucros acumulados sem IR.",
-    impact: "CRÍTICO"
-  },
-  {
-    title: "Aumentos de ITCMD Estaduais",
-    description: "Estados como SP podem aumentar ITCMD de 4% para 8%. Doações via holding hoje evitam taxas futuras mais altas.",
-    impact: "ALTO"
-  },
-  {
-    title: "Reforma Tributária em vigor",
-    description: "CBS/IBS alteram tributação de aluguéis. Holdings estruturadas em 2025 têm vantagem no novo regime.",
-    impact: "MÉDIO"
-  }
-];
+import { useTranslation } from "react-i18next";
+import i18n from '@/i18n';
 
 export default function HOLDING360() {
+  const { t } = useTranslation();
+  const currentLang = i18n.language as 'pt-BR' | 'en';
+  const isEnglish = currentLang === 'en';
+  
+  const features = t('solutionPages.holding360.features', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const benefits = t('solutionPages.holding360.benefits.items', { returnObjects: true }) as string[];
+  const urgencyFactors = t('solutionPages.holding360.urgency.factors', { returnObjects: true }) as Array<{ title: string; description: string; impact: string }>;
+  
+  const featureIcons = [Home, Shield, Users, FileText];
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={isEnglish ? "HOLDING360 - Asset Holding Structuring | OSP" : "HOLDING360 - Estruturação de Holding Patrimonial | OSP"}
+        description={isEnglish 
+          ? "Protect your assets with HOLDING360. Asset holding structuring for succession planning, tax optimization, and legal protection. Urgency: new inheritance tax legislation."
+          : "Proteja seu patrimônio com HOLDING360. Estruturação de holding patrimonial para sucessão, otimização tributária e proteção jurídica. Urgência: nova legislação de herança e doação."
+        }
+        keywords={isEnglish
+          ? "asset holding, family holding, succession planning, asset protection, inheritance tax, holding structuring, tax optimization"
+          : "holding patrimonial, holding familiar, planejamento sucessório, proteção patrimonial, imposto herança, estruturação holding, otimização tributária"
+        }
+        canonicalUrl={isEnglish ? "/en/solutions/holding360" : "/solucoes/holding360"}
+        locale={currentLang}
+        alternateUrls={{
+          'pt-BR': '/solucoes/holding360',
+          'en': '/en/solutions/holding360'
+        }}
+        ogImage="/images/solutions/holding360-og.jpg"
+      />
+      
+      <StructuredData
+        type="service"
+        data={createServiceSchema({
+          name: "HOLDING360",
+          description: isEnglish
+            ? "Complete asset holding structuring service for family succession, tax optimization, and legal asset protection."
+            : "Serviço completo de estruturação de holding patrimonial para sucessão familiar, otimização tributária e proteção jurídica de patrimônio.",
+          areaServed: "Brazil"
+        })}
+      />
+      
       <HeroSection
-        title="HOLDING360"
-        subtitle="Estruturação patrimonial, proteção de ativos e planejamento sucessório para grupos familiares"
-        primaryCTA={{ text: "Agendar Consultoria", href: "/contato" }}
+        title={t('solutionPages.holding360.hero.title')}
+        subtitle={t('solutionPages.holding360.hero.subtitle')}
+        primaryCTA={{ text: t('solutionPages.holding360.hero.primaryCTA'), href: "/contato" }}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Proteja e organize seu patrimônio</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">
+              {t('solutionPages.holding360.what.title')}
+            </h2>
             <p className="text-body-lg text-muted-foreground">
-              Criação de holdings patrimoniais e empresariais, planejamento sucessório, 
-              proteção de ativos e governança familiar com total segurança jurídica e tributária.
+              {t('solutionPages.holding360.what.description')}
             </p>
           </div>
 
           <FeatureGrid
-            features={[
-              {
-                icon: Home,
-                title: "Holding Patrimonial",
-                description: "Estruturação de imóveis e ativos para proteção",
-              },
-              {
-                icon: Shield,
-                title: "Proteção de Ativos",
-                description: "Blindagem patrimonial e segregação de riscos",
-              },
-              {
-                icon: Users,
-                title: "Planejamento Sucessório",
-                description: "Sucessão familiar estruturada e sem conflitos",
-              },
-              {
-                icon: FileText,
-                title: "Governança",
-                description: "Acordo de sócios e regras de família",
-              },
-            ]}
+            features={features.map((feature, index) => ({
+              icon: featureIcons[index],
+              title: feature.title,
+              description: feature.description,
+            }))}
             columns={4}
           />
         </div>
@@ -86,10 +87,12 @@ export default function HOLDING360() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-8">
               <AlertTriangle className="h-8 w-8 text-amber-600" />
-              <h2 className="text-section-mobile md:text-section text-center">Por que estruturar sua holding em 2025?</h2>
+              <h2 className="text-section-mobile md:text-section text-center">
+                {t('solutionPages.holding360.urgency.title')}
+              </h2>
             </div>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Três fatores convergem para tornar 2025 o ano decisivo para quem tem patrimônio acima de R$ 5 milhões
+              {t('solutionPages.holding360.urgency.subtitle')}
             </p>
 
             <div className="space-y-4">
@@ -99,8 +102,8 @@ export default function HOLDING360() {
                     <div className="flex items-start justify-between gap-4">
                       <CardTitle className="text-lg">{factor.title}</CardTitle>
                       <span className={`text-xs font-bold px-2 py-1 rounded ${
-                        factor.impact === 'CRÍTICO' ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-400' :
-                        factor.impact === 'ALTO' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-400' :
+                        factor.impact === 'CRÍTICO' || factor.impact === 'CRITICAL' ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-400' :
+                        factor.impact === 'ALTO' || factor.impact === 'HIGH' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-400' :
                         'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400'
                       }`}>
                         {factor.impact}
@@ -116,13 +119,15 @@ export default function HOLDING360() {
 
             <Card className="mt-8 bg-gradient-to-br from-amber-100/50 to-transparent dark:from-amber-950/20 border-amber-300/50 dark:border-amber-800/50">
               <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-bold mb-3">Janela de oportunidade: até 31/12/2025</h3>
+                <h3 className="text-xl font-bold mb-3">
+                  {t('solutionPages.holding360.urgency.deadline.title')}
+                </h3>
                 <p className="text-muted-foreground mb-6">
-                  Holdings estruturadas até dezembro de 2025 aproveitam regras atuais antes da tributação de dividendos e possíveis aumentos de ITCMD.
+                  {t('solutionPages.holding360.urgency.deadline.description')}
                 </p>
                 <Link href="/contato">
                   <Button size="lg" className="gap-2">
-                    Agendar Consultoria Urgente
+                    {t('solutionPages.holding360.urgency.deadline.button')}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -136,7 +141,9 @@ export default function HOLDING360() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-section-mobile md:text-section mb-8 text-center">Benefícios da Holding Patrimonial</h2>
+            <h2 className="text-section-mobile md:text-section mb-8 text-center">
+              {t('solutionPages.holding360.benefits.title')}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -150,10 +157,10 @@ export default function HOLDING360() {
       </section>
 
       <CTASection
-        title="Estruture sua holding com segurança"
-        description="Agende uma consultoria com nossos especialistas em planejamento patrimonial"
-        primaryButton={{ text: "Agendar Consultoria", href: "/contato" }}
-        secondaryButton={{ text: "Ver Cases de Sucesso", href: "/resultados" }}
+        title={t('solutionPages.holding360.cta.title')}
+        description={t('solutionPages.holding360.cta.description')}
+        primaryButton={{ text: t('solutionPages.holding360.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('solutionPages.holding360.cta.secondaryButton'), href: "/resultados" }}
         variant="accent"
       />
     </div>

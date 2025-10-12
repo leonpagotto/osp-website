@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
+type GradientVariant = 'default' | 'blue' | 'cyan' | 'indigo' | 'none';
+
 interface HeroSectionProps {
   title: string;
   subtitle: string;
@@ -18,9 +20,18 @@ interface HeroSectionProps {
     label: string;
   }>;
   showGradient?: boolean;
+  gradientVariant?: GradientVariant;
   backgroundImage?: string;
   overlayOpacity?: number;
 }
+
+const gradientClasses: Record<GradientVariant, string> = {
+  default: 'bg-gradient-to-br from-primary/10 via-background to-background',
+  blue: 'bg-gradient-to-br from-blue-500/10 via-background to-blue-500/5',
+  cyan: 'bg-gradient-to-br from-cyan-500/10 via-background to-cyan-500/5',
+  indigo: 'bg-gradient-to-br from-indigo-500/10 via-background to-indigo-500/5',
+  none: 'bg-background',
+};
 
 export default function HeroSection({
   title,
@@ -29,11 +40,16 @@ export default function HeroSection({
   secondaryCTA,
   stats,
   showGradient = true,
+  gradientVariant = 'default',
   backgroundImage,
   overlayOpacity = 0.85,
 }: HeroSectionProps) {
+  const gradientClass = !backgroundImage && showGradient 
+    ? gradientClasses[gradientVariant] 
+    : 'bg-background';
+
   return (
-    <section className={`relative py-20 lg:py-32 overflow-hidden ${showGradient && !backgroundImage ? 'bg-gradient-to-br from-primary/10 via-background to-background' : 'bg-background'}`}>
+    <section className={`relative py-20 lg:py-32 overflow-hidden ${gradientClass}`}>
       {/* Background Image */}
       {backgroundImage && (
         <>

@@ -10,6 +10,198 @@
     "careers": "Join Us",
     "materials": "Resources"
   },
+  "home": {
+    "hero": {
+      "title": "Accounting intelligence for decisions that transform businesses",
+      "subtitle": "The technical and advisory arm of companies under Real Profit regime",
+      "primaryCTA": "Talk to a Specialist",
+      "secondaryCTA": "Free Diagnostic",
+      "stats": {
+        "companies": "Companies Served",
+        "states": "States",
+        "countries": "Countries"
+      }
+    },
+    "whatWeDo": {
+      "title": "What we do",
+      "subtitle": "We are the technical and advisory arm of companies under Real Profit regime, offering much more than traditional accounting",
+      "features": {
+        "consulting": {
+          "title": "Consulting Service",
+          "description": "Direct relationship with partners and managers specialized in your segment"
+        },
+        "integration": {
+          "title": "Total Integration",
+          "description": "Complete connection between ERP, accounting and financial systems"
+        },
+        "bi": {
+          "title": "Custom BI",
+          "description": "Customized indicators and dashboards for your decision-making"
+        },
+        "security": {
+          "title": "Tax Security",
+          "description": "Specialization in Real Profit with SLA and clear milestone delivery"
+        }
+      }
+    },
+    "strategicSolutions": {
+      "title": "Strategic Solutions",
+      "subtitle": "Specialized methodologies for each challenge of your company"
+    },
+    "stats": {
+      "savings": "In tax savings generated",
+      "migrations": "Safe migrations to Real Profit",
+      "retention": "Client retention rate",
+      "experience": "Of experience and tradition"
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "subtitle": "Real cases of companies that transformed their management with OSP",
+      "items": [
+        {
+          "quote": "OSP helped us generate cash in the first 45 days of work. Tax structuring was essential for our expansion.",
+          "author": "Chief Financial Officer",
+          "company": "Tubesteel",
+          "role": "Metallurgical Industry"
+        },
+        {
+          "quote": "With OSP we managed to increase margin by +10% and expand throughout Brazil with total tax security.",
+          "author": "CEO",
+          "company": "Borabella",
+          "role": "Franchise Network"
+        },
+        {
+          "quote": "35 years of partnership. OSP is essential for our business strategy and tax compliance.",
+          "author": "Managing Partner",
+          "company": "Galena",
+          "role": "Business Group"
+        }
+      ]
+    },
+    "technology": {
+      "title": "Technology and Integration",
+      "subtitle": "Native integration with leading ERPs and BI tools in the market"
+    },
+    "cta": {
+      "title": "Ready to transform your accounting management?",
+      "description": "Schedule a conversation with our specialists and discover how we can help your company grow sustainably",
+      "primaryButton": "Talk to a Specialist",
+      "secondaryButton": "Request OSP360 Diagnostic"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About OSP",
+      "subtitle": "47 years transforming accounting into a strategic business instrument"
+    },
+    "essence": {
+      "title": "Our Essence",
+      "paragraph1": "OSP was founded in 1977 with a clear vision: to be more than an accounting firm. From the beginning, we positioned ourselves as the technical and advisory arm of companies seeking excellence in tax and financial management.",
+      "paragraph2": "Today, we are a national reference in serving companies under the Real Profit regime, combining tradition with innovation to deliver results that transform businesses."
+    },
+    "history": {
+      "title": "Our History",
+      "timeline": [
+        { "year": "1977", "event": "OSP founded by Gervásio de Souza" },
+        { "year": "1990", "event": "Specialization in medium and large companies" },
+        { "year": "2000", "event": "National expansion - serving 14 states" },
+        { "year": "2010", "event": "Development of 360 methodologies" },
+        { "year": "2020", "event": "International operations in 12 countries" },
+        { "year": "2025", "event": "Leadership in Real Profit with +600 companies" }
+      ]
+    },
+    "leadership": {
+      "title": "Leadership",
+      "subtitle": "Executive team with decades of experience in strategic accounting",
+      "team": [
+        {
+          "name": "Gervásio de Souza",
+          "role": "Founder & President",
+          "bio": "47 years of experience in strategic accounting"
+        },
+        {
+          "name": "Jonas Marinho",
+          "role": "CEO",
+          "bio": "Leader in digital transformation and governance"
+        },
+        {
+          "name": "Guilherme Pagotto",
+          "role": "Executive Director",
+          "bio": "Specialist in tax planning"
+        }
+      ]
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "Principles that guide our actions and relationships with clients",
+      "items": {
+        "specialization": {
+          "title": "Specialization",
+          "description": "Total focus on Real Profit and medium to large companies"
+        },
+        "partnership": {
+          "title": "Partnership",
+          "description": "Consultative and long-term relationships with our clients"
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "Quality delivery with SLA and clear milestones"
+        },
+        "results": {
+          "title": "Results",
+          "description": "Commitment to generating measurable value"
+        }
+      }
+    },
+    "cta": {
+      "title": "Get to know OSP better",
+      "description": "Schedule a visit or video conference with our team",
+      "primaryButton": "Schedule a Call",
+      "secondaryButton": "Join Us"
+    }
+  },
+  "solutions": {
+    "osp360": {
+      "name": "OSP360",
+      "description": "Complete strategic diagnostic"
+    },
+    "fundar360": {
+      "name": "FUNDAR360",
+      "description": "Business structuring"
+    },
+    "tributa360": {
+      "name": "TRIBUTA360",
+      "description": "Tax planning"
+    },
+    "gestao360": {
+      "name": "GESTÃO360",
+      "description": "Executive management support"
+    },
+    "bpoFinanceiro": {
+      "name": "Financial BPO",
+      "description": "Financial outsourcing"
+    },
+    "precifica360": {
+      "name": "PRECIFICA360",
+      "description": "Margin analysis and pricing"
+    },
+    "holding360": {
+      "name": "HOLDING360",
+      "description": "Asset structure"
+    },
+    "contabilidade": {
+      "name": "Accounting",
+      "description": "Specialized accounting services"
+    }
+  },
+  "segments": {
+    "estruturaComplexa": "Complex Structure",
+    "operacaoIntensiva": "Intensive Operations",
+    "servicosEspecializados": "Specialized Services",
+    "expansaoPatrimonial": "Asset Expansion",
+    "industrias": "Industries",
+    "multinacionais": "Multinationals"
+  },
   "common": {
     "learnMore": "Learn More",
     "contact": "Talk to a Specialist",
@@ -24,12 +216,692 @@
     "tagline": "Strategic accounting for companies planning to grow",
     "subtitle": "47 years transforming tax obligations into business opportunities"
   },
+  "segmentPages": {
+    "estruturaComplexa": {
+      "hero": {
+        "title": "Complex Structure",
+        "subtitle": "Solutions for companies with multiple entities, tax IDs, partners, or operations requiring governance and consolidated view",
+        "primaryCTA": "Talk to a Specialist"
+      },
+      "what": {
+        "title": "Integrated management of complex structures",
+        "description": "Companies with multiple tax IDs, branches in different states, partners with cross-participation, or holdings require integrated and strategic accounting and tax management."
+      },
+      "cta": {
+        "title": "Simplify your structure management",
+        "description": "Talk to our specialists in business groups",
+        "primaryButton": "Schedule Consultation"
+      }
+    },
+    "operacaoIntensiva": {
+      "hero": {
+        "title": "Intensive Operation",
+        "subtitle": "Solutions for companies with high volume of invoices, transactions, and operational complexity",
+        "primaryCTA": "Talk to a Specialist"
+      },
+      "what": {
+        "title": "High-volume operations management",
+        "description": "Companies with thousands of monthly transactions, multiple cost centers, high inventory turnover, or 24/7 operations require automated processes and rigorous controls."
+      },
+      "cta": {
+        "title": "Automate your accounting operation",
+        "description": "Talk to our specialists in high-volume operations",
+        "primaryButton": "Schedule Consultation"
+      }
+    },
+    "servicosEspecializados": {
+      "hero": {
+        "title": "Specialized Services",
+        "subtitle": "Solutions for consulting, technology, healthcare, and other high value-added service companies",
+        "primaryCTA": "Talk to a Specialist"
+      },
+      "what": {
+        "title": "Specialization in highly complex services",
+        "description": "Specialized service companies have tax particularities: service tax, withholding taxes, cash basis regime, high margins, and differentiated cost structure."
+      },
+      "cta": {
+        "title": "Optimize your services taxation",
+        "description": "Talk to our specialists in service companies",
+        "primaryButton": "Schedule Consultation"
+      }
+    },
+    "expansaoPatrimonial": {
+      "hero": {
+        "title": "Asset Expansion",
+        "subtitle": "Solutions for families and entrepreneurs focused on asset protection and succession planning",
+        "primaryCTA": "Talk to a Specialist"
+      },
+      "what": {
+        "title": "Asset protection and structuring",
+        "description": "Business families and successful entrepreneurs need to structure their assets: asset holdings, succession planning, asset protection, and family governance."
+      },
+      "cta": {
+        "title": "Protect and organize your assets",
+        "description": "Talk to our specialists in asset planning",
+        "primaryButton": "Schedule Consultation"
+      }
+    },
+    "industrias": {
+      "hero": {
+        "title": "Industries",
+        "subtitle": "Solutions for industries with tax credits, tax benefits, and cost complexity",
+        "primaryCTA": "Talk to a Specialist"
+      },
+      "stats": [
+        { "value": "50+", "label": "Industries served" },
+        { "value": "23%", "label": "Average tax burden reduction" },
+        { "value": "100%", "label": "Tax credits utilization" },
+        { "value": "R$ 50M+", "label": "In savings generated" }
+      ],
+      "what": {
+        "title": "Specialization in industrial operations",
+        "description": "Industries have tax and accounting particularities: tax calculation, presumed credits, tax incentives, production costs, and inventory control."
+      },
+      "cta": {
+        "title": "Maximize your tax credits",
+        "description": "Talk to our specialists in industries",
+        "primaryButton": "Schedule Consultation"
+      }
+    },
+    "multinacionais": {
+      "hero": {
+        "title": "Multinationals and International Groups",
+        "subtitle": "Solutions for companies with cross-border operations and international tax complexity",
+        "primaryCTA": "Talk to a Specialist"
+      },
+      "stats": [
+        { "value": "12", "label": "Countries served" },
+        { "value": "50+", "label": "International companies" },
+        { "value": "100%", "label": "International compliance" },
+        { "value": "Transfer Pricing", "label": "Specialized expertise" }
+      ],
+      "what": {
+        "title": "International specialization",
+        "description": "Companies with international operations face complex tax challenges: transfer pricing, international treaties, global tax planning, and multi-jurisdictional compliance."
+      },
+      "cta": {
+        "title": "Expand globally with tax security",
+        "description": "Talk to our specialists in international taxation",
+        "primaryButton": "Schedule Consultation"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "We're ready to help your company reach new heights"
+    },
+    "form": {
+      "title": "Send your message",
+      "name": "Full Name",
+      "company": "Company",
+      "role": "Position",
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "(00) 00000-0000",
+      "message": "How can we help?",
+      "messagePlaceholder": "Tell us about your challenges and goals...",
+      "submit": "Send Message",
+      "successTitle": "Message sent!",
+      "successDescription": "We'll get in touch soon.",
+      "required": "*"
+    },
+    "info": {
+      "title": "Contact Information",
+      "addresses": {
+        "title": "Addresses",
+        "campinas": "Campinas/SP",
+        "saoPaulo": "São Paulo/SP"
+      },
+      "whatsapp": {
+        "title": "WhatsApp"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "schedule": "Monday to Friday: 8am to 6pm"
+      },
+      "coverage": {
+        "title": "National and International Service",
+        "description": "We serve companies throughout Brazil (14 states) and in 12 countries. Our team is prepared to meet your needs wherever you are."
+      }
+    }
+  },
   "footer": {
-    "tagline": "Transforming accounting into strategy for 47 years",
+    "tagline": "Accounting intelligence for decisions that transform businesses",
     "quickLinks": "Quick Links",
     "solutions": "Solutions",
+    "company": "Company",
     "contact": "Contact",
     "followUs": "Follow Us",
-    "rights": "© 2025 OSP Contabilidade. All rights reserved."
+    "rights": "© 2025 OSP Contabilidade. All rights reserved.",
+    "newsletter": {
+      "title": "Stay up to date",
+      "subtitle": "Receive insights on tax and accounting management directly in your email",
+      "placeholder": "Your best email",
+      "button": "Subscribe",
+      "formLabel": "Newsletter subscription form",
+      "inputLabel": "Email address for newsletter"
+    },
+    "socialMedia": "Social media",
+    "linkedinLabel": "Visit our LinkedIn",
+    "instagramLabel": "Visit our Instagram",
+    "facebookLabel": "Visit our Facebook",
+    "solutionsNav": "Solutions navigation",
+    "companyNav": "Company navigation",
+    "careers": "Join Us",
+    "locations": "Campinas/SP | São Paulo/SP",
+    "phoneLabel": "Call OSP via WhatsApp",
+    "emailLabel": "Send an email to OSP",
+    "copyright": "© {{year}} OSP. All rights reserved.",
+    "legalNav": "Legal links",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "solutionPages": {
+    "osp360": {
+      "hero": {
+        "title": "OSP360",
+        "subtitle": "Complete strategic diagnostic in 45 days to transform your company's management",
+        "primaryCTA": "Request Diagnostic",
+        "secondaryCTA": "Schedule Presentation"
+      },
+      "what": {
+        "title": "What is OSP360?",
+        "description": "It's our proprietary business diagnostic methodology that analyzes all tax, financial, and operational aspects of your company in 45 days, generating a strategic action plan to maximize results."
+      },
+      "features": [
+        {
+          "title": "Deep Analysis",
+          "description": "Complete review of tax documents, contracts, and processes"
+        },
+        {
+          "title": "Gap Identification",
+          "description": "Mapping of risks, inefficiencies, and opportunities"
+        },
+        {
+          "title": "Strategic Plan",
+          "description": "Detailed roadmap with prioritization and timeline"
+        },
+        {
+          "title": "Follow-up",
+          "description": "Support in implementing recommendations"
+        }
+      ],
+      "benefits": {
+        "title": "OSP360 Benefits",
+        "items": [
+          "Complete 360° view of tax and financial health",
+          "Identification of tax risks and savings opportunities",
+          "Structured action plan for the next 12 months",
+          "Feasibility analysis for migration to Real Profit regime",
+          "Margin and pricing diagnosis",
+          "Process mapping and internal controls"
+        ]
+      },
+      "midCTA": {
+        "title": "Is your company ready to grow?",
+        "description": "In just 45 days, you'll have a complete roadmap to maximize your results. The OSP360 diagnostic is free and without commitment.",
+        "primaryButton": "Request Free Diagnostic",
+        "secondaryButton": "Talk to a Specialist"
+      },
+      "howItWorks": {
+        "title": "How It Works",
+        "steps": [
+          {
+            "title": "Kick-off and Collection (Days 1-10)",
+            "description": "Initial meeting, scope definition, and collection of tax, accounting, and operational documentation"
+          },
+          {
+            "title": "Analysis and Diagnosis (Days 11-30)",
+            "description": "Tax, financial, and operational analysis with identification of risks and opportunities"
+          },
+          {
+            "title": "Action Plan (Days 31-45)",
+            "description": "Executive presentation with prioritized roadmap and implementation timeline"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to transform your management?",
+        "description": "Request an OSP360 diagnostic and discover how we can help your company",
+        "primaryButton": "Request Free Diagnostic",
+        "secondaryButton": "Talk to a Specialist"
+      }
+    },
+    "holding360": {
+      "hero": {
+        "title": "HOLDING360",
+        "subtitle": "Asset structuring, asset protection, and succession planning for family groups",
+        "primaryCTA": "Schedule Consultation"
+      },
+      "what": {
+        "title": "Protect and organize your assets",
+        "description": "Creation of asset and business holdings, succession planning, asset protection, and family governance with complete legal and tax security."
+      },
+      "features": [
+        {
+          "title": "Asset Holding",
+          "description": "Structuring of real estate and assets for protection"
+        },
+        {
+          "title": "Asset Protection",
+          "description": "Asset shielding and risk segregation"
+        },
+        {
+          "title": "Succession Planning",
+          "description": "Structured family succession without conflicts"
+        },
+        {
+          "title": "Governance",
+          "description": "Shareholders agreement and family rules"
+        }
+      ],
+      "urgency": {
+        "title": "Why structure your holding in 2025?",
+        "subtitle": "Three factors converge to make 2025 the decisive year for those with assets above R$ 5 million",
+        "factors": [
+          {
+            "title": "PL 1.087/2025 - Dividend Taxation",
+            "description": "Dividends will be progressively taxed (0-15%). Structuring before 2026 allows the use of accumulated profits without income tax.",
+            "impact": "CRITICAL"
+          },
+          {
+            "title": "State ITCMD Increases",
+            "description": "States like SP may increase ITCMD from 4% to 8%. Donations via holding today avoid future higher rates.",
+            "impact": "HIGH"
+          },
+          {
+            "title": "Tax Reform in Effect",
+            "description": "CBS/IBS change rental taxation. Holdings structured in 2025 have an advantage in the new regime.",
+            "impact": "MEDIUM"
+          }
+        ],
+        "deadline": {
+          "title": "Window of opportunity: until 12/31/2025",
+          "description": "Holdings structured by December 2025 take advantage of current rules before dividend taxation and possible ITCMD increases.",
+          "button": "Schedule Urgent Consultation"
+        }
+      },
+      "benefits": {
+        "title": "Benefits of Asset Holding",
+        "items": [
+          "Reduction of ITCMD (Inheritance Tax) by up to 4-8%",
+          "Protection against seizures and business risks",
+          "Organization of family succession without conflicts",
+          "Income tax savings on rentals (Real Profit in holding)",
+          "Asset shielding with legal security",
+          "Clear governance for family decisions"
+        ]
+      },
+      "cta": {
+        "title": "Structure your holding safely",
+        "description": "Schedule a consultation with our specialists in asset planning",
+        "primaryButton": "Schedule Consultation",
+        "secondaryButton": "See Success Cases"
+      }
+    },
+    "fundar360": {
+      "hero": {
+        "title": "FUNDAR360",
+        "subtitle": "Complete legal and tax structuring for opening companies in the Real Profit regime",
+        "primaryCTA": "Schedule Consultation",
+        "secondaryCTA": "Simulate Savings"
+      },
+      "what": {
+        "title": "Open your company in the right regime from the start",
+        "description": "Company founding in the Real Profit regime with strategic tax planning, choice of the best corporate structure, and preparation for scalable growth."
+      },
+      "cta": {
+        "title": "Found your company with strategic intelligence",
+        "description": "Start right from day one with our specialized consulting",
+        "primaryButton": "Schedule Consultation",
+        "secondaryButton": "Learn About Our Methodology"
+      }
+    },
+    "tributa360": {
+      "hero": {
+        "title": "TRIBUTA360",
+        "subtitle": "Strategic tax planning for Real Profit companies with proven savings",
+        "primaryCTA": "Simulate Savings",
+        "secondaryCTA": "Schedule Analysis"
+      },
+      "what": {
+        "title": "Maximize your profitability with intelligent tax management",
+        "description": "Active tax planning for Real Profit companies, with analysis of tax incentives, operation structuring, and recovery of tax credits."
+      },
+      "features": [
+        {
+          "title": "Feasibility Analysis",
+          "description": "Comparative simulation between tax regimes"
+        },
+        {
+          "title": "Tax Burden Reduction",
+          "description": "Identification of credits, incentives and opportunities"
+        },
+        {
+          "title": "Safe Migration",
+          "description": "Structured process with zero audit risk"
+        },
+        {
+          "title": "Total Compliance",
+          "description": "On-time delivery of ancillary obligations"
+        }
+      ],
+      "cta": {
+        "title": "Reduce your tax burden legally",
+        "description": "Our specialized team can identify savings opportunities in your operation",
+        "primaryButton": "Simulate Tax Savings",
+        "secondaryButton": "Talk to a Specialist"
+      }
+    },
+    "gestao360": {
+      "hero": {
+        "title": "GESTÃO360",
+        "subtitle": "Complete financial and operational management with customized BI for strategic decision-making",
+        "primaryCTA": "Learn About Solution",
+        "secondaryCTA": "See Demo"
+      },
+      "what": {
+        "title": "Turn data into strategic decisions",
+        "description": "Complete management with personalized dashboards, KPIs by segment, total system integration, and management reports for partners and board."
+      },
+      "cta": {
+        "title": "Have total visibility of your business",
+        "description": "Personalized dashboards and precise indicators for faster and more accurate decisions",
+        "primaryButton": "Schedule Demonstration",
+        "secondaryButton": "Learn About Cases"
+      }
+    },
+    "bpoFinanceiro": {
+      "hero": {
+        "title": "Financial BPO",
+        "subtitle": "Complete financial area outsourcing with specialized team and cutting-edge technology",
+        "primaryCTA": "Request Proposal",
+        "secondaryCTA": "Learn About Model"
+      },
+      "what": {
+        "title": "Your complete finance department as a service",
+        "description": "Outsourced financial operation (accounts payable/receivable, reconciliations, treasury) with dedicated team, structured processes, and integrated technology."
+      },
+      "features": [
+        {
+          "title": "Complete Treasury",
+          "description": "Management of accounts payable and receivable"
+        },
+        {
+          "title": "Bank Reconciliation",
+          "description": "Automation and total control of statements"
+        },
+        {
+          "title": "Cash Flow",
+          "description": "Projections and rigorous cash control"
+        },
+        {
+          "title": "Banking Relationship",
+          "description": "Negotiation and management of credit lines"
+        }
+      ],
+      "cta": {
+        "title": "Focus on your core business",
+        "description": "Leave operational financial management to those who understand: our specialized team",
+        "primaryButton": "Request Commercial Proposal",
+        "secondaryButton": "Schedule a Conversation"
+      }
+    },
+    "precifica360": {
+      "hero": {
+        "title": "PRECIFICA360",
+        "subtitle": "Strategic pricing methodology to maximize margin and competitiveness",
+        "primaryCTA": "Simulate Impact",
+        "secondaryCTA": "Understand Methodology"
+      },
+      "what": {
+        "title": "Set prices that maximize profit and sales",
+        "description": "Cost structure analysis, margin by product/service, competitive positioning, and scenario simulations for strategic pricing."
+      },
+      "cta": {
+        "title": "Price with intelligence, not by feeling",
+        "description": "Discover the margin potential you might be leaving on the table",
+        "primaryButton": "Do Margin Diagnostic",
+        "secondaryButton": "See Methodology"
+      }
+    },
+    "contabilidade": {
+      "hero": {
+        "title": "Real Profit Accounting",
+        "subtitle": "Specialized consulting accounting for Real Profit companies with SLA and delivery milestones",
+        "primaryCTA": "Migrate to OSP",
+        "secondaryCTA": "Compare Services"
+      },
+      "what": {
+        "title": "Accounting that goes beyond numbers",
+        "description": "Complete accounting service for Real Profit with consulting service, systems integration, tax compliance, and strategic support for partners and CFOs."
+      },
+      "features": [
+        {
+          "title": "Total Compliance",
+          "description": "100% tax and fiscal conformity"
+        },
+        {
+          "title": "Consulting Service",
+          "description": "Close relationship with specialists"
+        },
+        {
+          "title": "Security",
+          "description": "Audited and certified processes"
+        },
+        {
+          "title": "Technology",
+          "description": "Integration with major ERPs and systems"
+        }
+      ],
+      "services": {
+        "title": "Our Plans",
+        "types": [
+          {
+            "title": "Standard Accounting",
+            "description": "Complete accounting services for growing companies",
+            "features": [
+              "Accounting and tax bookkeeping",
+              "Ancillary obligations",
+              "Payroll",
+              "Consulting service"
+            ]
+          },
+          {
+            "title": "Consulting Accounting",
+            "description": "Differentiated service focused on strategic management",
+            "features": [
+              "Everything from Standard +",
+              "Monthly results meetings",
+              "Personalized executive reports",
+              "Continuous tax planning"
+            ]
+          },
+          {
+            "title": "Specialized Real Profit",
+            "description": "For companies in the Real Profit regime with high complexity",
+            "features": [
+              "Everything from Consulting +",
+              "Complete Real Profit management",
+              "SLA and delivery milestones",
+              "Integration with corporate systems"
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "title": "Migrate to high-level accounting",
+        "description": "Consulting service, guaranteed SLA, and strategic support that your company deserves",
+        "primaryButton": "Request Migration",
+        "secondaryButton": "Compare with Current"
+      }
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "OSP Accounting Blog",
+      "description": "Accounting Blog with the best tips for entrepreneurs, market news, and useful information to keep you always updated."
+    },
+    "search": {
+      "placeholder": "Search articles..."
+    },
+    "categories": {
+      "all": "All",
+      "featured": "Featured Articles",
+      "allArticles": "All Articles"
+    },
+    "readingInfo": {
+      "articles": "articles",
+      "article": "article",
+      "readingTime": "min read"
+    },
+    "actions": {
+      "read": "Read",
+      "clearFilters": "Clear filters"
+    },
+    "noResults": {
+      "title": "No articles found",
+      "description": "Try adjusting your search or clearing the filters"
+    },
+    "cta": {
+      "title": "Need specialized accounting advisory?",
+      "description": "Talk to our specialists and discover how OSP can help your company grow with tax security and fiscal efficiency.",
+      "primaryButton": "Talk to a Specialist",
+      "secondaryButton": "Learn About Solutions"
+    }
+  },
+  "materiaisPage": {
+    "hero": {
+      "title": "Free Resources",
+      "subtitle": "Practical resources to enhance your company's accounting, tax, and financial management"
+    },
+    "description": "Download free guides, checklists, and tools developed by specialists with over 47 years of experience in strategic accounting",
+    "downloadButton": "Download Free",
+    "cta": {
+      "title": "Need something specific?",
+      "description": "Our team can develop custom analyses and materials for your business",
+      "button": "Request Custom Material"
+    }
+  },
+  "resultadosPage": {
+    "hero": {
+      "title": "Proven Results",
+      "subtitle": "Real cases of companies that transformed their accounting and tax management with OSP"
+    },
+    "stats": [
+      {
+        "value": "R$ 100M+",
+        "label": "In tax savings generated"
+      },
+      {
+        "value": "100+",
+        "label": "Safe migrations to Real Profit"
+      },
+      {
+        "value": "600+",
+        "label": "Companies served"
+      },
+      {
+        "value": "98%",
+        "label": "Client retention rate"
+      }
+    ],
+    "caseStudies": {
+      "title": "Success Stories",
+      "description": "Real challenges solved with our specialized methodologies",
+      "challengeLabel": "Challenge",
+      "solutionLabel": "Solution",
+      "resultsLabel": "Results"
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "description": "What our clients say about their partnership with OSP"
+    },
+    "cta": {
+      "title": "Want results like these?",
+      "description": "Schedule a conversation and discover how we can transform your company's management",
+      "primaryButton": "Talk to a Specialist",
+      "secondaryButton": "Request Diagnostic"
+    }
+  },
+  "facaPartePage": {
+    "hero": {
+      "title": "Join OSP",
+      "subtitle": "Join a team of specialists who transform accounting into a strategic business tool",
+      "primaryCTA": "View Open Positions"
+    },
+    "whyOSP": {
+      "title": "Why work at OSP?",
+      "description": "We are a reference in strategic accounting for medium and large companies. Here, you will have the opportunity to work with complex and challenging clients, growing professionally in an environment of excellence."
+    },
+    "benefits": {
+      "title": "Our Benefits",
+      "description": "We take care of our team with competitive benefits and a differentiated work environment",
+      "items": [
+        {
+          "title": "Health and Dental Insurance",
+          "description": "Complete coverage for you and your family"
+        },
+        {
+          "title": "Meal/Food Allowance",
+          "description": "Flexible benefit for your needs"
+        },
+        {
+          "title": "Home Office",
+          "description": "Structure for remote work when needed"
+        },
+        {
+          "title": "Performance Bonus",
+          "description": "Recognition for achieved results"
+        },
+        {
+          "title": "Continuous Development",
+          "description": "Training, certifications, and specialized courses"
+        },
+        {
+          "title": "Collaborative Environment",
+          "description": "Culture of partnership and joint growth"
+        }
+      ]
+    },
+    "careerAreas": {
+      "title": "Career Areas",
+      "description": "Opportunities in various specialized areas",
+      "areas": [
+        "Accounting",
+        "Tax and Fiscal",
+        "Human Resources",
+        "Financial BPO",
+        "Consulting",
+        "Technology and Automation"
+      ]
+    },
+    "howToApply": {
+      "title": "How to Apply",
+      "description": "Send your resume and cover letter to our talent team. We will review your profile and contact you if there are opportunities aligned with your experience.",
+      "primaryButton": "Send Resume",
+      "secondaryButton": "View on LinkedIn",
+      "contactInfo": {
+        "email": "E-mail:",
+        "emailValue": "talentos@ospcontabilidade.com.br",
+        "subject": "Subject:",
+        "subjectValue": "Application - [Your Area of Interest]"
+      }
+    }
+  },
+  "blogPost": {
+    "backToBlog": "Back to Blog",
+    "share": "Share",
+    "shareSuccess": "Link copied to clipboard!",
+    "by": "By",
+    "relatedPosts": "Related Articles",
+    "defaultCTA": {
+      "title": "Need help with your accounting?",
+      "description": "Talk to an OSP specialist and discover how we can help your company."
+    }
   }
 }

@@ -2,23 +2,27 @@ import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Zap, FileCheck, BarChart3, Shield } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function OperacaoIntensiva() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Operação Intensiva"
-        subtitle="Alto volume de transações, notas fiscais e movimentações que demandam automação e controles robustos"
-        primaryCTA={{ text: "Falar com Especialista", href: "/contato" }}
+        title={t('segmentPages.operacaoIntensiva.hero.title')}
+        subtitle={t('segmentPages.operacaoIntensiva.hero.subtitle')}
+        primaryCTA={{ text: t('segmentPages.operacaoIntensiva.hero.primaryCTA'), href: "/contato" }}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Eficiência em operações de alto volume</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">
+              {t('segmentPages.operacaoIntensiva.what.title')}
+            </h2>
             <p className="text-body-lg text-muted-foreground">
-              Empresas com milhares de notas fiscais, transações financeiras e operações diárias 
-              precisam de automação, controles e processos estruturados para garantir compliance e eficiência.
+              {t('segmentPages.operacaoIntensiva.what.description')}
             </p>
           </div>
 
@@ -51,9 +55,9 @@ export default function OperacaoIntensiva() {
       </section>
 
       <CTASection
-        title="Escale com segurança e eficiência"
-        description="Conheça nossas soluções para operações de alto volume"
-        primaryButton={{ text: "Agendar Consultoria", href: "/contato" }}
+        title={t('segmentPages.operacaoIntensiva.cta.title')}
+        description={t('segmentPages.operacaoIntensiva.cta.description')}
+        primaryButton={{ text: t('segmentPages.operacaoIntensiva.cta.primaryButton'), href: "/contato" }}
         variant="accent"
       />
     </div>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import HeroSection from "@/components/HeroSection";
 import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
@@ -68,30 +69,32 @@ const testimonials = [
 ];
 
 export default function Resultados() {
+  const { t } = useTranslation();
+  const stats = t('resultadosPage.stats', { returnObjects: true }) as Array<{ value: string; label: string; highlight?: boolean }>;
+  
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Resultados Comprovados"
-        subtitle="Casos reais de empresas que transformaram sua gestão contábil e tributária com a OSP"
-        showGradient={false}
+        title={t('resultadosPage.hero.title')}
+        subtitle={t('resultadosPage.hero.subtitle')}
+        showGradient={true}
+        gradientVariant="blue"
       />
 
       <StatsSection
-        stats={[
-          { value: "R$ 100M+", label: "Em economia tributária gerada", highlight: true },
-          { value: "100+", label: "Migrações seguras para Lucro Real" },
-          { value: "600+", label: "Empresas atendidas" },
-          { value: "98%", label: "Taxa de retenção de clientes", highlight: true },
-        ]}
+        stats={stats.map((stat, index) => ({
+          ...stat,
+          highlight: index === 0 || index === 3
+        }))}
       />
 
       {/* Case Studies */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Casos de Sucesso</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('resultadosPage.caseStudies.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Desafios reais resolvidos com nossas metodologias especializadas
+              {t('resultadosPage.caseStudies.description')}
             </p>
           </div>
           <div className="space-y-8 max-w-5xl mx-auto">
@@ -106,16 +109,16 @@ export default function Resultados() {
                 <CardContent className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-2">Desafio</h4>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-2">{t('resultadosPage.caseStudies.challengeLabel')}</h4>
                       <p className="text-sm">{study.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-2">Solução</h4>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-2">{t('resultadosPage.caseStudies.solutionLabel')}</h4>
                       <p className="text-sm font-medium text-primary">{study.solution}</p>
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground mb-3">Resultados</h4>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-3">{t('resultadosPage.caseStudies.resultsLabel')}</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {study.results.map((result, idx) => (
                         <div key={idx} className="flex items-start gap-2">
@@ -136,9 +139,9 @@ export default function Resultados() {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Depoimentos</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('resultadosPage.testimonials.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              O que nossos clientes falam sobre a parceria com a OSP
+              {t('resultadosPage.testimonials.description')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -150,10 +153,10 @@ export default function Resultados() {
       </section>
 
       <CTASection
-        title="Quer resultados como esses?"
-        description="Agende uma conversa e descubra como podemos transformar a gestão da sua empresa"
-        primaryButton={{ text: "Falar com Especialista", href: "/contato" }}
-        secondaryButton={{ text: "Solicitar Diagnóstico", href: "/solucoes/osp360" }}
+        title={t('resultadosPage.cta.title')}
+        description={t('resultadosPage.cta.description')}
+        primaryButton={{ text: t('resultadosPage.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('resultadosPage.cta.secondaryButton'), href: "/solucoes/osp360" }}
         variant="accent"
       />
     </div>

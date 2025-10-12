@@ -3,32 +3,40 @@ import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import StatsSection from "@/components/StatsSection";
 import { Factory, Calculator, TrendingUp, Shield } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Industrias() {
+  const { t } = useTranslation();
+  
+  const stats = t('segmentPages.industrias.stats', { returnObjects: true }) as Array<{
+    value: string;
+    label: string;
+    highlight?: boolean;
+  }>;
+
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Indústrias"
-        subtitle="Soluções especializadas para o setor industrial com foco em eficiência tributária e gestão de custos"
-        primaryCTA={{ text: "Falar com Especialista", href: "/contato" }}
+        title={t('segmentPages.industrias.hero.title')}
+        subtitle={t('segmentPages.industrias.hero.subtitle')}
+        primaryCTA={{ text: t('segmentPages.industrias.hero.primaryCTA'), href: "/contato" }}
       />
 
       <StatsSection
-        stats={[
-          { value: "50+", label: "Indústrias atendidas" },
-          { value: "23%", label: "Redução média de carga tributária", highlight: true },
-          { value: "100%", label: "Aproveitamento de créditos fiscais" },
-          { value: "R$ 50M+", label: "Em economia gerada", highlight: true },
-        ]}
+        stats={stats.map((stat, index) => ({
+          ...stat,
+          highlight: index === 1 || index === 3
+        }))}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Especialização em indústria</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">
+              {t('segmentPages.industrias.what.title')}
+            </h2>
             <p className="text-body-lg text-muted-foreground">
-              Conhecemos a fundo as particularidades tributárias da indústria: ICMS, IPI, PIS/Cofins, 
-              créditos fiscais, drawback, regimes especiais e muito mais.
+              {t('segmentPages.industrias.what.description')}
             </p>
           </div>
 
@@ -61,9 +69,9 @@ export default function Industrias() {
       </section>
 
       <CTASection
-        title="Maximize a eficiência da sua indústria"
-        description="Agende uma análise tributária especializada para o setor industrial"
-        primaryButton={{ text: "Solicitar Análise", href: "/contato" }}
+        title={t('segmentPages.industrias.cta.title')}
+        description={t('segmentPages.industrias.cta.description')}
+        primaryButton={{ text: t('segmentPages.industrias.cta.primaryButton'), href: "/contato" }}
         variant="accent"
       />
     </div>

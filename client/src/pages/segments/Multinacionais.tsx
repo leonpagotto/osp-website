@@ -3,32 +3,40 @@ import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import StatsSection from "@/components/StatsSection";
 import { Globe, FileCheck, TrendingUp, Shield } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Multinacionais() {
+  const { t } = useTranslation();
+  
+  const stats = t('segmentPages.multinacionais.stats', { returnObjects: true }) as Array<{
+    value: string;
+    label: string;
+    highlight?: boolean;
+  }>;
+
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Multinacionais e Grupos Internacionais"
-        subtitle="Soluções para empresas com operações cross-border e complexidade fiscal internacional"
-        primaryCTA={{ text: "Falar com Especialista", href: "/contato" }}
+        title={t('segmentPages.multinacionais.hero.title')}
+        subtitle={t('segmentPages.multinacionais.hero.subtitle')}
+        primaryCTA={{ text: t('segmentPages.multinacionais.hero.primaryCTA'), href: "/contato" }}
       />
 
       <StatsSection
-        stats={[
-          { value: "12", label: "Países atendidos" },
-          { value: "50+", label: "Empresas internacionais", highlight: true },
-          { value: "100%", label: "Compliance internacional" },
-          { value: "Transfer Pricing", label: "Expertise especializada", highlight: true },
-        ]}
+        stats={stats.map((stat, index) => ({
+          ...stat,
+          highlight: index === 1 || index === 3
+        }))}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Especialização internacional</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">
+              {t('segmentPages.multinacionais.what.title')}
+            </h2>
             <p className="text-body-lg text-muted-foreground">
-              Empresas com operações internacionais enfrentam desafios tributários complexos: 
-              transfer pricing, tratados internacionais, planejamento fiscal global e compliance multi-jurisdicional.
+              {t('segmentPages.multinacionais.what.description')}
             </p>
           </div>
 
@@ -61,9 +69,9 @@ export default function Multinacionais() {
       </section>
 
       <CTASection
-        title="Expanda globalmente com segurança tributária"
-        description="Converse com nossos especialistas em tributação internacional"
-        primaryButton={{ text: "Agendar Consultoria", href: "/contato" }}
+        title={t('segmentPages.multinacionais.cta.title')}
+        description={t('segmentPages.multinacionais.cta.description')}
+        primaryButton={{ text: t('segmentPages.multinacionais.cta.primaryButton'), href: "/contato" }}
         variant="accent"
       />
     </div>

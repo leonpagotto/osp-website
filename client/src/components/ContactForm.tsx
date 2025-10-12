@@ -4,8 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -20,8 +22,8 @@ export default function ContactForm() {
     e.preventDefault();
     console.log("Form submitted:", formData);
     toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
+      title: t('contact.form.successTitle'),
+      description: t('contact.form.successDescription'),
     });
     // Reset form
     setFormData({
@@ -39,10 +41,12 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl" aria-label={t('contact.form.title')}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="name">Nome Completo *</Label>
+          <Label htmlFor="name">
+            {t('contact.form.name')} {t('contact.form.required')}
+          </Label>
           <Input
             id="name"
             name="name"
@@ -50,10 +54,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             data-testid="input-name"
+            aria-required="true"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="company">Empresa *</Label>
+          <Label htmlFor="company">
+            {t('contact.form.company')} {t('contact.form.required')}
+          </Label>
           <Input
             id="company"
             name="company"
@@ -61,13 +68,14 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             data-testid="input-company"
+            aria-required="true"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="role">Cargo</Label>
+          <Label htmlFor="role">{t('contact.form.role')}</Label>
           <Input
             id="role"
             name="role"
@@ -77,7 +85,9 @@ export default function ContactForm() {
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">E-mail *</Label>
+          <Label htmlFor="email">
+            {t('contact.form.email')} {t('contact.form.required')}
+          </Label>
           <Input
             id="email"
             name="email"
@@ -86,12 +96,15 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             data-testid="input-email"
+            aria-required="true"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="phone">Telefone / WhatsApp *</Label>
+        <Label htmlFor="phone">
+          {t('contact.form.phone')} {t('contact.form.required')}
+        </Label>
         <Input
           id="phone"
           name="phone"
@@ -99,13 +112,16 @@ export default function ContactForm() {
           value={formData.phone}
           onChange={handleChange}
           required
-          placeholder="(00) 00000-0000"
+          placeholder={t('contact.form.phonePlaceholder')}
           data-testid="input-phone"
+          aria-required="true"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message">Como podemos ajudar? *</Label>
+        <Label htmlFor="message">
+          {t('contact.form.message')} {t('contact.form.required')}
+        </Label>
         <Textarea
           id="message"
           name="message"
@@ -113,13 +129,14 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          placeholder="Conte-nos sobre seus desafios e objetivos..."
+          placeholder={t('contact.form.messagePlaceholder')}
           data-testid="textarea-message"
+          aria-required="true"
         />
       </div>
 
       <Button type="submit" size="lg" className="w-full md:w-auto" data-testid="button-submit-contact">
-        Enviar Mensagem
+        {t('contact.form.submit')}
       </Button>
     </form>
   );

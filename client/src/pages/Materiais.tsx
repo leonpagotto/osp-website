@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import HeroSection from "@/components/HeroSection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -44,11 +45,13 @@ const materials = [
 ];
 
 export default function Materiais() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Materiais Gratuitos"
-        subtitle="Recursos práticos para aprimorar a gestão contábil, tributária e financeira da sua empresa"
+        title={t('materiaisPage.hero.title')}
+        subtitle={t('materiaisPage.hero.subtitle')}
         showGradient={false}
       />
 
@@ -56,8 +59,7 @@ export default function Materiais() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-body-lg text-muted-foreground">
-              Baixe gratuitamente nossos guias, checklists e ferramentas desenvolvidas 
-              por especialistas com mais de 47 anos de experiência em contabilidade estratégica
+              {t('materiaisPage.description')}
             </p>
           </div>
 
@@ -78,7 +80,7 @@ export default function Materiais() {
                   <p className="text-sm text-muted-foreground mb-6 flex-1">{material.description}</p>
                   <Button className="w-full" data-testid={`button-download-${index}`} onClick={() => console.log(`Download: ${material.title}`)}>
                     <Download className="mr-2 h-4 w-4" />
-                    Baixar Grátis
+                    {t('materiaisPage.downloadButton')}
                   </Button>
                 </CardContent>
               </Card>
@@ -91,12 +93,12 @@ export default function Materiais() {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-section-mobile md:text-section mb-4">Precisa de algo específico?</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('materiaisPage.cta.title')}</h2>
             <p className="text-body-lg text-muted-foreground mb-8">
-              Nossa equipe pode desenvolver análises e materiais personalizados para o seu negócio
+              {t('materiaisPage.cta.description')}
             </p>
             <Button size="lg" data-testid="button-contact-custom">
-              Solicitar Material Customizado
+              {t('materiaisPage.cta.button')}
             </Button>
           </div>
         </div>

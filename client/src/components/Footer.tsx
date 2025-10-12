@@ -2,24 +2,35 @@ import { Link } from "wouter";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
-    <footer className="bg-secondary border-t border-border">
+    <footer className="bg-secondary border-t border-border" role="contentinfo" aria-label="Site footer">
       {/* Newsletter Section */}
       <div className="border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-xl font-semibold mb-2">Fique por dentro das novidades</h3>
-            <p className="text-muted-foreground mb-6">Receba insights sobre gestão tributária e contábil direto no seu e-mail</p>
-            <form className="flex gap-4 max-w-md mx-auto" onSubmit={(e) => { e.preventDefault(); console.log('Newsletter signup'); }}>
+            <h3 className="text-xl font-semibold mb-2">{t('footer.newsletter.title')}</h3>
+            <p className="text-muted-foreground mb-6">{t('footer.newsletter.subtitle')}</p>
+            <form 
+              className="flex gap-4 max-w-md mx-auto" 
+              onSubmit={(e) => { e.preventDefault(); console.log('Newsletter signup'); }}
+              aria-label={t('footer.newsletter.formLabel')}
+            >
               <Input
                 type="email"
-                placeholder="Seu melhor e-mail"
+                placeholder={t('footer.newsletter.placeholder')}
                 className="flex-1"
                 data-testid="input-newsletter-email"
+                aria-label={t('footer.newsletter.inputLabel')}
+                required
               />
-              <Button type="submit" data-testid="button-newsletter-submit">Inscrever</Button>
+              <Button type="submit" data-testid="button-newsletter-submit">
+                {t('footer.newsletter.button')}
+              </Button>
             </form>
           </div>
         </div>
@@ -30,63 +41,96 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <div className="text-2xl font-bold text-primary mb-4">OSP</div>
+            <div className="text-2xl font-bold text-primary mb-4" aria-label="OSP Logo">OSP</div>
             <p className="text-sm text-muted-foreground mb-4">
-              Inteligência contábil para decisões que transformam negócios
+              {t('footer.tagline')}
             </p>
-            <div className="flex space-x-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover-elevate active-elevate-2 p-2 rounded-md" data-testid="link-linkedin">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover-elevate active-elevate-2 p-2 rounded-md" data-testid="link-instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover-elevate active-elevate-2 p-2 rounded-md" data-testid="link-facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-            </div>
+            <nav aria-label={t('footer.socialMedia')}>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover-elevate active-elevate-2 p-2 rounded-md" 
+                  data-testid="link-linkedin"
+                  aria-label={t('footer.linkedinLabel')}
+                >
+                  <Linkedin className="h-5 w-5" aria-hidden="true" />
+                </a>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover-elevate active-elevate-2 p-2 rounded-md" 
+                  data-testid="link-instagram"
+                  aria-label={t('footer.instagramLabel')}
+                >
+                  <Instagram className="h-5 w-5" aria-hidden="true" />
+                </a>
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover-elevate active-elevate-2 p-2 rounded-md" 
+                  data-testid="link-facebook"
+                  aria-label={t('footer.facebookLabel')}
+                >
+                  <Facebook className="h-5 w-5" aria-hidden="true" />
+                </a>
+              </div>
+            </nav>
           </div>
 
           {/* Solutions */}
-          <div>
-            <h4 className="font-semibold mb-4">Soluções</h4>
+          <nav aria-label={t('footer.solutionsNav')}>
+            <h4 className="font-semibold mb-4">{t('nav.solutions')}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/solucoes/osp360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-osp360">OSP360</Link></li>
-              <li><Link href="/solucoes/fundar360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-fundar360">FUNDAR360</Link></li>
-              <li><Link href="/solucoes/tributa360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tributa360">TRIBUTA360</Link></li>
-              <li><Link href="/solucoes/gestao360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-gestao360">GESTÃO360</Link></li>
-              <li><Link href="/solucoes/holding360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-holding360">HOLDING360</Link></li>
+              <li><Link href="/solucoes/osp360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-osp360">{t('solutions.osp360.name')}</Link></li>
+              <li><Link href="/solucoes/fundar360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-fundar360">{t('solutions.fundar360.name')}</Link></li>
+              <li><Link href="/solucoes/tributa360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tributa360">{t('solutions.tributa360.name')}</Link></li>
+              <li><Link href="/solucoes/gestao360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-gestao360">{t('solutions.gestao360.name')}</Link></li>
+              <li><Link href="/solucoes/holding360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-holding360">{t('solutions.holding360.name')}</Link></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Company */}
-          <div>
-            <h4 className="font-semibold mb-4">Empresa</h4>
+          <nav aria-label={t('footer.companyNav')}>
+            <h4 className="font-semibold mb-4">{t('footer.company')}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">Sobre Nós</Link></li>
-              <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">Resultados</Link></li>
-              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">Blog</Link></li>
-              <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">Trabalhe Conosco</Link></li>
+              <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">{t('nav.about')}</Link></li>
+              <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">{t('nav.results')}</Link></li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">{t('nav.blog')}</Link></li>
+              <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">{t('footer.careers')}</Link></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contato</h4>
+            <h4 className="font-semibold mb-4">{t('nav.contact')}</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">Campinas/SP | São Paulo/SP</span>
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
+                <span className="text-muted-foreground">{t('footer.locations')}</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <a href="https://wa.me/5519993216091" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-phone">
+                <Phone className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
+                <a 
+                  href="https://wa.me/5519993216091" 
+                  className="text-muted-foreground hover:text-foreground transition-colors" 
+                  data-testid="link-footer-phone"
+                  aria-label={t('footer.phoneLabel')}
+                >
                   +55 (19) 99321-6091
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <Mail className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <a href="mailto:contato@ospcontabilidade.com.br" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-email">
+                <Mail className="h-4 w-4 mt-1 flex-shrink-0 text-primary" aria-hidden="true" />
+                <a 
+                  href="mailto:contato@ospcontabilidade.com.br" 
+                  className="text-muted-foreground hover:text-foreground transition-colors" 
+                  data-testid="link-footer-email"
+                  aria-label={t('footer.emailLabel')}
+                >
                   contato@ospcontabilidade.com.br
                 </a>
               </li>
@@ -100,16 +144,18 @@ export default function Footer() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} OSP. Todos os direitos reservados.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
-            <div className="flex space-x-6 text-sm">
-              <Link href="/privacidade" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-privacidade">
-                Política de Privacidade
-              </Link>
-              <Link href="/termos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-termos">
-                Termos de Uso
-              </Link>
-            </div>
+            <nav aria-label={t('footer.legalNav')}>
+              <div className="flex space-x-6 text-sm">
+                <Link href="/privacidade" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-privacidade">
+                  {t('footer.privacy')}
+                </Link>
+                <Link href="/termos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-termos">
+                  {t('footer.terms')}
+                </Link>
+              </div>
+            </nav>
           </div>
         </div>
       </div>

@@ -59,8 +59,8 @@ interface ArticleSchema {
 }
 
 interface StructuredDataProps {
-  type: 'organization' | 'breadcrumb' | 'article';
-  data: OrganizationSchema | BreadcrumbSchema | ArticleSchema;
+  type: 'organization' | 'breadcrumb' | 'article' | 'service' | 'localBusiness' | 'faq';
+  data: OrganizationSchema | BreadcrumbSchema | ArticleSchema | any;
 }
 
 export function StructuredData({ type, data }: StructuredDataProps) {
@@ -146,5 +146,92 @@ export function createArticleSchema(article: {
         url: `${siteUrl}/logo.png`,
       },
     },
+  };
+}
+
+// Service Schema for solution pages
+export function createServiceSchema(service: {
+  name: string;
+  description: string;
+  areaServed?: string;
+  locale?: string;
+}) {
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ospcontabilidade.com.br';
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: service.name,
+    provider: {
+      '@type': 'Organization',
+      name: 'OSP Contabilidade Digital',
+      url: siteUrl
+    },
+    description: service.description,
+    areaServed: {
+      '@type': 'Country',
+      name: service.areaServed || 'Brazil'
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: `${siteUrl}/contato`
+    }
+  };
+}
+
+// LocalBusiness Schema
+export function createLocalBusinessSchema() {
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ospcontabilidade.com.br';
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'OSP Contabilidade Digital',
+    image: `${siteUrl}/logo.png`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rua Exemplo, 123',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      postalCode: '01234-567',
+      addressCountry: 'BR'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -23.5505,
+      longitude: -46.6333
+    },
+    url: siteUrl,
+    telephone: '+55-11-1234-5678',
+    priceRange: '$$',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00'
+      }
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '150'
+    }
+  };
+}
+
+// FAQ Schema
+export function createFAQSchema(questions: Array<{ question: string; answer: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.map(q => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: q.answer
+      }
+    }))
   };
 }

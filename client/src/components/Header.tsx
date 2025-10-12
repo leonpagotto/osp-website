@@ -10,28 +10,31 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from 'react-i18next';
 
 const solutions = [
-  { name: "OSP360", href: "/solucoes/osp360", description: "Diagnóstico estratégico completo" },
-  { name: "FUNDAR360", href: "/solucoes/fundar360", description: "Estruturação de negócios" },
-  { name: "TRIBUTA360", href: "/solucoes/tributa360", description: "Planejamento tributário" },
-  { name: "GESTÃO360", href: "/solucoes/gestao360", description: "Suporte à gestão executiva" },
-  { name: "BPO Financeiro", href: "/solucoes/bpo-financeiro", description: "Terceirização financeira" },
-  { name: "PRECIFICA360", href: "/solucoes/precifica360", description: "Análise de margem e precificação" },
-  { name: "HOLDING360", href: "/solucoes/holding360", description: "Estrutura patrimonial" },
-  { name: "Contabilidade", href: "/solucoes/contabilidade", description: "Serviços contábeis especializados" },
+  { name: "osp360", href: "/solucoes/osp360" },
+  { name: "fundar360", href: "/solucoes/fundar360" },
+  { name: "tributa360", href: "/solucoes/tributa360" },
+  { name: "gestao360", href: "/solucoes/gestao360" },
+  { name: "bpoFinanceiro", href: "/solucoes/bpo-financeiro" },
+  { name: "precifica360", href: "/solucoes/precifica360" },
+  { name: "holding360", href: "/solucoes/holding360" },
+  { name: "contabilidade", href: "/solucoes/contabilidade" },
 ];
 
 const segments = [
-  { name: "Estrutura Complexa", href: "/segmentos/estrutura-complexa" },
-  { name: "Operação Intensiva", href: "/segmentos/operacao-intensiva" },
-  { name: "Serviços Especializados", href: "/segmentos/servicos-especializados" },
-  { name: "Expansão Patrimonial", href: "/segmentos/expansao-patrimonial" },
-  { name: "Indústrias", href: "/segmentos/industrias" },
-  { name: "Multinacionais", href: "/segmentos/multinacionais" },
+  { name: "estruturaComplexa", href: "/segmentos/estrutura-complexa" },
+  { name: "operacaoIntensiva", href: "/segmentos/operacao-intensiva" },
+  { name: "servicosEspecializados", href: "/segmentos/servicos-especializados" },
+  { name: "expansaoPatrimonial", href: "/segmentos/expansao-patrimonial" },
+  { name: "industrias", href: "/segmentos/industrias" },
+  { name: "multinacionais", href: "/segmentos/multinacionais" },
 ];
 
 export default function Header() {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [mobileSegmentsOpen, setMobileSegmentsOpen] = useState(false);
@@ -76,12 +79,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <Link href="/" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/") ? "text-primary" : "text-foreground"}`} data-testid="link-home">
-              Home
+              {t('nav.home')}
             </Link>
             
             <div className="relative group">
               <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors" data-testid="button-solucoes-menu">
-                Soluções
+                {t('nav.solutions')}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="absolute left-0 mt-2 w-80 bg-card border border-card-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -89,8 +92,8 @@ export default function Header() {
                   {solutions.map((solution) => (
                     <Link key={solution.href} href={solution.href} data-testid={`link-${solution.name.toLowerCase().replace(/\s+/g, '-')}`}>
                       <div className="p-3 rounded-md hover-elevate active-elevate-2 cursor-pointer">
-                        <div className="font-medium text-sm">{solution.name}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{solution.description}</div>
+                        <div className="font-medium text-sm">{t(`solutions.${solution.name}.name`)}</div>
+                        <div className="text-xs text-muted-foreground mt-1">{t(`solutions.${solution.name}.description`)}</div>
                       </div>
                     </Link>
                   ))}
@@ -100,7 +103,7 @@ export default function Header() {
 
             <div className="relative group">
               <button className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors" data-testid="button-segmentos-menu">
-                Segmentos
+                {t('nav.segments')}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="absolute left-0 mt-2 w-72 bg-card border border-card-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -108,7 +111,7 @@ export default function Header() {
                   {segments.map((segment) => (
                     <Link key={segment.href} href={segment.href} data-testid={`link-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}>
                       <div className="p-2 rounded-md hover-elevate active-elevate-2 cursor-pointer text-sm">
-                        {segment.name}
+                        {t(`segments.${segment.name}`)}
                       </div>
                     </Link>
                   ))}
@@ -117,23 +120,24 @@ export default function Header() {
             </div>
 
             <Link href="/resultados" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/resultados") ? "text-primary" : "text-foreground"}`} data-testid="link-resultados">
-              Resultados
+              {t('nav.results')}
             </Link>
             <Link href="/sobre-nos" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/sobre-nos") ? "text-primary" : "text-foreground"}`} data-testid="link-sobre-nos">
-              Sobre Nós
+              {t('nav.about')}
             </Link>
             <Link href="/blog" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/blog") ? "text-primary" : "text-foreground"}`} data-testid="link-blog">
-              Blog
+              {t('nav.blog')}
             </Link>
             <Link href="/contato" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contato") ? "text-primary" : "text-foreground"}`} data-testid="link-contato">
-              Contato
+              {t('nav.contact')}
             </Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
+            <LanguageSwitcher />
             <Link href="/contato">
-              <Button data-testid="button-contact-cta">Fale com Especialista</Button>
+              <Button data-testid="button-contact-cta">{t('common.contact')}</Button>
             </Link>
           </div>
 
@@ -194,7 +198,7 @@ export default function Header() {
                 }`}
                 data-testid="link-mobile-home"
               >
-                Home
+                {t('nav.home')}
                 <ChevronRight className="h-5 w-5" />
               </Link>
               
@@ -205,7 +209,7 @@ export default function Header() {
                   onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                   data-testid="button-mobile-solucoes"
                 >
-                  Soluções
+                  {t('nav.solutions')}
                   <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <div 
@@ -223,8 +227,8 @@ export default function Header() {
                         }`}
                         data-testid={`link-mobile-${solution.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
-                        <div className="font-medium">{solution.name}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{solution.description}</div>
+                        <div className="font-medium">{t(`solutions.${solution.name}.name`)}</div>
+                        <div className="text-xs text-muted-foreground mt-0.5">{t(`solutions.${solution.name}.description`)}</div>
                       </Link>
                     ))}
                   </div>
@@ -238,7 +242,7 @@ export default function Header() {
                   onClick={() => setMobileSegmentsOpen(!mobileSegmentsOpen)}
                   data-testid="button-mobile-segmentos"
                 >
-                  Segmentos
+                  {t('nav.segments')}
                   <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${mobileSegmentsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <div 
@@ -256,7 +260,7 @@ export default function Header() {
                         }`}
                         data-testid={`link-mobile-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
-                        {segment.name}
+                        {t(`segments.${segment.name}`)}
                       </Link>
                     ))}
                   </div>
@@ -270,7 +274,7 @@ export default function Header() {
                 }`}
                 data-testid="link-mobile-resultados"
               >
-                Resultados
+                {t('nav.results')}
                 <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
@@ -280,7 +284,7 @@ export default function Header() {
                 }`}
                 data-testid="link-mobile-sobre-nos"
               >
-                Sobre Nós
+                {t('nav.about')}
                 <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
@@ -290,7 +294,7 @@ export default function Header() {
                 }`}
                 data-testid="link-mobile-blog"
               >
-                Blog
+                {t('nav.blog')}
                 <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
@@ -300,16 +304,17 @@ export default function Header() {
                 }`}
                 data-testid="link-mobile-contato"
               >
-                Contato
+                {t('nav.contact')}
                 <ChevronRight className="h-5 w-5" />
               </Link>
             </div>
 
             {/* Sidebar Footer CTA */}
-            <div className="p-4 border-t border-border">
+            <div className="p-4 border-t border-border space-y-3">
+              <LanguageSwitcher />
               <Link href="/contato">
                 <Button className="w-full min-h-[52px] text-base font-semibold" size="lg" data-testid="button-mobile-contact">
-                  Fale com Especialista
+                  {t('common.contact')}
                 </Button>
               </Link>
             </div>

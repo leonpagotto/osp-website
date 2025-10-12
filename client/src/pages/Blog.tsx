@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { SEOHead } from "@/components/SEO";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { Badge } from "@/components/ui/badge";
@@ -7,8 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Calendar, Clock, Search, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { blogPosts, categories } from "@/data/blogPosts";
+import i18n from '@/i18n';
 
 export default function Blog() {
+  const { t } = useTranslation();
+  const currentLang = i18n.language as 'pt-BR' | 'en';
+  const isEnglish = currentLang === 'en';
   const [selectedCategory, setSelectedCategory] = useState("todos");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -30,10 +35,21 @@ export default function Blog() {
   return (
     <>
       <SEOHead
-        title="Blog OSP - Insights sobre Contabilidade e Gestão Empresarial"
-        description="Artigos especializados sobre reforma tributária, lucro real, planejamento patrimonial e gestão financeira. Conteúdo técnico e prático para empresários e CFOs."
-        keywords="blog contabilidade, reforma tributária, lucro real, planejamento tributário, gestão financeira, holding familiar, CBS, IBS"
-        canonicalUrl="/blog"
+        title={isEnglish ? "OSP Blog - Insights on Accounting and Business Management" : "Blog OSP - Insights sobre Contabilidade e Gestão Empresarial"}
+        description={isEnglish
+          ? "Expert articles on tax reform, real profit accounting, asset planning, and financial management. Technical and practical content for entrepreneurs and CFOs."
+          : "Artigos especializados sobre reforma tributária, lucro real, planejamento patrimonial e gestão financeira. Conteúdo técnico e prático para empresários e CFOs."
+        }
+        keywords={isEnglish
+          ? "accounting blog, tax reform, real profit, tax planning, financial management, family holding, CBS, IBS"
+          : "blog contabilidade, reforma tributária, lucro real, planejamento tributário, gestão financeira, holding familiar, CBS, IBS"
+        }
+        canonicalUrl={isEnglish ? "/en/blog" : "/blog"}
+        locale={currentLang}
+        alternateUrls={{
+          'pt-BR': '/blog',
+          'en': '/en/blog'
+        }}
         ogImage="/images/og-blog.jpg"
       />
 
@@ -43,11 +59,10 @@ export default function Blog() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Blog Contábil OSP
+                {t('blogPage.hero.title')}
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Blog sobre Contabilidade com as melhores dicas para empreendedores, 
-                notícias do mercado e informações úteis para que você se mantenha sempre atualizado.
+                {t('blogPage.hero.description')}
               </p>
 
               {/* Search Bar */}
@@ -55,7 +70,7 @@ export default function Blog() {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder="Pesquisar artigos..."
+                  placeholder={t('blogPage.search.placeholder')}
                   className="pl-12 h-12 text-base"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -90,7 +105,7 @@ export default function Blog() {
         {selectedCategory === "todos" && searchQuery === "" && (
           <section className="py-12 border-b border-border">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-2xl font-bold mb-8">Artigos em Destaque</h2>
+              <h2 className="text-2xl font-bold mb-8">{t('blogPage.categories.featured')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {featuredPosts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`}>
@@ -141,13 +156,13 @@ export default function Blog() {
                 <div className="flex items-center justify-between mb-8">
                   <h2 className="text-2xl font-bold">
                     {selectedCategory === "todos"
-                      ? "Todos os Artigos"
+                      ? t('blogPage.categories.allArticles')
                       : categories.find((c) => c.slug === selectedCategory)
                           ?.name}
                   </h2>
                   <p className="text-sm text-muted-foreground">
                     {filteredPosts.length}{" "}
-                    {filteredPosts.length === 1 ? "artigo" : "artigos"}
+                    {filteredPosts.length === 1 ? t('blogPage.readingInfo.article') : t('blogPage.readingInfo.articles')}
                   </p>
                 </div>
 
@@ -193,7 +208,7 @@ export default function Blog() {
                             </div>
 
                             <div className="flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
-                              Ler
+                              {t('blogPage.actions.read')}
                               <ArrowRight className="w-4 h-4" />
                             </div>
                           </div>
@@ -206,7 +221,7 @@ export default function Blog() {
             ) : (
               <div className="text-center py-16">
                 <p className="text-lg text-muted-foreground mb-4">
-                  Nenhum artigo encontrado
+                  {t('blogPage.noResults.title')}
                 </p>
                 <Button
                   variant="outline"
@@ -215,7 +230,7 @@ export default function Blog() {
                     setSelectedCategory("todos");
                   }}
                 >
-                  Limpar filtros
+                  {t('blogPage.actions.clearFilters')}
                 </Button>
               </div>
             )}
@@ -227,21 +242,20 @@ export default function Blog() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">
-                Precisa de assessoria contábil especializada?
+                {t('blogPage.cta.title')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Fale com nossos especialistas e descubra como a OSP pode ajudar 
-                sua empresa a crescer com segurança tributária e eficiência fiscal.
+                {t('blogPage.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contato">
                   <Button size="lg" className="w-full sm:w-auto">
-                    Falar com Especialista
+                    {t('blogPage.cta.primaryButton')}
                   </Button>
                 </Link>
                 <Link href="/solucoes">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Conhecer Soluções
+                    {t('blogPage.cta.secondaryButton')}
                   </Button>
                 </Link>
               </div>

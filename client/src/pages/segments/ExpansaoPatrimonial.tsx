@@ -2,23 +2,27 @@ import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Building, Home, Users, Shield } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function ExpansaoPatrimonial() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Expansão Patrimonial e Familiar"
-        subtitle="Soluções para grupos familiares, holdings e empresas em processo de estruturação patrimonial e sucessória"
-        primaryCTA={{ text: "Agendar Consultoria", href: "/contato" }}
+        title={t('segmentPages.expansaoPatrimonial.hero.title')}
+        subtitle={t('segmentPages.expansaoPatrimonial.hero.subtitle')}
+        primaryCTA={{ text: t('segmentPages.expansaoPatrimonial.hero.primaryCTA'), href: "/contato" }}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Estruturação patrimonial completa</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">
+              {t('segmentPages.expansaoPatrimonial.what.title')}
+            </h2>
             <p className="text-body-lg text-muted-foreground">
-              Grupos familiares e empresários em processo de expansão patrimonial precisam de 
-              planejamento tributário, sucessório e governança para garantir a perpetuidade do patrimônio.
+              {t('segmentPages.expansaoPatrimonial.what.description')}
             </p>
           </div>
 
@@ -51,9 +55,9 @@ export default function ExpansaoPatrimonial() {
       </section>
 
       <CTASection
-        title="Proteja e organize seu patrimônio familiar"
-        description="Agende uma consultoria especializada em estruturação patrimonial"
-        primaryButton={{ text: "Agendar Consultoria", href: "/contato" }}
+        title={t('segmentPages.expansaoPatrimonial.cta.title')}
+        description={t('segmentPages.expansaoPatrimonial.cta.description')}
+        primaryButton={{ text: t('segmentPages.expansaoPatrimonial.cta.primaryButton'), href: "/contato" }}
         variant="accent"
       />
     </div>

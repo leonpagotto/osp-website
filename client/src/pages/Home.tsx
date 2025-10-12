@@ -4,7 +4,11 @@ import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import { SEOHead } from "@/components/SEO/SEOHead";
+import { StructuredData, createOrganizationSchema, createLocalBusinessSchema } from "@/components/SEO/StructuredData";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
+import i18n from '@/i18n';
 import {
   Target,
   Building2,
@@ -20,82 +24,86 @@ import {
   BarChart3,
 } from "lucide-react";
 
-//todo: remove mock data - testimonials
-const testimonials = [
-  {
-    quote: "A OSP nos ajudou a gerar caixa já nos primeiros 45 dias de trabalho. A estruturação tributária foi fundamental para nossa expansão.",
-    author: "Diretor Financeiro",
-    company: "Tubesteel",
-    role: "Indústria Metalúrgica",
-  },
-  {
-    quote: "Com a OSP conseguimos aumentar margem em +10% e expandir para todo Brasil com segurança tributária total.",
-    author: "CEO",
-    company: "Borabella",
-    role: "Rede de Franquias",
-  },
-  {
-    quote: "35 anos de parceria. A OSP é essencial para nossa estratégia de negócios e compliance tributário.",
-    author: "Sócio-Diretor",
-    company: "Galena",
-    role: "Grupo Empresarial",
-  },
-];
-
 export default function Home() {
+  const { t } = useTranslation();
+  const currentLang = i18n.language as 'pt-BR' | 'en';
+  const isEnglish = currentLang === 'en';
+  
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={isEnglish ? "Digital Accounting for Growing Companies | OSP" : "Contabilidade Digital para Empresas em Crescimento | OSP"}
+        description={isEnglish 
+          ? "OSP Digital Accounting: Integrated accounting, tax planning, BPO, and technology solutions for companies in Real Profit. +600 clients, 14 states, 47 years of expertise."
+          : "OSP Contabilidade Digital: Contabilidade integrada, planejamento tributário, BPO e soluções tecnológicas para empresas do Lucro Real. +600 clientes, 14 estados, 47 anos de expertise."
+        }
+        keywords={isEnglish
+          ? "digital accounting, real profit accounting, tax planning, financial BPO, business consulting, accounting technology, tax advisory, business intelligence, integrated ERP"
+          : "contabilidade digital, contabilidade lucro real, planejamento tributário, bpo financeiro, consultoria empresarial, tecnologia contábil, assessoria tributária, business intelligence, erp integrado"
+        }
+        canonicalUrl={isEnglish ? "/en" : "/"}
+        locale={currentLang}
+        alternateUrls={{
+          'pt-BR': '/',
+          'en': '/en'
+        }}
+        ogImage="/images/og/home-og.jpg"
+      />
+      
+      <StructuredData type="organization" data={createOrganizationSchema()} />
+      <StructuredData type="localBusiness" data={createLocalBusinessSchema()} />
+      
       {/* Hero */}
       <HeroSection
-        title="Inteligência contábil para decisões que transformam negócios"
-        subtitle="O braço técnico e consultivo de empresas no Lucro Real"
+        title={t('home.hero.title')}
+        subtitle={t('home.hero.subtitle')}
         backgroundImage="/images/backgrounds/osp-building.jpg"
         overlayOpacity={0.82}
-        primaryCTA={{ text: "Fale com Especialista", href: "/contato" }}
-        secondaryCTA={{ text: "Diagnóstico Gratuito", href: "/solucoes/osp360" }}
+        primaryCTA={{ text: t('home.hero.primaryCTA'), href: "/contato" }}
+        secondaryCTA={{ text: t('home.hero.secondaryCTA'), href: "/solucoes/osp360" }}
         stats={[
-          { value: "+600", label: "Empresas Atendidas" },
-          { value: "14", label: "Estados" },
-          { value: "12", label: "Países" },
+          { value: "+600", label: t('home.hero.stats.companies') },
+          { value: "14", label: t('home.hero.stats.states') },
+          { value: "12", label: t('home.hero.stats.countries') },
         ]}
       />
 
       {/* O Que Fazemos */}
       <motion.section 
         className="py-20"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">O que fazemos</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('home.whatWeDo.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Somos o braço técnico e consultivo de empresas no Lucro Real, oferecendo muito mais que contabilidade tradicional
+              {t('home.whatWeDo.subtitle')}
             </p>
           </div>
           <FeatureGrid
             features={[
               {
                 icon: Users,
-                title: "Atendimento Consultivo",
-                description: "Relacionamento direto com sócios e gestores especializados em seu segmento",
+                title: t('home.whatWeDo.features.consulting.title'),
+                description: t('home.whatWeDo.features.consulting.description'),
               },
               {
                 icon: Zap,
-                title: "Integração Total",
-                description: "Conexão completa entre ERP, sistemas contábeis e financeiros",
+                title: t('home.whatWeDo.features.integration.title'),
+                description: t('home.whatWeDo.features.integration.description'),
               },
               {
                 icon: BarChart3,
-                title: "BI Personalizado",
-                description: "Indicadores e dashboards customizados para sua tomada de decisão",
+                title: t('home.whatWeDo.features.bi.title'),
+                description: t('home.whatWeDo.features.bi.description'),
               },
               {
                 icon: Shield,
-                title: "Segurança Tributária",
-                description: "Especialização em Lucro Real com SLA e entrega de marcos claros",
+                title: t('home.whatWeDo.features.security.title'),
+                description: t('home.whatWeDo.features.security.description'),
               },
             ]}
             columns={4}
@@ -106,65 +114,65 @@ export default function Home() {
       {/* Soluções Estratégicas */}
       <motion.section 
         className="py-20 bg-card"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Soluções Estratégicas</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('home.strategicSolutions.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Metodologias especializadas para cada desafio da sua empresa
+              {t('home.strategicSolutions.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <SolutionCard
               icon={Target}
-              title="OSP360"
-              description="Diagnóstico completo em 45 dias"
+              title={t('solutions.osp360.name')}
+              description={t('solutions.osp360.description')}
               href="/solucoes/osp360"
             />
             <SolutionCard
               icon={Building2}
-              title="FUNDAR360"
-              description="Estruturação de novos negócios"
+              title={t('solutions.fundar360.name')}
+              description={t('solutions.fundar360.description')}
               href="/solucoes/fundar360"
             />
             <SolutionCard
               icon={Calculator}
-              title="TRIBUTA360"
-              description="Planejamento tributário e Lucro Real"
+              title={t('solutions.tributa360.name')}
+              description={t('solutions.tributa360.description')}
               href="/solucoes/tributa360"
             />
             <SolutionCard
               icon={TrendingUp}
-              title="GESTÃO360"
-              description="BI, KPIs e suporte executivo"
+              title={t('solutions.gestao360.name')}
+              description={t('solutions.gestao360.description')}
               href="/solucoes/gestao360"
             />
             <SolutionCard
               icon={DollarSign}
-              title="BPO Financeiro"
-              description="Terceirização financeira completa"
+              title={t('solutions.bpoFinanceiro.name')}
+              description={t('solutions.bpoFinanceiro.description')}
               href="/solucoes/bpo-financeiro"
             />
             <SolutionCard
               icon={PieChart}
-              title="PRECIFICA360"
-              description="Análise de margem e precificação"
+              title={t('solutions.precifica360.name')}
+              description={t('solutions.precifica360.description')}
               href="/solucoes/precifica360"
             />
             <SolutionCard
               icon={HomeIcon}
-              title="HOLDING360"
-              description="Estrutura patrimonial e sucessória"
+              title={t('solutions.holding360.name')}
+              description={t('solutions.holding360.description')}
               href="/solucoes/holding360"
             />
             <SolutionCard
               icon={FileText}
-              title="Contabilidade"
-              description="Standard, Consultiva e Lucro Real"
+              title={t('solutions.contabilidade.name')}
+              description={t('solutions.contabilidade.description')}
               href="/solucoes/contabilidade"
             />
           </div>
@@ -174,30 +182,30 @@ export default function Home() {
       {/* Stats Section */}
       <StatsSection
         stats={[
-          { value: "R$ 100M+", label: "Em economia tributária gerada", highlight: true },
-          { value: "100+", label: "Migrações seguras para Lucro Real" },
-          { value: "98%", label: "Taxa de retenção de clientes", highlight: true },
-          { value: "47 anos", label: "De experiência e tradição" },
+          { value: "R$ 100M+", label: t('home.stats.savings'), highlight: true },
+          { value: "100+", label: t('home.stats.migrations') },
+          { value: "98%", label: t('home.stats.retention'), highlight: true },
+          { value: "47 anos", label: t('home.stats.experience') },
         ]}
       />
 
       {/* Testimonials */}
       <motion.section 
         className="py-20"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">O que dizem nossos clientes</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('home.testimonials.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Casos reais de empresas que transformaram sua gestão com a OSP
+              {t('home.testimonials.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+            {[0, 1, 2].map((index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -205,7 +213,12 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <TestimonialCard {...testimonial} />
+                <TestimonialCard
+                  quote={t(`home.testimonials.items.${index}.quote`)}
+                  author={t(`home.testimonials.items.${index}.author`)}
+                  company={t(`home.testimonials.items.${index}.company`)}
+                  role={t(`home.testimonials.items.${index}.role`)}
+                />
               </motion.div>
             ))}
           </div>
@@ -215,16 +228,16 @@ export default function Home() {
       {/* Technology Partners */}
       <motion.section 
         className="py-20 bg-card"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-section-mobile md:text-section mb-4">Tecnologia e Integração</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('home.technology.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              Integração nativa com os principais ERPs e ferramentas de BI do mercado
+              {t('home.technology.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -247,10 +260,10 @@ export default function Home() {
 
       {/* CTA */}
       <CTASection
-        title="Pronto para transformar sua gestão contábil?"
-        description="Agende uma conversa com nossos especialistas e descubra como podemos ajudar sua empresa a crescer de forma sustentável"
-        primaryButton={{ text: "Falar com Especialista", href: "/contato" }}
-        secondaryButton={{ text: "Solicitar Diagnóstico OSP360", href: "/solucoes/osp360" }}
+        title={t('home.cta.title')}
+        description={t('home.cta.description')}
+        primaryButton={{ text: t('home.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('home.cta.secondaryButton'), href: "/solucoes/osp360" }}
         variant="accent"
       />
     </div>

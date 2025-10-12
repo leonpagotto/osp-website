@@ -21,8 +21,8 @@ export default function LanguageSwitcher() {
   };
 
   const languages = [
-    { code: 'pt-BR', name: 'Português', flag: '🇧🇷' },
-    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'pt-BR', abbr: 'PT', fullName: 'Português' },
+    { code: 'en', abbr: 'EN', fullName: 'English' },
   ];
 
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
@@ -30,10 +30,9 @@ export default function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2">
+        <Button variant="ghost" size="sm" className="gap-1.5">
           <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{currentLanguage.flag} {currentLanguage.name}</span>
-          <span className="sm:hidden">{currentLanguage.flag}</span>
+          <span className="text-xs font-medium">{currentLanguage.abbr}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -43,8 +42,7 @@ export default function LanguageSwitcher() {
             onClick={() => changeLanguage(lang.code)}
             className={i18n.language === lang.code ? 'bg-accent' : ''}
           >
-            <span className="mr-2">{lang.flag}</span>
-            {lang.name}
+            {lang.fullName}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

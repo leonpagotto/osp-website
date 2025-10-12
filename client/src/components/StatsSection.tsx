@@ -8,7 +8,7 @@ interface StatsSectionProps {
 
 export default function StatsSection({ stats }: StatsSectionProps) {
   return (
-    <section className="py-16 bg-card border-y border-card-border">
+    <section className="py-16 bg-card/50 backdrop-blur-sm border-y border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

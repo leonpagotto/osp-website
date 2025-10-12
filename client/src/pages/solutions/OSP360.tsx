@@ -1,64 +1,80 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import { SEOHead } from "@/components/SEO/SEOHead";
+import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Target, FileSearch, BarChart3, Users, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-
-const benefits = [
-  "Visão 360° completa da saúde tributária e financeira",
-  "Identificação de riscos fiscais e oportunidades de economia",
-  "Plano de ação estruturado para os próximos 12 meses",
-  "Análise de viabilidade de migração para Lucro Real",
-  "Diagnóstico de margem e precificação",
-  "Mapeamento de processos e controles internos",
-];
+import { useTranslation } from "react-i18next";
+import i18n from '@/i18n';
 
 export default function OSP360() {
+  const { t } = useTranslation();
+  const currentLang = i18n.language as 'pt-BR' | 'en';
+  const isEnglish = currentLang === 'en';
+  
+  const features = t('solutionPages.osp360.features', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const benefits = t('solutionPages.osp360.benefits.items', { returnObjects: true }) as string[];
+  const steps = t('solutionPages.osp360.howItWorks.steps', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  
+  const featureIcons = [FileSearch, Target, BarChart3, Users];
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={isEnglish ? "OSP360 - Complete Integrated Management | OSP" : "OSP360 - Gestão Integrada Completa | OSP"}
+        description={isEnglish 
+          ? "OSP360: Complete management platform integrating accounting, finance, tax, and BI. 360° vision of your business with data-driven decisions. Accounting, BPO, planning, and insights in one place."
+          : "OSP360: Plataforma completa de gestão integrando contabilidade, financeiro, fiscal e BI. Visão 360° do seu negócio com decisões baseadas em dados. Contabilidade, BPO, planejamento e insights em um só lugar."
+        }
+        keywords={isEnglish
+          ? "integrated management, OSP360, digital accounting, financial BPO, tax planning, business intelligence, 360 management, data-driven decisions"
+          : "gestão integrada, OSP360, contabilidade digital, bpo financeiro, planejamento tributário, business intelligence, gestão 360, decisões baseadas em dados"
+        }
+        canonicalUrl={isEnglish ? "/en/solutions/osp360" : "/solucoes/osp360"}
+        locale={currentLang}
+        alternateUrls={{
+          'pt-BR': '/solucoes/osp360',
+          'en': '/en/solutions/osp360'
+        }}
+        ogImage="/images/solutions/osp360-og.jpg"
+      />
+      
+      <StructuredData
+        type="service"
+        data={createServiceSchema({
+          name: "OSP360",
+          description: isEnglish
+            ? "Complete integrated management platform combining accounting, financial BPO, tax planning, and business intelligence for 360° business visibility."
+            : "Plataforma completa de gestão integrada combinando contabilidade, BPO financeiro, planejamento tributário e business intelligence para visão 360° do negócio.",
+          areaServed: "Brazil"
+        })}
+      />
+      
       <HeroSection
-        title="OSP360"
-        subtitle="Diagnóstico estratégico completo em 45 dias para transformar a gestão da sua empresa"
-        primaryCTA={{ text: "Solicitar Diagnóstico", href: "/contato" }}
-        secondaryCTA={{ text: "Agendar Apresentação", href: "/contato" }}
+        title={t('solutionPages.osp360.hero.title')}
+        subtitle={t('solutionPages.osp360.hero.subtitle')}
+        primaryCTA={{ text: t('solutionPages.osp360.hero.primaryCTA'), href: "/contato" }}
+        secondaryCTA={{ text: t('solutionPages.osp360.hero.secondaryCTA'), href: "/contato" }}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">O que é o OSP360?</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">{t('solutionPages.osp360.what.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
-              É a nossa metodologia proprietária de diagnóstico empresarial que analisa todos os aspectos 
-              tributários, financeiros e operacionais da sua empresa em 45 dias, gerando um plano de ação 
-              estratégico para maximizar resultados.
+              {t('solutionPages.osp360.what.description')}
             </p>
           </div>
 
           <FeatureGrid
-            features={[
-              {
-                icon: FileSearch,
-                title: "Análise Profunda",
-                description: "Revisão completa de documentos fiscais, contratos e processos",
-              },
-              {
-                icon: Target,
-                title: "Identificação de Gaps",
-                description: "Mapeamento de riscos, ineficiências e oportunidades",
-              },
-              {
-                icon: BarChart3,
-                title: "Plano Estratégico",
-                description: "Roadmap detalhado com priorização e cronograma",
-              },
-              {
-                icon: Users,
-                title: "Acompanhamento",
-                description: "Suporte na implementação das recomendações",
-              },
-            ]}
+            features={features.map((feature, index) => ({
+              icon: featureIcons[index],
+              title: feature.title,
+              description: feature.description,
+            }))}
             columns={4}
           />
         </div>
@@ -67,7 +83,9 @@ export default function OSP360() {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-section-mobile md:text-section mb-8 text-center">Benefícios do OSP360</h2>
+            <h2 className="text-section-mobile md:text-section mb-8 text-center">
+              {t('solutionPages.osp360.benefits.title')}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3" data-testid={`benefit-${index}`}>
@@ -80,21 +98,20 @@ export default function OSP360() {
             {/* Mid-page CTA */}
             <Card className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-primary/20">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-3">Sua empresa está pronta para crescer?</h3>
+                <h3 className="text-2xl font-bold mb-3">{t('solutionPages.osp360.midCTA.title')}</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Em apenas 45 dias, você terá um roadmap completo para maximizar seus resultados. 
-                  O diagnóstico OSP360 é gratuito e sem compromisso.
+                  {t('solutionPages.osp360.midCTA.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link href="/contato">
                     <Button size="lg" className="gap-2">
-                      Solicitar Diagnóstico Gratuito
+                      {t('solutionPages.osp360.midCTA.primaryButton')}
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                   <Link href="/contato">
                     <Button size="lg" variant="outline">
-                      Falar com Especialista
+                      {t('solutionPages.osp360.midCTA.secondaryButton')}
                     </Button>
                   </Link>
                 </div>
@@ -107,65 +124,37 @@ export default function OSP360() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-section-mobile md:text-section mb-12 text-center">Como Funciona</h2>
+            <h2 className="text-section-mobile md:text-section mb-12 text-center">
+              {t('solutionPages.osp360.howItWorks.title')}
+            </h2>
             <div className="space-y-6">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-lg font-bold text-primary">1</span>
+              {steps.map((step, index) => (
+                <Card key={index}>
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-lg font-bold text-primary">{index + 1}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                        <p className="text-muted-foreground">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">Kick-off e Coleta (Dias 1-10)</h3>
-                      <p className="text-muted-foreground">
-                        Reunião inicial, definição de escopo e coleta de documentação fiscal, contábil e operacional
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-lg font-bold text-primary">2</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">Análise e Diagnóstico (Dias 11-30)</h3>
-                      <p className="text-muted-foreground">
-                        Análise tributária, financeira e operacional com identificação de riscos e oportunidades
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-lg font-bold text-primary">3</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">Plano de Ação (Dias 31-45)</h3>
-                      <p className="text-muted-foreground">
-                        Apresentação executiva com roadmap priorizado e cronograma de implementação
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       <CTASection
-        title="Pronto para transformar sua gestão?"
-        description="Solicite um diagnóstico OSP360 e descubra como podemos ajudar sua empresa"
-        primaryButton={{ text: "Solicitar Diagnóstico Gratuito", href: "/contato" }}
-        secondaryButton={{ text: "Falar com Especialista", href: "/contato" }}
+        title={t('solutionPages.osp360.cta.title')}
+        description={t('solutionPages.osp360.cta.description')}
+        primaryButton={{ text: t('solutionPages.osp360.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('solutionPages.osp360.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
       />
     </div>

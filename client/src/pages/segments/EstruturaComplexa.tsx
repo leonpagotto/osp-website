@@ -2,23 +2,27 @@ import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Network, FileCheck, BarChart3, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function EstruturaComplexa() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Estrutura Complexa"
-        subtitle="Soluções para empresas com múltiplas entidades, CNPJs, sócios ou operações que exigem governança e visão consolidada"
-        primaryCTA={{ text: "Falar com Especialista", href: "/contato" }}
+        title={t('segmentPages.estruturaComplexa.hero.title')}
+        subtitle={t('segmentPages.estruturaComplexa.hero.subtitle')}
+        primaryCTA={{ text: t('segmentPages.estruturaComplexa.hero.primaryCTA'), href: "/contato" }}
       />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">Gestão integrada de estruturas complexas</h2>
+            <h2 className="text-section-mobile md:text-section mb-4">
+              {t('segmentPages.estruturaComplexa.what.title')}
+            </h2>
             <p className="text-body-lg text-muted-foreground">
-              Empresas com múltiplos CNPJs, filiais em diferentes estados, sócios com participação 
-              cruzada ou holdings exigem uma gestão contábil e tributária integrada e estratégica.
+              {t('segmentPages.estruturaComplexa.what.description')}
             </p>
           </div>
 
@@ -51,9 +55,9 @@ export default function EstruturaComplexa() {
       </section>
 
       <CTASection
-        title="Simplifique a gestão da sua estrutura"
-        description="Converse com nossos especialistas em grupos empresariais"
-        primaryButton={{ text: "Agendar Consultoria", href: "/contato" }}
+        title={t('segmentPages.estruturaComplexa.cta.title')}
+        description={t('segmentPages.estruturaComplexa.cta.description')}
+        primaryButton={{ text: t('segmentPages.estruturaComplexa.cta.primaryButton'), href: "/contato" }}
         variant="accent"
       />
     </div>

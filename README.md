@@ -102,12 +102,18 @@ OSPWebsite2026/
 │   └── schema.ts                  # Shared types and schemas
 ├── .github/
 │   └── copilot-instructions.md    # AI coding assistant guidelines
-├── documentation/                  # Project documentation
+├── docs/                           # Project documentation (30+ files)
+│   ├── README.md                  # Documentation index
+│   ├── WORDPRESS_MIGRATION_PLAN.md      # WordPress → React migration guide
+│   ├── POST_LAUNCH_ENHANCEMENTS_COMPLETE.md  # Post-launch summary
+│   ├── SEO_ENHANCEMENT_COMPLETE.md      # SEO implementation
+│   ├── PERFORMANCE_OPTIMIZATION_COMPLETE.md  # Performance guide
 │   ├── BLOG_IMPLEMENTATION_COMPLETE.md  # Blog system overview
-│   ├── BLOG_SYSTEM_STATUS.md            # Technical details
+│   ├── I18N_IMPLEMENTATION_GUIDE.md     # Internationalization guide
 │   ├── IMAGE_SETUP_INSTRUCTIONS.md      # Image requirements
 │   ├── SEO_CHECKLIST.md                 # SEO optimization guide
-│   └── UX_GUIDELINES.md                 # Design principles
+│   ├── UX_GUIDELINES.md                 # Design principles
+│   └── ... (20+ more documentation files)
 └── README.md                      # This file
 ```
 
@@ -200,7 +206,7 @@ export default function YourPost() {
 
 ### Required Images
 
-**See `IMAGE_SETUP_INSTRUCTIONS.md` for complete details.**
+**See `/docs/IMAGE_SETUP_INSTRUCTIONS.md` for complete details.**
 
 #### Background Image
 - `client/public/images/backgrounds/osp-building.jpg`
@@ -444,12 +450,25 @@ npx tsc --noEmit client/src/pages/YourPage.tsx
 
 ## 📚 Documentation
 
-- **[Blog System](./BLOG_IMPLEMENTATION_COMPLETE.md)**: Complete blog features overview
-- **[Blog Status](./BLOG_SYSTEM_STATUS.md)**: Technical documentation
-- **[Image Setup](./IMAGE_SETUP_INSTRUCTIONS.md)**: Image requirements and instructions
-- **[SEO Checklist](./SEO_CHECKLIST.md)**: SEO optimization guide
-- **[UX Guidelines](./UX_GUIDELINES.md)**: Design principles
-- **[Copilot Instructions](./.github/copilot-instructions.md)**: AI coding guidelines
+All documentation is organized in the `/docs` folder. See [docs/README.md](./docs/README.md) for the complete index.
+
+### Key Documents
+- **[WordPress Migration Plan](./docs/WORDPRESS_MIGRATION_PLAN.md)**: Complete migration strategy from WordPress to React
+- **[Post-Launch Enhancements](./docs/POST_LAUNCH_ENHANCEMENTS_COMPLETE.md)**: Week 3-4 improvements summary
+- **[SEO Enhancement](./docs/SEO_ENHANCEMENT_COMPLETE.md)**: Complete SEO implementation guide
+- **[Performance Optimization](./docs/PERFORMANCE_OPTIMIZATION_COMPLETE.md)**: Code splitting and optimization
+- **[Blog System](./docs/BLOG_IMPLEMENTATION_COMPLETE.md)**: Complete blog features overview
+- **[i18n Guide](./docs/I18N_IMPLEMENTATION_GUIDE.md)**: Bilingual implementation guide
+- **[Image Setup](./docs/IMAGE_SETUP_INSTRUCTIONS.md)**: Image requirements and instructions
+- **[SEO Checklist](./docs/SEO_CHECKLIST.md)**: SEO optimization guide
+- **[UX Guidelines](./docs/UX_GUIDELINES.md)**: Design principles
+
+### Quick Links
+- 📖 [Documentation Index](./docs/README.md) - Browse all 30+ documentation files
+- 🚀 [Quick Start Guide](./docs/QUICKSTART.md) - Get started quickly
+- 🔍 [SEO Checklist](./docs/SEO_CHECKLIST.md) - Optimize every page
+- 🎨 [Design Guidelines](./docs/design_guidelines.md) - Follow the design system
+- 🌍 [Translation Guide](./docs/I18N_IMPLEMENTATION_GUIDE.md) - Add translations
 
 ## 🤝 Contributing
 
