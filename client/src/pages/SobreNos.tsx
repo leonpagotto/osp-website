@@ -94,7 +94,13 @@ export default function SobreNos() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => {
-              const imagePath = `/images/team/${member.name.toLowerCase().replace(' ', '-')}.jpg`;
+              // Normalize name for file path: lowercase, replace all spaces with hyphens, remove accents
+              const imagePath = `/images/team/${member.name
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '') // Remove accents
+                .replace(/\s+/g, '-') // Replace all spaces with hyphens
+              }.jpg`;
               return (
                 <Card key={index} data-testid={`team-member-${index}`}>
                   <CardContent className="pt-6 text-center">
