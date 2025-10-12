@@ -206,7 +206,6 @@ export function BlogPostTemplate({
                     className="w-8 h-8 rounded-full object-cover border-2 border-border"
                   />
                 )}
-                <User className="w-4 h-4" />
                 <span>{t('blogPost.by')} {author.name}</span>
               </div>
               <div className="flex items-center gap-2">
