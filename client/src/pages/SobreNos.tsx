@@ -104,7 +104,7 @@ export default function SobreNos() {
               return (
                 <Card key={index} data-testid={`team-member-${index}`}>
                   <CardContent className="pt-6 text-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 bg-primary/10">
+                    <div className="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4 bg-primary/10">
                       <img 
                         src={imagePath}
                         alt={member.name}
