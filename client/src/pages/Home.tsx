@@ -73,13 +73,7 @@ export default function Home() {
       />
 
       {/* O Que Fazemos */}
-      <motion.section 
-        className="py-20"
-        initial={{ opacity: 1 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">{t('home.whatWeDo.title')}</h2>
@@ -113,16 +107,10 @@ export default function Home() {
             columns={4}
           />
         </div>
-      </motion.section>
+      </section>
 
       {/* Soluções Estratégicas */}
-      <motion.section 
-        className="py-20 bg-card"
-        initial={{ opacity: 1 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
+      <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">{t('home.strategicSolutions.title')}</h2>
@@ -181,7 +169,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Stats Section */}
       <StatsSection
@@ -194,13 +182,7 @@ export default function Home() {
       />
 
       {/* Testimonials */}
-      <motion.section 
-        className="py-20"
-        initial={{ opacity: 1 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">{t('home.testimonials.title')}</h2>
@@ -227,16 +209,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Technology Partners */}
-      <motion.section 
-        className="py-20 bg-card"
-        initial={{ opacity: 1 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
+      <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-section-mobile md:text-section mb-4">{t('home.technology.title')}</h2>
@@ -260,7 +236,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* CTA */}
       <CTASection
