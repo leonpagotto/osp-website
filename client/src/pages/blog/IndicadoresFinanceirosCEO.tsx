@@ -1,44 +1,18 @@
 import { BlogPostTemplate } from "@/components/BlogPostTemplate";
+import { BlogContentRenderer } from "@/components/BlogContentRenderer";
+import { useBlogPost } from "@/lib/blogHelpers";
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp } from "lucide-react";
-import { authorInfo } from "@/data/blogPosts";
 
 export default function IndicadoresFinanceirosCEO() {
-  const relatedPosts = [
-    {
-      slug: "sua-contabilidade-esta-impulsionando-ou-travando-o-crescimento-do-seu-negocio",
-      title: "Sua contabilidade está impulsionando ou travando o crescimento do seu negócio?",
-      category: "Gestão Financeira"
-    },
-    {
-      slug: "lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber",
-      title: "Lucro Real com Estratégia: O que toda empresa precisa saber",
-      category: "Lucro Real"
-    },
-    {
-      slug: "estudo-tributario-tomar-decisoes",
-      title: "Estudo tributário: Como usar dados para tomar decisões estratégicas",
-      category: "Planejamento Patrimonial"
-    }
-  ];
+  const blogPost = useBlogPost("indicadores-financeiros-ceo");
+  
+  if (!blogPost) return null;
+  
+  const { postData, title, description, category, readingTime, author, getRelatedPost } = blogPost;
 
-  return (
-    <BlogPostTemplate
-      title="Indicadores Financeiros que todo CEO deveria acompanhar"
-      description="Conheça os principais indicadores financeiros que CEOs e executivos devem monitorar para tomar decisões estratégicas baseadas em dados."
-      keywords="indicadores financeiros, KPIs, gestão financeira, CEO, tomada de decisão, EBITDA, FCF, ROI, ROIC, fluxo de caixa"
-      canonicalUrl="/blog/indicadores-financeiros-ceo"
-      ogImage="/images/blog/indicadores-ceo.png"
-      category="Gestão Financeira"
-      categorySlug="gestao-financeira"
-      publishedDate="2025-02-15"
-      readingTime="10 min de leitura"
-      author={authorInfo}
-      heroImage="/images/blog/indicadores-ceo.png"
-      relatedPosts={relatedPosts}
-      ctaTitle="Precisa de ajuda com indicadores financeiros?"
-      ctaDescription="Nossa equipe pode implementar um dashboard executivo personalizado para sua empresa"
-    >
+  const fallbackContent = (
+    <>
       <p className="text-xl text-muted-foreground mb-8">
         A tomada de decisão estratégica exige mais do que intuição. CEOs bem-sucedidos baseiam suas escolhas em dados 
         concretos e indicadores que revelam a verdadeira saúde financeira do negócio.
@@ -70,66 +44,49 @@ export default function IndicadoresFinanceirosCEO() {
         O FCF mostra quanto dinheiro a empresa gera após investimentos necessários para manter e crescer o negócio. 
         É o recurso disponível para distribuição aos sócios, redução de dívida ou novos investimentos estratégicos.
       </p>
-      <p>
-        <strong>Fórmula:</strong> FCF = EBITDA - Investimentos em Capital de Giro - CAPEX
-      </p>
 
       <h2>3. Capital de Giro e Ciclo de Caixa</h2>
       <p>
         O capital de giro representa os recursos necessários para financiar a operação do dia a dia. 
         O ciclo de caixa mede quantos dias a empresa leva para converter seus investimentos em produtos/serviços em dinheiro.
       </p>
-      <p>
-        <strong>Benchmark:</strong> Ciclos menores que 30 dias são considerados excelentes. Acima de 60 dias pode indicar problemas de eficiência.
-      </p>
-
-      <h2>4. ROI e ROIC</h2>
-      <p>
-        O Retorno sobre Investimento (ROI) e o Retorno sobre Capital Investido (ROIC) medem a eficiência 
-        na alocação de recursos. Um ROIC consistentemente acima do custo de capital indica criação de valor.
-      </p>
-      <Card className="my-6">
-        <CardContent className="pt-6">
-          <p className="text-sm">
-            <strong>Meta:</strong> ROIC superior a 15% é considerado excelente para a maioria dos setores. 
-            Compare sempre com o custo de capital da empresa (WACC).
-          </p>
-        </CardContent>
-      </Card>
-
-      <h2>5. Ponto de Equilíbrio e Margem de Segurança</h2>
-      <p>
-        Conhecer o ponto de equilíbrio (break-even) e a margem de segurança é crucial para gestão de riscos. 
-        Indica o quanto o faturamento pode cair antes da empresa entrar no prejuízo.
-      </p>
-      <p>
-        <strong>Margem de Segurança = (Faturamento Atual - Ponto de Equilíbrio) / Faturamento Atual</strong>
-      </p>
-      <p>
-        Uma margem de segurança acima de 30% indica boa proteção contra variações de mercado.
-      </p>
-
-      <h2>Como Implementar</h2>
-      <p>
-        A implementação efetiva desses indicadores exige:
-      </p>
-      <ul>
-        <li><strong>Sistemas integrados:</strong> ERP conectado à contabilidade gerencial</li>
-        <li><strong>Atualização frequente:</strong> Dashboards atualizados no mínimo semanalmente</li>
-        <li><strong>Análise comparativa:</strong> Acompanhamento de tendências e benchmarks setoriais</li>
-        <li><strong>Suporte especializado:</strong> Parceria com contabilidade consultiva para interpretação correta</li>
-      </ul>
 
       <h2>Conclusão</h2>
       <p>
-        Estes cinco indicadores formam a base de um sistema robusto de gestão financeira. 
+        Estes indicadores formam a base de um sistema robusto de gestão financeira. 
         Quando acompanhados consistentemente e interpretados corretamente, permitem decisões mais assertivas 
         e reduzem significativamente os riscos do negócio.
       </p>
-      <p>
-        Na OSP, auxiliamos nossos clientes a implementar dashboards executivos com esses e outros indicadores 
-        relevantes para seu setor, garantindo visão clara e atualizada da saúde financeira do negócio.
-      </p>
+    </>
+  );
+
+  const relatedPosts = [
+    getRelatedPost("sua-contabilidade-esta-impulsionando-ou-travando-o-crescimento-do-seu-negocio"),
+    getRelatedPost("lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber")
+  ].filter((post): post is NonNullable<typeof post> => post !== null);
+
+  return (
+    <BlogPostTemplate
+      title={title}
+      description={description}
+      keywords={postData.keywords}
+      canonicalUrl={`/blog/${postData.slug}`}
+      ogImage={postData.featuredImage}
+      category={category}
+      categorySlug={postData.categorySlug}
+      author={author}
+      publishedDate={postData.publishedDate}
+      readingTime={readingTime}
+      heroImage={postData.featuredImage}
+      heroImageAlt={title}
+      relatedPosts={relatedPosts}
+      ctaTitle="Precisa de ajuda com indicadores financeiros?"
+      ctaDescription="Nossa equipe pode implementar um dashboard executivo personalizado para sua empresa"
+    >
+      <BlogContentRenderer 
+        slug={postData.slug}
+        fallbackContent={fallbackContent}
+      />
     </BlogPostTemplate>
   );
 }

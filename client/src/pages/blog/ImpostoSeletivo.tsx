@@ -1,53 +1,45 @@
 import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 import { BlogContentRenderer } from "@/components/BlogContentRenderer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Flame, Ban, Building2, Percent } from "lucide-react";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { authorInfo } from "@/data/blogPosts";
+import { useBlogPost } from "@/lib/blogHelpers";
 
 export default function ImpostoSeletivo() {
+  const blogPost = useBlogPost("imposto-seletivo-e-regimes-diferenciados-na-reforma-tributaria");
+  
+  if (!blogPost) return null;
+  
+  const { postData, title, description, category, readingTime, author, getRelatedPost } = blogPost;
+
   const fallbackContent = (
     <>
       <p className="text-xl text-muted-foreground lead">
-        Além de CBS e IBS, a Reforma Tributária cria o Imposto Seletivo e diversos regimes diferenciados. 
-        Entenda como esses mecanismos funcionam e se sua empresa está no alvo.
+        {description}
       </p>
-      {/* Original content as fallback */}
     </>
   );
 
   const relatedPosts = [
-    {
-      title: "CBS e IBS na Reforma Tributária",
-      slug: "cbs-e-ibs-na-reforma-tributaria-impactos-praticos-para-empresas-em-2025",
-      category: "Reforma Tributária"
-    },
-    {
-      title: "Reforma Tributária 2025: Guia Prático",
-      slug: "reforma-tributaria-2025-guia-pratico-para-empresarios",
-      category: "Reforma Tributária"
-    }
-  ];
+    getRelatedPost("cbs-e-ibs-na-reforma-tributaria-impactos-praticos-para-empresas-em-2025"),
+    getRelatedPost("reforma-tributaria-2025-guia-pratico-para-empresarios")
+  ].filter((post): post is NonNullable<typeof post> => post !== null);
 
   return (
     <BlogPostTemplate
-      title="Imposto Seletivo e regimes diferenciados na Reforma Tributária: riscos, exceções e como se preparar"
-      description="Entenda o Imposto Seletivo e os regimes diferenciados da Reforma Tributária e seus impactos em setores específicos."
-      keywords="imposto seletivo, regimes diferenciados, reforma tributária, tributação específica"
-      canonicalUrl="/blog/imposto-seletivo-e-regimes-diferenciados-na-reforma-tributaria"
-      ogImage="/images/blog/imposto-seletivo.png"
-      category="Reforma Tributária"
-      categorySlug="reforma-tributaria"
-      author={authorInfo}
-      publishedDate="2025-07-13"
-      readingTime="7 min de leitura"
-      heroImage="/images/blog/imposto-seletivo.png"
-      heroImageAlt="Imposto seletivo e regimes diferenciados da reforma tributária"
+      title={title}
+      description={description}
+      keywords={postData.keywords}
+      canonicalUrl={`/blog/${postData.slug}`}
+      ogImage={postData.featuredImage}
+      category={category}
+      categorySlug={postData.categorySlug}
+      author={author}
+      publishedDate={postData.publishedDate}
+      readingTime={readingTime}
+      heroImage={postData.featuredImage}
+      heroImageAlt={title}
       relatedPosts={relatedPosts}
     >
       <BlogContentRenderer 
-        slug="imposto-seletivo-e-regimes-diferenciados-na-reforma-tributaria"
+        slug={postData.slug}
         fallbackContent={fallbackContent}
       />
     </BlogPostTemplate>

@@ -200,7 +200,22 @@
     "servicosEspecializados": "Serviços Especializados",
     "expansaoPatrimonial": "Expansão Patrimonial",
     "industrias": "Indústrias",
-    "multinacionais": "Multinacionais"
+    "multinacionais": "Multinacionais",
+    "technology": {
+      "name": "Tecnologia"
+    },
+    "health": {
+      "name": "Saúde"
+    },
+    "education": {
+      "name": "Educação"
+    },
+    "industry": {
+      "name": "Indústria"
+    },
+    "commerce": {
+      "name": "Comércio e Serviços"
+    }
   },
   "common": {
     "learnMore": "Saiba Mais",
@@ -384,6 +399,8 @@
     "quickLinks": "Links Rápidos",
     "solutions": "Soluções",
     "company": "Empresa",
+    "segments": "Segmentos",
+    "segmentsNav": "Navegação de segmentos",
     "contact": "Contato",
     "followUs": "Siga-nos",
     "rights": "© 2025 OSP Contabilidade. Todos os direitos reservados.",

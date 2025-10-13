@@ -52,92 +52,82 @@ export default function Contato() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h2>
-                <div className="space-y-4">
-                  <Card>
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div 
-                          className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
-                          aria-hidden="true"
-                        >
-                          <MapPin className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">{t('contact.info.addresses.title')}</h3>
-                          <p className="text-sm text-muted-foreground">{t('contact.info.addresses.campinas')}</p>
-                          <p className="text-sm text-muted-foreground">{t('contact.info.addresses.saoPaulo')}</p>
-                        </div>
+                <Card>
+                  <CardContent className="pt-6 space-y-6">
+                    {/* Addresses */}
+                    <div className="flex items-start gap-4">
+                      <div 
+                        className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
+                        aria-hidden="true"
+                      >
+                        <MapPin className="h-5 w-5 text-primary" />
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="font-semibold mb-1">{t('contact.info.addresses.title')}</h3>
+                        <p className="text-sm text-muted-foreground">{t('contact.info.addresses.campinas')}</p>
+                        <p className="text-sm text-muted-foreground">{t('contact.info.addresses.saoPaulo')}</p>
+                      </div>
+                    </div>
 
-                  <Card>
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div 
-                          className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
-                          aria-hidden="true"
-                        >
-                          <MessageCircle className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">{t('contact.info.whatsapp.title')}</h3>
-                          <a
-                            href="https://wa.me/5519993216091"
-                            className="text-sm text-primary hover:underline"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-testid="link-whatsapp"
-                            aria-label={t('footer.phoneLabel')}
-                          >
-                            +55 (19) 99321-6091
-                          </a>
-                        </div>
+                    {/* WhatsApp */}
+                    <div className="flex items-start gap-4">
+                      <div 
+                        className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
+                        aria-hidden="true"
+                      >
+                        <MessageCircle className="h-5 w-5 text-primary" />
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="font-semibold mb-1">{t('contact.info.whatsapp.title')}</h3>
+                        <a
+                          href="https://wa.me/5519993216091"
+                          className="text-sm text-primary hover:underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-testid="link-whatsapp"
+                          aria-label={t('footer.phoneLabel')}
+                        >
+                          +55 (19) 99321-6091
+                        </a>
+                      </div>
+                    </div>
 
-                  <Card>
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div 
-                          className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
-                          aria-hidden="true"
-                        >
-                          <Mail className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">{t('contact.info.email.title')}</h3>
-                          <a
-                            href="mailto:atendimento@osp.com.br"
-                            className="text-sm text-primary hover:underline"
-                            data-testid="link-email"
-                            aria-label={t('footer.emailLabel')}
-                          >
-                            atendimento@osp.com.br
-                          </a>
-                        </div>
+                    {/* Email */}
+                    <div className="flex items-start gap-4">
+                      <div 
+                        className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
+                        aria-hidden="true"
+                      >
+                        <Mail className="h-5 w-5 text-primary" />
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="font-semibold mb-1">{t('contact.info.email.title')}</h3>
+                        <a
+                          href="mailto:atendimento@osp.com.br"
+                          className="text-sm text-primary hover:underline"
+                          data-testid="link-email"
+                          aria-label={t('footer.emailLabel')}
+                        >
+                          atendimento@osp.com.br
+                        </a>
+                      </div>
+                    </div>
 
-                  <Card>
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div 
-                          className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
-                          aria-hidden="true"
-                        >
-                          <Phone className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">{t('contact.info.hours.title')}</h3>
-                          <p className="text-sm text-muted-foreground">{t('contact.info.hours.schedule')}</p>
-                        </div>
+                    {/* Business Hours */}
+                    <div className="flex items-start gap-4">
+                      <div 
+                        className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
+                        aria-hidden="true"
+                      >
+                        <Phone className="h-5 w-5 text-primary" />
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                      <div>
+                        <h3 className="font-semibold mb-1">{t('contact.info.hours.title')}</h3>
+                        <p className="text-sm text-muted-foreground">{t('contact.info.hours.schedule')}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
 
               <div className="bg-card p-6 rounded-lg border border-card-border">

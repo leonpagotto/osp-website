@@ -7,30 +7,31 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar, Clock, Search, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-import { blogPosts, categories } from "@/data/blogPosts";
+import { blogPostsBilingual, categoriesBilingual } from "@/data/blogPostsBilingual";
 import i18n from '@/i18n';
 
 export default function Blog() {
   const { t } = useTranslation();
   const currentLang = i18n.language as 'pt-BR' | 'en';
   const isEnglish = currentLang === 'en';
+  const lang = isEnglish ? 'en' : 'pt';
   const [selectedCategory, setSelectedCategory] = useState("todos");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter posts by category and search query
-  const filteredPosts = blogPosts.filter((post) => {
+  const filteredPosts = blogPostsBilingual.filter((post) => {
     const matchesCategory =
       selectedCategory === "todos" || post.categorySlug === selectedCategory;
     const matchesSearch =
       searchQuery === "" ||
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.title[lang].toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.description[lang].toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.keywords.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   // Get featured posts (top 3)
-  const featuredPosts = blogPosts.filter((post) => post.featured).slice(0, 3);
+  const featuredPosts = blogPostsBilingual.filter((post) => post.featured).slice(0, 3);
 
   return (
     <>
@@ -84,7 +85,7 @@ export default function Blog() {
         <section className="border-b border-border sticky top-16 bg-background/95 backdrop-blur-md z-40">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-3 overflow-x-auto py-4 scrollbar-hide">
-              {categories.map((category) => (
+              {categoriesBilingual.map((category) => (
                 <Button
                   key={category.slug}
                   variant={
@@ -94,7 +95,7 @@ export default function Blog() {
                   onClick={() => setSelectedCategory(category.slug)}
                   className="whitespace-nowrap"
                 >
-                  {category.name}
+                  {category.name[lang]}
                 </Button>
               ))}
             </div>
@@ -113,7 +114,7 @@ export default function Blog() {
                       <div className="relative h-58 rounded-lg overflow-hidden mb-4 bg-gray-800">
                         <OptimizedImage
                           src={post.featuredImage}
-                          alt={post.title}
+                          alt={post.title[lang]}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -121,14 +122,14 @@ export default function Blog() {
                           variant="secondary"
                           className="absolute top-3 left-3"
                         >
-                          {post.category}
+                          {post.category[lang]}
                         </Badge>
                       </div>
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                        {post.title}
+                        {post.title[lang]}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-1">
-                        {post.description}
+                        {post.description[lang]}
                       </p>
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         <div className="flex items-center gap-1">
@@ -137,7 +138,7 @@ export default function Blog() {
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {post.readingTime}
+                          {post.readingTime[lang]}
                         </div>
                       </div>
                     </article>
@@ -157,8 +158,8 @@ export default function Blog() {
                   <h2 className="text-2xl font-bold">
                     {selectedCategory === "todos"
                       ? t('blogPage.categories.allArticles')
-                      : categories.find((c) => c.slug === selectedCategory)
-                          ?.name}
+                      : categoriesBilingual.find((c) => c.slug === selectedCategory)
+                          ?.name[lang]}
                   </h2>
                   <p className="text-sm text-muted-foreground">
                     {filteredPosts.length}{" "}
@@ -173,7 +174,7 @@ export default function Blog() {
                         <div className="relative h-58 rounded-t-lg overflow-hidden bg-gray-800">
                           <OptimizedImage
                             src={post.featuredImage}
-                            alt={post.title}
+                            alt={post.title[lang]}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -184,15 +185,15 @@ export default function Blog() {
                             variant="secondary"
                             className="w-fit mb-3"
                           >
-                            {post.category}
+                            {post.category[lang]}
                           </Badge>
 
                           <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                            {post.title}
+                            {post.title[lang]}
                           </h3>
 
                           <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-1">
-                            {post.description}
+                            {post.description[lang]}
                           </p>
 
                           <div className="flex items-center justify-between pt-4 border-t border-border">
@@ -203,7 +204,7 @@ export default function Blog() {
                               </div>
                               <div className="flex items-center gap-1">
                                 <Clock className="w-3 h-3" />
-                                {post.readingTime}
+                                {post.readingTime[lang]}
                               </div>
                             </div>
 

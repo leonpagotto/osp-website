@@ -128,7 +128,31 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Solutions */}
+          {/* Company & Segments Column */}
+          <div>
+            <nav aria-label={t('footer.companyNav')}>
+              <h4 className="font-semibold mb-4">{t('footer.company')}</h4>
+              <ul className="space-y-2 text-sm mb-6">
+                <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">{t('nav.about')}</Link></li>
+                <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">{t('nav.results')}</Link></li>
+                <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">{t('nav.blog')}</Link></li>
+                <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">{t('footer.careers')}</Link></li>
+              </ul>
+            </nav>
+
+            <nav aria-label={t('footer.segmentsNav')}>
+              <h4 className="font-semibold mb-4">{t('footer.segments')}</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/segmentos/tecnologia" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tecnologia">{t('segments.technology.name')}</Link></li>
+                <li><Link href="/segmentos/saude" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-saude">{t('segments.health.name')}</Link></li>
+                <li><Link href="/segmentos/educacao" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-educacao">{t('segments.education.name')}</Link></li>
+                <li><Link href="/segmentos/industria" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-industria">{t('segments.industry.name')}</Link></li>
+                <li><Link href="/segmentos/comercio-servicos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-comercio">{t('segments.commerce.name')}</Link></li>
+              </ul>
+            </nav>
+          </div>
+
+          {/* Solutions Column */}
           <nav aria-label={t('footer.solutionsNav')}>
             <h4 className="font-semibold mb-4">{t('nav.solutions')}</h4>
             <ul className="space-y-2 text-sm">
@@ -136,18 +160,10 @@ export default function Footer() {
               <li><Link href="/solucoes/fundar360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-fundar360">{t('solutions.fundar360.name')}</Link></li>
               <li><Link href="/solucoes/tributa360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tributa360">{t('solutions.tributa360.name')}</Link></li>
               <li><Link href="/solucoes/gestao360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-gestao360">{t('solutions.gestao360.name')}</Link></li>
+              <li><Link href="/solucoes/bpo-financeiro" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-bpo">{t('solutions.bpoFinanceiro.name')}</Link></li>
+              <li><Link href="/solucoes/precifica360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-precifica360">{t('solutions.precifica360.name')}</Link></li>
               <li><Link href="/solucoes/holding360" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-holding360">{t('solutions.holding360.name')}</Link></li>
-            </ul>
-          </nav>
-
-          {/* Company */}
-          <nav aria-label={t('footer.companyNav')}>
-            <h4 className="font-semibold mb-4">{t('footer.company')}</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">{t('nav.about')}</Link></li>
-              <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">{t('nav.results')}</Link></li>
-              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">{t('nav.blog')}</Link></li>
-              <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">{t('footer.careers')}</Link></li>
+              <li><Link href="/solucoes/contabilidade" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-contabilidade">{t('solutions.contabilidade.name')}</Link></li>
             </ul>
           </nav>
 

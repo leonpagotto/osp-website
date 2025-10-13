@@ -1,59 +1,45 @@
 import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 import { BlogContentRenderer } from "@/components/BlogContentRenderer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TrendingUp, Shield, Calculator, Target } from "lucide-react";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { authorInfo } from "@/data/blogPosts";
+import { useBlogPost } from "@/lib/blogHelpers";
 
 export default function LucroRealEstrategia() {
+  const blogPost = useBlogPost("lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber");
+  
+  if (!blogPost) return null;
+  
+  const { postData, title, description, category, readingTime, author, getRelatedPost } = blogPost;
+
   const fallbackContent = (
     <>
       <p className="text-xl text-muted-foreground lead">
-        O Lucro Real não é apenas um regime tributário — é uma ferramenta estratégica que, quando bem 
-        utilizada, pode gerar economia significativa e insights valiosos sobre o negócio. Entenda como 
-        operar com inteligência nesse regime.
+        {description}
       </p>
-      {/* Original content as fallback */}
     </>
   );
 
   const relatedPosts = [
-    {
-      title: "Estudo Tributário: Como tomar decisões fiscais",
-      slug: "estudo-tributario-tomar-decisoes",
-      category: "Lucro Real"
-    },
-    {
-      title: "Contabilidade Lucro Real: Por que mudar de regime",
-      slug: "contabilidade-lucro-real-por-que-mudar-de-regime",
-      category: "Lucro Real"
-    },
-    {
-      title: "Sua contabilidade está impulsionando ou travando o crescimento",
-      slug: "sua-contabilidade-esta-impulsionando-ou-travando-o-crescimento-do-seu-negocio",
-      category: "Lucro Real"
-    }
-  ];
+    getRelatedPost("estudo-tributario-tomar-decisoes"),
+    getRelatedPost("contabilidade-lucro-real-por-que-mudar-de-regime")
+  ].filter((post): post is NonNullable<typeof post> => post !== null);
 
   return (
     <BlogPostTemplate
-      title="Lucro Real com Estratégia: O Que Toda Empresa Precisa Saber Antes de Operar Nesse Regime"
-      description="Guia completo sobre o regime de Lucro Real: quando optar, vantagens, desafios e como maximizar benefícios fiscais."
-      keywords="lucro real, regime tributário, planejamento tributário, apuração fiscal"
-      canonicalUrl="/blog/lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber"
-      ogImage="/images/blog/lucro-real-estrategia.png"
-      category="Lucro Real"
-      categorySlug="lucro-real"
-      author={authorInfo}
-      publishedDate="2025-07-11"
-      readingTime="9 min de leitura"
-      heroImage="/images/blog/lucro-real-estrategia.png"
-      heroImageAlt="Estratégias para Lucro Real e planejamento tributário"
+      title={title}
+      description={description}
+      keywords={postData.keywords}
+      canonicalUrl={`/blog/${postData.slug}`}
+      ogImage={postData.featuredImage}
+      category={category}
+      categorySlug={postData.categorySlug}
+      author={author}
+      publishedDate={postData.publishedDate}
+      readingTime={readingTime}
+      heroImage={postData.featuredImage}
+      heroImageAlt={title}
       relatedPosts={relatedPosts}
     >
       <BlogContentRenderer 
-        slug="lucro-real-com-estrategia-o-que-toda-empresa-precisa-saber"
+        slug={postData.slug}
         fallbackContent={fallbackContent}
       />
     </BlogPostTemplate>

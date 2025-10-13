@@ -4,9 +4,14 @@ interface OrganizationSchema {
   '@context': 'https://schema.org';
   '@type': 'Organization';
   name: string;
+  alternateName?: string;
   url: string;
   logo: string;
   description: string;
+  parentOrganization?: {
+    '@type': 'Organization';
+    name: string;
+  };
   address?: {
     '@type': 'PostalAddress';
     streetAddress: string;
@@ -78,10 +83,14 @@ export function createOrganizationSchema(): OrganizationSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'OSP Contabilidade Digital',
+    name: 'OSP Contabilidade',
     url: 'https://ospcontabilidade.com.br',
     logo: 'https://ospcontabilidade.com.br/logo.png',
     description: 'Consultoria contábil, fiscal e tributária para empresas de médio e grande porte no Brasil e exterior.',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'OSP Group'
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Av. Paulista, 1636 – 15º Andar',
@@ -107,9 +116,9 @@ export function createOrganizationSchema(): OrganizationSchema {
       },
     ],
     sameAs: [
-      // Add social media URLs here
       'https://www.linkedin.com/company/osp-contabilidade',
       'https://www.instagram.com/ospcontabilidade',
+      'https://www.facebook.com/ospcontabilidade',
     ],
   };
 }

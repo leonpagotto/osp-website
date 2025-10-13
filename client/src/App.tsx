@@ -1,97 +1,71 @@
-import { Switch, Route, useLocation } from "wouter";
-import { useEffect, lazy, Suspense } from "react";
-import { AnimatePresence } from "framer-motion";
+import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
-import PageTransition from "@/components/PageTransition";
-
-// Loading component
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-);
-
-// Eager load Home page (critical)
+import ScrollToTop from "@/components/ScrollToTop";
 import Home from "@/pages/Home";
+import Solucoes from "@/pages/Solucoes";
+import Segmentos from "@/pages/Segmentos";
+import Resultados from "@/pages/Resultados";
+import SobreNos from "@/pages/SobreNos";
+import Contato from "@/pages/Contato";
+import Blog from "@/pages/Blog";
+import FacaParte from "@/pages/FacaParte";
+import Materiais from "@/pages/Materiais";
 
-// Lazy load other pages
-const Solucoes = lazy(() => import("@/pages/Solucoes"));
-const Segmentos = lazy(() => import("@/pages/Segmentos"));
-const Resultados = lazy(() => import("@/pages/Resultados"));
-const SobreNos = lazy(() => import("@/pages/SobreNos"));
-const Contato = lazy(() => import("@/pages/Contato"));
-const Blog = lazy(() => import("@/pages/Blog"));
-const FacaParte = lazy(() => import("@/pages/FacaParte"));
-const Materiais = lazy(() => import("@/pages/Materiais"));
+// Solution Pages
+import OSP360 from "@/pages/solutions/OSP360";
+import FUNDAR360 from "@/pages/solutions/FUNDAR360";
+import TRIBUTA360 from "@/pages/solutions/TRIBUTA360";
+import GESTAO360 from "@/pages/solutions/GESTAO360";
+import BPOFinanceiro from "@/pages/solutions/BPOFinanceiro";
+import PRECIFICA360 from "@/pages/solutions/PRECIFICA360";
+import HOLDING360 from "@/pages/solutions/HOLDING360";
+import Contabilidade from "@/pages/solutions/Contabilidade";
 
-// Solution Pages (lazy loaded)
-const OSP360 = lazy(() => import("@/pages/solutions/OSP360"));
-const FUNDAR360 = lazy(() => import("@/pages/solutions/FUNDAR360"));
-const TRIBUTA360 = lazy(() => import("@/pages/solutions/TRIBUTA360"));
-const GESTAO360 = lazy(() => import("@/pages/solutions/GESTAO360"));
-const BPOFinanceiro = lazy(() => import("@/pages/solutions/BPOFinanceiro"));
-const PRECIFICA360 = lazy(() => import("@/pages/solutions/PRECIFICA360"));
-const HOLDING360 = lazy(() => import("@/pages/solutions/HOLDING360"));
-const Contabilidade = lazy(() => import("@/pages/solutions/Contabilidade"));
+// Segment Pages
+import EstruturaComplexa from "@/pages/segments/EstruturaComplexa";
+import OperacaoIntensiva from "@/pages/segments/OperacaoIntensiva";
+import Industrias from "@/pages/segments/Industrias";
+import ServicosEspecializados from "@/pages/segments/ServicosEspecializados";
+import ExpansaoPatrimonial from "@/pages/segments/ExpansaoPatrimonial";
+import Multinacionais from "@/pages/segments/Multinacionais";
 
-// Segment Pages (lazy loaded)
-const EstruturaComplexa = lazy(() => import("@/pages/segments/EstruturaComplexa"));
-const OperacaoIntensiva = lazy(() => import("@/pages/segments/OperacaoIntensiva"));
-const Industrias = lazy(() => import("@/pages/segments/Industrias"));
-const ServicosEspecializados = lazy(() => import("@/pages/segments/ServicosEspecializados"));
-const ExpansaoPatrimonial = lazy(() => import("@/pages/segments/ExpansaoPatrimonial"));
-const Multinacionais = lazy(() => import("@/pages/segments/Multinacionais"));
+// Blog
+import BlogPost from "@/pages/BlogPost";
+import IndicadoresFinanceirosCEO from "@/pages/blog/IndicadoresFinanceirosCEO";
+import HoldingFamiliar from "@/pages/blog/HoldingFamiliar";
+import TributacaoDividendos from "@/pages/blog/TributacaoDividendos";
+import CashbackCestaBasica from "@/pages/blog/CashbackCestaBasica";
+import CBSIBS from "@/pages/blog/CBSIBS";
+import ReformaTributaria2025 from "@/pages/blog/ReformaTributaria2025";
+import ChecklistOSP from "@/pages/blog/ChecklistOSP";
+import ImpostoSeletivo from "@/pages/blog/ImpostoSeletivo";
+import EC132Impactos from "@/pages/blog/EC132Impactos";
+import LucroRealEstrategia from "@/pages/blog/LucroRealEstrategia";
+import ContabilidadeCrescimento from "@/pages/blog/ContabilidadeCrescimento";
+import HoldingPatrimonial2025 from "@/pages/blog/HoldingPatrimonial2025";
+import EstudoTributario from "@/pages/blog/EstudoTributario";
+import ContabilidadeLucroReal from "@/pages/blog/ContabilidadeLucroReal";
 
-// Blog (lazy loaded)
-const BlogPost = lazy(() => import("@/pages/BlogPost"));
-const IndicadoresFinanceirosCEO = lazy(() => import("@/pages/blog/IndicadoresFinanceirosCEO"));
-const HoldingFamiliar = lazy(() => import("@/pages/blog/HoldingFamiliar"));
-const TributacaoDividendos = lazy(() => import("@/pages/blog/TributacaoDividendos"));
-const CashbackCestaBasica = lazy(() => import("@/pages/blog/CashbackCestaBasica"));
-const CBSIBS = lazy(() => import("@/pages/blog/CBSIBS"));
-const ReformaTributaria2025 = lazy(() => import("@/pages/blog/ReformaTributaria2025"));
-const ChecklistOSP = lazy(() => import("@/pages/blog/ChecklistOSP"));
-const ImpostoSeletivo = lazy(() => import("@/pages/blog/ImpostoSeletivo"));
-const EC132Impactos = lazy(() => import("@/pages/blog/EC132Impactos"));
-const LucroRealEstrategia = lazy(() => import("@/pages/blog/LucroRealEstrategia"));
-const ContabilidadeCrescimento = lazy(() => import("@/pages/blog/ContabilidadeCrescimento"));
-const HoldingPatrimonial2025 = lazy(() => import("@/pages/blog/HoldingPatrimonial2025"));
-const EstudoTributario = lazy(() => import("@/pages/blog/EstudoTributario"));
-const ContabilidadeLucroReal = lazy(() => import("@/pages/blog/ContabilidadeLucroReal"));
-
-const NotFound = lazy(() => import("@/pages/not-found"));
-
-// Scroll to top component
-function ScrollToTop() {
-  const [location] = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
-  return null;
-}
+import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <Suspense fallback={<LoadingFallback />}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/solucoes" component={Solucoes} />
-        <Route path="/segmentos" component={Segmentos} />
-        <Route path="/resultados" component={Resultados} />
-        <Route path="/sobre-nos" component={SobreNos} />
-        <Route path="/contato" component={Contato} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/faca-parte" component={FacaParte} />
-        <Route path="/materiais" component={Materiais} />
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/solucoes" component={Solucoes} />
+      <Route path="/segmentos" component={Segmentos} />
+      <Route path="/resultados" component={Resultados} />
+      <Route path="/sobre-nos" component={SobreNos} />
+      <Route path="/contato" component={Contato} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/faca-parte" component={FacaParte} />
+      <Route path="/materiais" component={Materiais} />
       
       {/* Solution Pages */}
       <Route path="/solucoes/osp360" component={OSP360} />
@@ -130,34 +104,26 @@ function Router() {
       
       <Route component={NotFound} />
     </Switch>
-    </Suspense>
   );
 }
 
 function App() {
-  const [location] = useLocation();
-  
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
         <TooltipProvider>
           <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">
-              <AnimatePresence mode="wait">
-                <PageTransition key={location}>
-                  <Router />
-                </PageTransition>
-              </AnimatePresence>
+              <Router />
             </main>
             <Footer />
           </div>
-          <FloatingCTA />
           <Toaster />
         </TooltipProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
+      </HelmetProvider>
+    </QueryClientProvider>
   );
 }
 

@@ -1,54 +1,45 @@
 import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 import { BlogContentRenderer } from "@/components/BlogContentRenderer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, ShoppingCart, Users, TrendingDown } from "lucide-react";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { authorInfo } from "@/data/blogPosts";
+import { useBlogPost } from "@/lib/blogHelpers";
 
 export default function CashbackCestaBasica() {
+  const blogPost = useBlogPost("cashback-cesta-basica-e-justica-fiscal-o-que-muda-na-tributacao");
+  
+  if (!blogPost) return null;
+  
+  const { postData, title, description, category, readingTime, author, getRelatedPost } = blogPost;
+
   const fallbackContent = (
     <>
       <p className="text-xl text-muted-foreground lead">
-        A Reforma Tributária introduz dois mecanismos importantes de justiça social: o cashback tributário 
-        e a Cesta Básica Nacional com alíquota zero. Entenda como esses mecanismos funcionam e os impactos 
-        operacionais para empresas.
+        {description}
       </p>
-      {/* Original content as fallback */}
     </>
   );
 
   const relatedPosts = [
-    {
-      title: "CBS e IBS na Reforma Tributária",
-      slug: "cbs-e-ibs-na-reforma-tributaria-impactos-praticos-para-empresas-em-2025",
-      category: "Reforma Tributária"
-    },
-    {
-      title: "Reforma Tributária 2025: Guia Prático",
-      slug: "reforma-tributaria-2025-guia-pratico-para-empresarios",
-      category: "Reforma Tributária"
-    }
-  ];
+    getRelatedPost("cbs-e-ibs-na-reforma-tributaria-impactos-praticos-para-empresas-em-2025"),
+    getRelatedPost("reforma-tributaria-2025-guia-pratico-para-empresarios")
+  ].filter((post): post is NonNullable<typeof post> => post !== null);
 
   return (
     <BlogPostTemplate
-      title="Cashback, Cesta Básica e Justiça Fiscal: o que muda na tributação"
-      description="Cashback tributário e Cesta Básica Nacional representam avanços de justiça fiscal. Entenda os impactos operacionais para sua empresa."
-      keywords="cashback tributário, cesta básica, CBS, IBS, reforma tributária, NCM, classificação fiscal"
-      canonicalUrl="/blog/cashback-cesta-basica-e-justica-fiscal-o-que-muda-na-tributacao"
-      ogImage="/images/blog/cashback-cesta-basica.png"
-      category="Reforma Tributária"
-      categorySlug="reforma-tributaria"
-      author={authorInfo}
-      publishedDate="2025-07-13"
-      readingTime="6 min de leitura"
-      heroImage="/images/blog/cashback-cesta-basica.png"
-      heroImageAlt="Cesta básica e cashback fiscal para famílias de baixa renda"
+      title={title}
+      description={description}
+      keywords={postData.keywords}
+      canonicalUrl={`/blog/${postData.slug}`}
+      ogImage={postData.featuredImage}
+      category={category}
+      categorySlug={postData.categorySlug}
+      author={author}
+      publishedDate={postData.publishedDate}
+      readingTime={readingTime}
+      heroImage={postData.featuredImage}
+      heroImageAlt={title}
       relatedPosts={relatedPosts}
     >
       <BlogContentRenderer 
-        slug="cashback-cesta-basica-e-justica-fiscal-o-que-muda-na-tributacao"
+        slug={postData.slug}
         fallbackContent={fallbackContent}
       />
     </BlogPostTemplate>

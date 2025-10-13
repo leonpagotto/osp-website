@@ -200,7 +200,22 @@
     "servicosEspecializados": "Specialized Services",
     "expansaoPatrimonial": "Asset Expansion",
     "industrias": "Industries",
-    "multinacionais": "Multinationals"
+    "multinacionais": "Multinationals",
+    "technology": {
+      "name": "Technology"
+    },
+    "health": {
+      "name": "Healthcare"
+    },
+    "education": {
+      "name": "Education"
+    },
+    "industry": {
+      "name": "Industry"
+    },
+    "commerce": {
+      "name": "Commerce & Services"
+    }
   },
   "common": {
     "learnMore": "Learn More",
@@ -384,6 +399,8 @@
     "quickLinks": "Quick Links",
     "solutions": "Solutions",
     "company": "Company",
+    "segments": "Segments",
+    "segmentsNav": "Segments navigation",
     "contact": "Contact",
     "followUs": "Follow Us",
     "rights": "© 2025 OSP Contabilidade. All rights reserved.",
