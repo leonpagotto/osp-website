@@ -109,6 +109,7 @@ export default function SobreNos() {
                         src={imagePath}
                         alt={member.name}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                         onError={(e) => {
                           // Fallback to gradient placeholder if image not found
                           e.currentTarget.style.display = 'none';
