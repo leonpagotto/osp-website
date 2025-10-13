@@ -1,0 +1,8 @@
+# robots.txt for OSP Contabilidade Digital
+# https://osp-website-2026.web.app
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://osp-website-2026.web.app/sitemap.xml

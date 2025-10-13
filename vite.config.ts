@@ -64,6 +64,15 @@ export default defineConfig({
       compress: {
         drop_console: true, // Remove console.logs in production
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+        dead_code: true,
+        unused: true,
+        conditionals: true,
+        booleans: true,
+        if_return: true,
+      },
+      mangle: {
+        safari10: true,
       },
     },
   },
