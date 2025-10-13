@@ -61,6 +61,8 @@
   --primary: 210 100% 45%;
 
   --primary-foreground: 210 100% 98%;
+  
+  --primary-light: 210 100% 38%; /* Lighter blue for better contrast on gray backgrounds */
 
   --secondary: 220 8% 90%;
 
@@ -179,6 +181,8 @@
   --primary: 210 100% 45%;
 
   --primary-foreground: 210 100% 98%;
+  
+  --primary-light: 210 100% 55%; /* Lighter blue for better contrast on dark backgrounds */
 
   --secondary: 220 10% 20%;
 

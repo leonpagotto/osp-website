@@ -31,7 +31,7 @@ export default function SolutionCard({ icon: Icon, title, description, href }: S
           </CardHeader>
           <CardContent className="relative z-10">
             <CardDescription className="text-base mb-4 group-hover:text-foreground/80 transition-colors duration-300">{description}</CardDescription>
-            <div className="flex items-center text-primary group-hover:text-primary font-medium text-sm group-hover:gap-2 transition-all duration-300">
+            <div className="flex items-center font-medium text-sm group-hover:gap-2 transition-all duration-300" style={{ color: 'hsl(var(--primary-light))' }}>
               {t('common.learnMore')}
               <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 animate-arrow-bounce" />
             </div>
