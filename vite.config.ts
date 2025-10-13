@@ -50,8 +50,7 @@ export default defineConfig({
           'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
           'router': ['wouter'],
           'i18n': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
-          // Only include Radix UI components that are actually used
-          'ui': ['@radix-ui/react-label', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-dropdown-menu'],
+          'ui': ['@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-avatar', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-popover', '@radix-ui/react-scroll-area', '@radix-ui/react-select', '@radix-ui/react-separator', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast'],
           'icons': ['lucide-react'],
           'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
         },
@@ -59,7 +58,7 @@ export default defineConfig({
     },
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
-    // Standard minification (aggressive settings caused Speed Index regression)
+    // Minification
     minify: 'terser',
     terserOptions: {
       compress: {
