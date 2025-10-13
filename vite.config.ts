@@ -45,36 +45,14 @@ export default defineConfig({
     // Code splitting optimization
     rollupOptions: {
       output: {
-        manualChunks(id) {
+        manualChunks: {
           // Vendor chunks
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('jsx-runtime')) {
-              return 'react-vendor';
-            }
-            if (id.includes('wouter')) {
-              return 'router';
-            }
-            if (id.includes('i18next') || id.includes('react-i18next') || id.includes('languagedetector')) {
-              return 'i18n';
-            }
-            if (id.includes('@radix-ui')) {
-              return 'ui';
-            }
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            if (id.includes('react-hook-form') || id.includes('hookform') || id.includes('zod')) {
-              return 'forms';
-            }
-          }
-          // Split blog data into separate chunk (only loaded on blog pages)
-          if (id.includes('blogPostsBilingual') || id.includes('blogPosts.ts')) {
-            return 'blog-data';
-          }
-          // Split blog helpers
-          if (id.includes('blogHelpers')) {
-            return 'blog-utils';
-          }
+          'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
+          'router': ['wouter'],
+          'i18n': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+          'ui': ['@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-avatar', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-popover', '@radix-ui/react-scroll-area', '@radix-ui/react-select', '@radix-ui/react-separator', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast'],
+          'icons': ['lucide-react'],
+          'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
         },
       },
     },
