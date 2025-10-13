@@ -50,7 +50,8 @@ export default defineConfig({
           'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
           'router': ['wouter'],
           'i18n': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
-          'ui': ['@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-avatar', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-popover', '@radix-ui/react-scroll-area', '@radix-ui/react-select', '@radix-ui/react-separator', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast'],
+          // Only include Radix UI components that are actually used
+          'ui': ['@radix-ui/react-label', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-dropdown-menu'],
           'icons': ['lucide-react'],
           'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
         },
@@ -58,12 +59,27 @@ export default defineConfig({
     },
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
-    // Minification
+    // Aggressive minification for Phase 2 optimization
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true, // Remove console.logs in production
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'], // Remove more console methods
+        passes: 2, // Multiple compression passes for better results
+        dead_code: true, // Remove unreachable code
+        conditionals: true, // Optimize if/else conditions
+        booleans: true, // Optimize boolean expressions
+        unused: true, // Remove unused variables
+        toplevel: true, // Drop unreferenced top-level functions
+        if_return: true, // Optimize if/return statements
+      },
+      mangle: {
+        safari10: true, // Better Safari 10+ compatibility
+        toplevel: true, // Mangle top-level names
+      },
+      format: {
+        comments: false, // Remove all comments
       },
     },
   },
