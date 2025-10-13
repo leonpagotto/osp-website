@@ -59,27 +59,12 @@ export default defineConfig({
     },
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
-    // Aggressive minification for Phase 2 optimization
+    // Standard minification (aggressive settings caused Speed Index regression)
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true, // Remove console.logs in production
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'], // Remove more console methods
-        passes: 2, // Multiple compression passes for better results
-        dead_code: true, // Remove unreachable code
-        conditionals: true, // Optimize if/else conditions
-        booleans: true, // Optimize boolean expressions
-        unused: true, // Remove unused variables
-        toplevel: true, // Drop unreferenced top-level functions
-        if_return: true, // Optimize if/return statements
-      },
-      mangle: {
-        safari10: true, // Better Safari 10+ compatibility
-        toplevel: true, // Mangle top-level names
-      },
-      format: {
-        comments: false, // Remove all comments
       },
     },
   },
