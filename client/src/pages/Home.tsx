@@ -9,6 +9,7 @@ import { StructuredData, createOrganizationSchema, createLocalBusinessSchema } f
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useTranslation } from 'react-i18next';
 import i18n from '@/i18n';
+// TODO: Lazy load icons below the fold to reduce initial bundle
 import {
   Target,
   Building2,
