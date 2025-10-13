@@ -1,6 +1,5 @@
+import { lazy, Suspense } from 'react';
 import HeroSection from "@/components/HeroSection";
-import SolutionCard from "@/components/SolutionCard";
-import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
@@ -9,25 +8,23 @@ import { StructuredData, createOrganizationSchema, createLocalBusinessSchema } f
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useTranslation } from 'react-i18next';
 import i18n from '@/i18n';
-// TODO: Lazy load icons below the fold to reduce initial bundle
+// Below-fold icons loaded only above fold to reduce initial bundle
 import {
   Target,
   Building2,
   Calculator,
   TrendingUp,
-  DollarSign,
-  PieChart,
-  Home as HomeIcon,
-  FileText,
   Users,
   Zap,
   Shield,
   BarChart3,
-  Compass,
-  Rocket,
-  Scale,
-  LayoutDashboard,
 } from "lucide-react";
+
+// Lazy load below-fold sections to improve mobile performance
+const SolutionsSection = lazy(() => import("@/components/sections/SolutionsSection"));
+const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
+const TechPartnersSection = lazy(() => import("@/components/sections/TechPartnersSection"));
+const SectionLoader = lazy(() => import("@/components/sections/SectionLoader"));
 
 export default function Home() {
   const { t } = useTranslation();
@@ -110,68 +107,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Soluções Estratégicas */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">{t('home.strategicSolutions.title')}</h2>
-            <p className="text-body-lg text-muted-foreground">
-              {t('home.strategicSolutions.subtitle')}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SolutionCard
-              icon={Compass}
-              title={t('solutions.osp360.name')}
-              description={t('solutions.osp360.description')}
-              href="/solucoes/osp360"
-            />
-            <SolutionCard
-              icon={Rocket}
-              title={t('solutions.fundar360.name')}
-              description={t('solutions.fundar360.description')}
-              href="/solucoes/fundar360"
-            />
-            <SolutionCard
-              icon={Scale}
-              title={t('solutions.tributa360.name')}
-              description={t('solutions.tributa360.description')}
-              href="/solucoes/tributa360"
-            />
-            <SolutionCard
-              icon={LayoutDashboard}
-              title={t('solutions.gestao360.name')}
-              description={t('solutions.gestao360.description')}
-              href="/solucoes/gestao360"
-            />
-            <SolutionCard
-              icon={DollarSign}
-              title={t('solutions.bpoFinanceiro.name')}
-              description={t('solutions.bpoFinanceiro.description')}
-              href="/solucoes/bpo-financeiro"
-            />
-            <SolutionCard
-              icon={PieChart}
-              title={t('solutions.precifica360.name')}
-              description={t('solutions.precifica360.description')}
-              href="/solucoes/precifica360"
-            />
-            <SolutionCard
-              icon={HomeIcon}
-              title={t('solutions.holding360.name')}
-              description={t('solutions.holding360.description')}
-              href="/solucoes/holding360"
-            />
-            <SolutionCard
-              icon={FileText}
-              title={t('solutions.contabilidade.name')}
-              description={t('solutions.contabilidade.description')}
-              href="/solucoes/contabilidade"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Stats Section */}
       <StatsSection
         stats={[
@@ -182,54 +117,12 @@ export default function Home() {
         ]}
       />
 
-      {/* Testimonials */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-section-mobile md:text-section mb-4">{t('home.testimonials.title')}</h2>
-            <p className="text-body-lg text-muted-foreground">
-              {t('home.testimonials.subtitle')}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[0, 1, 2].map((index) => (
-              <div
-                key={index}
-                className={`scroll-animate animate-delay-${index * 100}`}
-              >
-                <TestimonialCard
-                  quote={t(`home.testimonials.items.${index}.quote`)}
-                  author={t(`home.testimonials.items.${index}.author`)}
-                  company={t(`home.testimonials.items.${index}.company`)}
-                  role={t(`home.testimonials.items.${index}.role`)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Partners */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-section-mobile md:text-section mb-4">{t('home.technology.title')}</h2>
-            <p className="text-body-lg text-muted-foreground">
-              {t('home.technology.subtitle')}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {["TOTVS", "SAP", "Sankhya", "Omie", "Power BI", "Qlik", "Tableau", "Conta Azul"].map((partner, index) => (
-              <div
-                key={partner}
-                className={`flex items-center justify-center p-6 bg-background border border-border rounded-lg hover-elevate scroll-animate animate-delay-${Math.floor(index / 2) * 100}`}
-              >
-                <span className="text-lg font-semibold text-muted-foreground">{partner}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Lazy-loaded below-fold sections for better mobile performance */}
+      <Suspense fallback={<SectionLoader />}>
+        <SolutionsSection />
+        <TestimonialsSection />
+        <TechPartnersSection />
+      </Suspense>
 
       {/* CTA */}
       <CTASection
