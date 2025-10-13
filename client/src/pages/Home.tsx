@@ -6,7 +6,7 @@ import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createOrganizationSchema, createLocalBusinessSchema } from "@/components/SEO/StructuredData";
-import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useTranslation } from 'react-i18next';
 import i18n from '@/i18n';
 import {
@@ -192,12 +192,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[0, 1, 2].map((index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`scroll-animate animate-delay-${index * 100}`}
               >
                 <TestimonialCard
                   quote={t(`home.testimonials.items.${index}.quote`)}
@@ -205,7 +202,7 @@ export default function Home() {
                   company={t(`home.testimonials.items.${index}.company`)}
                   role={t(`home.testimonials.items.${index}.role`)}
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -222,17 +219,12 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {["TOTVS", "SAP", "Sankhya", "Omie", "Power BI", "Qlik", "Tableau", "Conta Azul"].map((partner, index) => (
-              <motion.div
+              <div
                 key={partner}
-                className="flex items-center justify-center p-6 bg-background border border-border rounded-lg hover-elevate"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
+                className={`flex items-center justify-center p-6 bg-background border border-border rounded-lg hover-elevate scroll-animate animate-delay-${Math.floor(index / 2) * 100}`}
               >
                 <span className="text-lg font-semibold text-muted-foreground">{partner}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
