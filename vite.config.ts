@@ -1,27 +1,28 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-// import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   plugins: [
     react(),
-    // Image optimization DISABLED - preserve original image quality
-    // ViteImageOptimizer({
-    //   png: {
-    //     quality: 85,
-    //   },
-    //   jpeg: {
-    //     quality: 85,
-    //   },
-    //   jpg: {
-    //     quality: 85,
-    //   },
-    //   webp: {
-    //     quality: 85,
-    //   },
-    // }),
+    // Image optimization with 100% quality (lossless optimization only)
+    ViteImageOptimizer({
+      png: {
+        quality: 100, // Lossless
+      },
+      jpeg: {
+        quality: 100, // Maximum quality
+      },
+      jpg: {
+        quality: 100, // Maximum quality
+      },
+      webp: {
+        quality: 100, // Lossless WebP
+        lossless: true,
+      },
+    }),
     // Bundle analyzer (only in build mode)
     visualizer({
       filename: 'dist/stats.html',
