@@ -251,9 +251,18 @@ export function BlogPostTemplate({
                 <h3 className="text-2xl font-bold mb-3">
                   {ctaTitle || t('blogPost.defaultCTA.title')}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-6">
                   {ctaDescription || t('blogPost.defaultCTA.description')}
                 </p>
+                <a 
+                  href="https://wa.me/5519993216091?text=Olá!%20Vim%20do%20blog%20e%20gostaria%20de%20falar%20com%20um%20especialista."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" className="gap-2">
+                    {t('blogPost.defaultCTA.button')}
+                  </Button>
+                </a>
               </div>
             </div>
 

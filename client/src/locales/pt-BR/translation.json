@@ -49,6 +49,7 @@
       "subtitle": "Metodologias especializadas para cada desafio da sua empresa"
     },
     "stats": {
+      "years": "47 anos",
       "savings": "Em economia tributária gerada",
       "migrations": "Migrações seguras para Lucro Real",
       "retention": "Taxa de retenção de clientes",
@@ -934,7 +935,8 @@
     "relatedPosts": "Artigos Relacionados",
     "defaultCTA": {
       "title": "Precisa de ajuda com sua contabilidade?",
-      "description": "Fale com um especialista da OSP e descubra como podemos ajudar sua empresa."
+      "description": "Fale com um especialista da OSP e descubra como podemos ajudar sua empresa.",
+      "button": "Falar com Especialista"
     }
   }
 }

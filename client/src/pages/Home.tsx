@@ -177,7 +177,7 @@ export default function Home() {
           { value: "R$ 100M+", label: t('home.stats.savings'), highlight: true },
           { value: "100+", label: t('home.stats.migrations') },
           { value: "98%", label: t('home.stats.retention'), highlight: true },
-          { value: "47 anos", label: t('home.stats.experience') },
+          { value: t('home.stats.years'), label: t('home.stats.experience') },
         ]}
       />
 

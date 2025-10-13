@@ -49,6 +49,7 @@
       "subtitle": "Specialized methodologies for each challenge of your company"
     },
     "stats": {
+      "years": "47 years",
       "savings": "In tax savings generated",
       "migrations": "Safe migrations to Real Profit",
       "retention": "Client retention rate",
@@ -934,7 +935,8 @@
     "relatedPosts": "Related Articles",
     "defaultCTA": {
       "title": "Need help with your accounting?",
-      "description": "Talk to an OSP specialist and discover how we can help your company."
+      "description": "Talk to an OSP specialist and discover how we can help your company.",
+      "button": "Talk to a Specialist"
     }
   }
 }
