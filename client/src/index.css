@@ -1,9 +1,9 @@
+/* Import high-performance CSS animations */
+@import './styles/animations.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import high-performance CSS animations */
-@import './styles/animations.css';
 
 @layer utilities {
   /* Custom height for blog thumbnails (20% increase from h-48) */
