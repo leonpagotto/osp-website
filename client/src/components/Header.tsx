@@ -25,19 +25,19 @@ const solutions = [
 ];
 
 const segmentsByProfile = [
-  { name: "estruturaComplexa", href: "/segmentos/estrutura-complexa", translationKey: "segmentsPage.profile.complexStructure.title" },
-  { name: "operacaoIntensiva", href: "/segmentos/operacao-intensiva", translationKey: "segmentsPage.profile.intensiveOperation.title" },
-  { name: "servicosEspecializados", href: "/segmentos/servicos-especializados", translationKey: "segmentsPage.profile.specializedServices.title" },
-  { name: "expansaoPatrimonial", href: "/segmentos/expansao-patrimonial", translationKey: "segmentsPage.profile.assetExpansion.title" },
+  { name: "complexStructure", href: "/segmentos/estrutura-complexa", translationKey: "segments.complexStructure.name" },
+  { name: "intensiveOperation", href: "/segmentos/operacao-intensiva", translationKey: "segments.intensiveOperation.name" },
+  { name: "specializedServices", href: "/segmentos/servicos-especializados", translationKey: "segments.specializedServices.name" },
+  { name: "assetExpansion", href: "/segmentos/expansao-patrimonial", translationKey: "segments.assetExpansion.name" },
 ];
 
 const segmentsBySector = [
-  { name: "industrias", href: "/segmentos/industrias", translationKey: "segmentsPage.sector.industry.title" },
-  { name: "multinacionais", href: "/segmentos/multinacionais", translationKey: "segmentsPage.sector.multinationals.title" },
-  { name: "tecnologia", href: "/segmentos/tecnologia", translationKey: "segmentsPage.sector.technology.title" },
-  { name: "saude", href: "/segmentos/saude", translationKey: "segmentsPage.sector.healthcare.title" },
-  { name: "educacao", href: "/segmentos/educacao", translationKey: "segmentsPage.sector.education.title" },
-  { name: "comercioServicos", href: "/segmentos/comercio-servicos", translationKey: "segmentsPage.sector.commerce.title" },
+  { name: "industry", href: "/segmentos/industrias", translationKey: "segments.industry.name" },
+  { name: "multinationals", href: "/segmentos/multinacionais", translationKey: "segments.multinationals.name" },
+  { name: "technology", href: "/segmentos/tecnologia", translationKey: "segments.technology.name" },
+  { name: "health", href: "/segmentos/saude", translationKey: "segments.health.name" },
+  { name: "education", href: "/segmentos/educacao", translationKey: "segments.education.name" },
+  { name: "commerce", href: "/segmentos/comercio-servicos", translationKey: "segments.commerce.name" },
 ];
 
 const segments = [...segmentsByProfile, ...segmentsBySector];
@@ -162,7 +162,7 @@ export default function Header() {
                   {segments.map((segment) => (
                     <Link key={segment.href} href={segment.href} data-testid={`link-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}>
                       <div className="p-2 rounded-md hover-elevate active-elevate-2 cursor-pointer text-sm focus-within:ring-2 focus-within:ring-primary">
-                        {t(`segments.${segment.name}`)}
+                        {t(segment.translationKey)}
                       </div>
                     </Link>
                   ))}
@@ -311,7 +311,7 @@ export default function Header() {
                         }`}
                         data-testid={`link-mobile-${segment.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
-                        {t(`segments.${segment.name}`)}
+                        {t(segment.translationKey)}
                       </Link>
                     ))}
                   </div>
