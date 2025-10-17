@@ -189,8 +189,11 @@ export default function SobreNos() {
       </section>
 
       {/* Valores */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-background relative overflow-hidden">
+        {/* Gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">{t('about.values.title')}</h2>
             <p className="text-body-lg text-muted-foreground">
