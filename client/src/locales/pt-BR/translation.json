@@ -130,6 +130,40 @@
           "role": "Diretor Executivo",
           "bio": "Especialista em planejamento tributário"
         }
+      ],
+      "extendedTitle": "Time Estendido",
+      "extendedSubtitle": "Especialistas dedicados em cada área de atuação",
+      "extendedTeam": [
+        {
+          "name": "Jéssica Gonçalves",
+          "role": "Contabilidade",
+          "bio": "Especialista em escrituração contábil e demonstrações financeiras"
+        },
+        {
+          "name": "Larissa Nascimento",
+          "role": "Societário e Legalização",
+          "bio": "Especialista em estruturação societária e compliance legal"
+        },
+        {
+          "name": "Mariely Gesueli",
+          "role": "Recursos Humanos",
+          "bio": "Gestão de pessoas e desenvolvimento organizacional"
+        },
+        {
+          "name": "Polyane Oliveira",
+          "role": "Sucesso do Cliente",
+          "bio": "Relacionamento e experiência do cliente"
+        },
+        {
+          "name": "Rafaela Oliveira",
+          "role": "Tributos Indiretos",
+          "bio": "Especialista em ICMS, PIS, COFINS e ISS"
+        },
+        {
+          "name": "Raquel Lisboa",
+          "role": "Folha de Pagamento",
+          "bio": "Gestão de folha de pagamento e encargos trabalhistas"
+        }
       ]
     },
     "values": {

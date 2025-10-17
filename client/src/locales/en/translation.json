@@ -130,6 +130,40 @@
           "role": "Executive Director",
           "bio": "Specialist in tax planning"
         }
+      ],
+      "extendedTitle": "Extended Team",
+      "extendedSubtitle": "Dedicated specialists in each area of expertise",
+      "extendedTeam": [
+        {
+          "name": "Jéssica Gonçalves",
+          "role": "Accounting",
+          "bio": "Specialist in accounting records and financial statements"
+        },
+        {
+          "name": "Larissa Nascimento",
+          "role": "Corporate & Legalization",
+          "bio": "Specialist in corporate structuring and legal compliance"
+        },
+        {
+          "name": "Mariely Gesueli",
+          "role": "Human Resources",
+          "bio": "People management and organizational development"
+        },
+        {
+          "name": "Polyane Oliveira",
+          "role": "Customer Success",
+          "bio": "Customer relationship and experience"
+        },
+        {
+          "name": "Rafaela Oliveira",
+          "role": "Indirect Taxes",
+          "bio": "Specialist in ICMS, PIS, COFINS and ISS"
+        },
+        {
+          "name": "Raquel Lisboa",
+          "role": "Payroll",
+          "bio": "Payroll management and labor charges"
+        }
       ]
     },
     "values": {

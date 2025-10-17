@@ -14,6 +14,7 @@ export default function SobreNos() {
   
   const timeline = t('about.history.timeline', { returnObjects: true }) as Array<{ year: string; event: string }>;
   const team = t('about.leadership.team', { returnObjects: true }) as Array<{ name: string; role: string; bio: string }>;
+  const extendedTeam = t('about.leadership.extendedTeam', { returnObjects: true }) as Array<{ name: string; role: string; bio: string }>;
 
   return (
     <div className="min-h-screen">
@@ -124,6 +125,61 @@ export default function SobreNos() {
                     <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
                     <p className="text-sm text-primary font-medium mb-3">{member.role}</p>
                     <p className="text-sm text-muted-foreground">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Extended Team */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-section-mobile md:text-section mb-4">{t('about.leadership.extendedTitle')}</h2>
+            <p className="text-body-lg text-muted-foreground">
+              {t('about.leadership.extendedSubtitle')}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {extendedTeam.map((member, index) => {
+              // Map names to actual file names with proper formatting
+              const fileNameMap: { [key: string]: string } = {
+                'Jéssica Gonçalves': 'Jéssica Gonçalves – Contabilidade',
+                'Larissa Nascimento': 'Larissa Nascimento - Societário e Legalização',
+                'Mariely Gesueli': 'Mariely Gesueli - Recursos Humanos',
+                'Polyane Oliveira': '⁠Polyane Oliveira – Sucesso do Cliente',
+                'Rafaela Oliveira': 'Rafaela Oliveira – Tributos Indiretos',
+                'Raquel Lisboa': '⁠Raquel Lisboa – Folha de Pagamento'
+              };
+              
+              const fileName = fileNameMap[member.name] || member.name;
+              const imagePath = `/images/team/${fileName}.jpg`;
+              
+              return (
+                <Card key={index} data-testid={`extended-team-member-${index}`}>
+                  <CardContent className="pt-6 text-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 bg-primary/10">
+                      <img 
+                        src={imagePath}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          // Fallback to gradient placeholder if image not found
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.parentElement!.innerHTML = `
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary to-blue-700">
+                              <span class="text-white text-2xl font-bold">${member.name.split(' ').map((n: string) => n[0]).join('')}</span>
+                            </div>
+                          `;
+                        }}
+                      />
+                    </div>
+                    <h3 className="font-semibold text-base mb-1">{member.name}</h3>
+                    <p className="text-sm text-primary font-medium mb-2">{member.role}</p>
+                    <p className="text-xs text-muted-foreground">{member.bio}</p>
                   </CardContent>
                 </Card>
               );
