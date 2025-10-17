@@ -1,8 +1,12 @@
 # robots.txt for OSP Contabilidade Digital
-# https://osp-website-2026.web.app
+# Development/Staging Environment - Block all crawlers
+
+# IMPORTANT: This file is for development only
+# Production robots.txt should be configured in Firebase Hosting
 
 User-agent: *
-Allow: /
+Disallow: /
 
-# Sitemaps
-Sitemap: https://osp-website-2026.web.app/sitemap.xml
+# Block all search engines from indexing this development site
+# This prevents duplicate content issues and protects against
+# accidental indexing of development/staging environments

@@ -1,0 +1,44 @@
+# robots.txt for OSP Contabilidade Digital - PRODUCTION
+# This file should be uploaded to Firebase Hosting for the production site
+# https://ospcontabilidade.com.br
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ospcontabilidade.com.br/sitemap.xml
+
+# Disallow admin/internal pages
+Disallow: /api/
+Disallow: /_/
+Disallow: /__/
+
+# Crawl-delay for politeness (optional)
+Crawl-delay: 1
+
+# Specific rules for common bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /

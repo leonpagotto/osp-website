@@ -42,6 +42,21 @@ export function SEOHead({
   
   // Create full title with brand
   const fullTitle = title.includes('OSP') ? title : `${title} | OSP Contabilidade Digital`;
+  
+  // Detect if this is a development/staging environment
+  const isDevelopment = import.meta.env.DEV || 
+                       siteUrl.includes('localhost') || 
+                       siteUrl.includes('127.0.0.1') ||
+                       siteUrl.includes('web.app') || // Firebase preview
+                       siteUrl.includes('firebaseapp.com') || // Firebase hosting
+                       siteUrl.includes('preview') ||
+                       siteUrl.includes('staging') ||
+                       siteUrl.includes('dev-');
+  
+  // Robots meta tag - noindex for development environments
+  const robotsContent = isDevelopment 
+    ? 'noindex, nofollow, noarchive, nosnippet' 
+    : 'index, follow';
 
   return (
     <Helmet>
@@ -53,11 +68,16 @@ export function SEOHead({
       {author && <meta name="author" content={author} />}
       <html lang={locale} />
       
-      {/* Canonical URL */}
-      {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
+      {/* Development Environment Warning */}
+      {isDevelopment && (
+        <meta name="environment" content="development" />
+      )}
       
-      {/* Alternate language URLs */}
-      {alternateUrls && (
+      {/* Canonical URL - only in production */}
+      {fullCanonicalUrl && !isDevelopment && <link rel="canonical" href={fullCanonicalUrl} />}
+      
+      {/* Alternate language URLs - only in production */}
+      {alternateUrls && !isDevelopment && (
         <>
           <link rel="alternate" hrefLang="pt-BR" href={`${siteUrl}${alternateUrls['pt-BR']}`} />
           <link rel="alternate" hrefLang="en" href={`${siteUrl}${alternateUrls['en']}`} />
@@ -100,10 +120,14 @@ export function SEOHead({
       <meta name="twitter:image" content={fullOgImage} />
       <meta name="twitter:site" content="@ospcontabilidade" />
       
+      {/* SEO Control - CRITICAL: Block indexing in development */}
+      <meta name="robots" content={robotsContent} />
+      {isDevelopment && <meta name="googlebot" content="noindex, nofollow" />}
+      {isDevelopment && <meta name="bingbot" content="noindex, nofollow" />}
+      
       {/* Additional SEO tags */}
-      <meta name="robots" content="index, follow" />
       <meta name="language" content={locale === 'pt-BR' ? 'Portuguese' : 'English'} />
-      <meta name="revisit-after" content="7 days" />
+      {!isDevelopment && <meta name="revisit-after" content="7 days" />}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
     </Helmet>
