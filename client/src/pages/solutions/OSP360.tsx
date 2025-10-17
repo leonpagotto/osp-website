@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { Card, CardContent } from "@/components/ui/card";
@@ -149,6 +150,11 @@ export default function OSP360() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="osp360"
+        relatedSlugs={['tributa360', 'gestao360', 'bpo-financeiro']}
+      />
 
       <CTASection
         title={t('solutionPages.osp360.cta.title')}

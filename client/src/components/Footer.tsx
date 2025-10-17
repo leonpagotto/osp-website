@@ -146,7 +146,7 @@ export default function Footer() {
                 <li><Link href="/segmentos/tecnologia" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tecnologia">{t('segments.technology.name')}</Link></li>
                 <li><Link href="/segmentos/saude" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-saude">{t('segments.health.name')}</Link></li>
                 <li><Link href="/segmentos/educacao" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-educacao">{t('segments.education.name')}</Link></li>
-                <li><Link href="/segmentos/industria" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-industria">{t('segments.industry.name')}</Link></li>
+                <li><Link href="/segmentos/industrias" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-industrias">{t('segments.industry.name')}</Link></li>
                 <li><Link href="/segmentos/comercio-servicos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-comercio">{t('segments.commerce.name')}</Link></li>
               </ul>
             </nav>

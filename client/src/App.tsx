@@ -40,6 +40,10 @@ const Industrias = lazy(() => import("@/pages/segments/Industrias"));
 const ServicosEspecializados = lazy(() => import("@/pages/segments/ServicosEspecializados"));
 const ExpansaoPatrimonial = lazy(() => import("@/pages/segments/ExpansaoPatrimonial"));
 const Multinacionais = lazy(() => import("@/pages/segments/Multinacionais"));
+const Tecnologia = lazy(() => import("@/pages/segments/Tecnologia"));
+const Saude = lazy(() => import("@/pages/segments/Saude"));
+const Educacao = lazy(() => import("@/pages/segments/Educacao"));
+const ComercioServicos = lazy(() => import("@/pages/segments/ComercioServicos"));
 
 // Lazy load: Blog Posts
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
@@ -91,6 +95,10 @@ function Router() {
         <Route path="/segmentos/expansao-patrimonial" component={ExpansaoPatrimonial} />
         <Route path="/segmentos/industrias" component={Industrias} />
         <Route path="/segmentos/multinacionais" component={Multinacionais} />
+        <Route path="/segmentos/tecnologia" component={Tecnologia} />
+        <Route path="/segmentos/saude" component={Saude} />
+        <Route path="/segmentos/educacao" component={Educacao} />
+        <Route path="/segmentos/comercio-servicos" component={ComercioServicos} />
         
         {/* Blog Posts */}
         <Route path="/blog/tributacao-de-dividendos-o-que-muda-em-2026-e-como-se-preparar" component={TributacaoDividendos} />

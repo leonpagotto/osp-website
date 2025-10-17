@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -113,6 +114,11 @@ export default function Contabilidade() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="contabilidade"
+        relatedSlugs={['osp360', 'bpo-financeiro', 'gestao360']}
+      />
 
       <CTASection
         title={t('solutionPages.contabilidade.cta.title')}

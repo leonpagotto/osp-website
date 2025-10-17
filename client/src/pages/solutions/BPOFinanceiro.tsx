@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { DollarSign, CreditCard, FileCheck, TrendingUp } from "lucide-react";
@@ -76,6 +77,11 @@ export default function BPOFinanceiro() {
           />
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="bpo-financeiro"
+        relatedSlugs={['gestao360', 'osp360', 'contabilidade']}
+      />
 
       <CTASection
         title={t('solutionPages.bpoFinanceiro.cta.title')}

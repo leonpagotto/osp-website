@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { PieChart, TrendingUp, Calculator, Target } from "lucide-react";
@@ -89,6 +90,11 @@ export default function PRECIFICA360() {
           />
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="precifica360"
+        relatedSlugs={['tributa360', 'gestao360', 'osp360']}
+      />
 
       <CTASection
         title={t('solutionPages.precifica360.cta.title')}

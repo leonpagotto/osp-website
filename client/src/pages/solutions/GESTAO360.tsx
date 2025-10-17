@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { BarChart3, TrendingUp, FileText, Zap } from "lucide-react";
@@ -89,6 +90,11 @@ export default function GESTAO360() {
           />
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="gestao360"
+        relatedSlugs={['osp360', 'bpo-financeiro', 'tributa360']}
+      />
 
       <CTASection
         title={t('solutionPages.gestao360.cta.title')}

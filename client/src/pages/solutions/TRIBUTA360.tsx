@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import StatsSection from "@/components/StatsSection";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
@@ -86,6 +87,11 @@ export default function TRIBUTA360() {
           />
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="tributa360"
+        relatedSlugs={['osp360', 'precifica360', 'gestao360']}
+      />
 
       <CTASection
         title={t('solutionPages.tributa360.cta.title')}

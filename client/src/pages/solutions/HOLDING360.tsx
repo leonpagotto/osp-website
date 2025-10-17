@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createServiceSchema } from "@/components/SEO/StructuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -155,6 +156,11 @@ export default function HOLDING360() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions 
+        currentSlug="holding360"
+        relatedSlugs={['fundar360', 'tributa360', 'osp360']}
+      />
 
       <CTASection
         title={t('solutionPages.holding360.cta.title')}
