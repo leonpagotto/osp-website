@@ -85,7 +85,7 @@ export default function SobreNos() {
       </section>
 
       {/* Team */}
-      <section className="py-20">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">{t('about.leadership.title')}</h2>
@@ -130,12 +130,13 @@ export default function SobreNos() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Extended Team */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Subtle divider */}
+          <div className="max-w-5xl mx-auto mt-20 mb-20">
+            <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          </div>
+          
+          {/* Extended Team - within same section */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-section-mobile md:text-section mb-4">{t('about.leadership.extendedTitle')}</h2>
             <p className="text-body-lg text-muted-foreground">
