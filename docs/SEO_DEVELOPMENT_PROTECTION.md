@@ -20,6 +20,21 @@ This document explains how the OSP website prevents search engine indexing durin
 ## 🛡️ Protection Layers
 
 ### Layer 1: Meta Tags (Client-Side)
+
+**A. Static HTML Meta Tags (Immediate Protection)**
+**File:** `client/index.html`
+
+**Protection:**
+- Hard-coded in HTML template
+- Works instantly, no JavaScript required
+- Google sees these immediately on first crawl
+```html
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="googlebot" content="noindex, nofollow" />
+<meta name="bingbot" content="noindex, nofollow" />
+```
+
+**B. Dynamic Meta Tags (React/JavaScript)**
 **File:** `client/src/components/SEO/SEOHead.tsx`
 
 **Detection Logic:**
@@ -35,9 +50,7 @@ const isDevelopment = import.meta.env.DEV ||
 ```
 
 **Protection:**
-- `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`
-- `<meta name="googlebot" content="noindex, nofollow">`
-- `<meta name="bingbot" content="noindex, nofollow">`
+- Dynamic meta tags via react-helmet-async
 - Canonical URLs disabled in development
 - hreflang tags disabled in development
 
