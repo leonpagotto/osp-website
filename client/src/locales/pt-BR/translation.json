@@ -13,7 +13,7 @@
   "home": {
     "hero": {
       "title": "Inteligência contábil para decisões que transformam negócios",
-      "subtitle": "O braço técnico e consultivo de empresas no Lucro Real",
+      "subtitle": "O braço técnico e consultivo de empresas no Lucro Real — com sede em Campinas, atuação nacional e presença internacional",
       "primaryCTA": "Fale com Especialista",
       "secondaryCTA": "Diagnóstico Gratuito",
       "stats": {
@@ -164,35 +164,43 @@
   "solutions": {
     "osp360": {
       "name": "OSP360",
-      "description": "Diagnóstico estratégico completo"
+      "description": "Diagnóstico estratégico completo",
+      "shortDescription": "Diagnóstico 360° do seu negócio com análise tributária, financeira e operacional para identificar oportunidades de economia e eficiência"
     },
     "fundar360": {
       "name": "FUNDAR360",
-      "description": "Estruturação de negócios"
+      "description": "Estruturação de negócios",
+      "shortDescription": "Estruturação completa para abertura de empresas com planejamento tributário desde o início e suporte em todas as etapas"
     },
     "tributa360": {
       "name": "TRIBUTA360",
-      "description": "Planejamento tributário"
+      "description": "Planejamento tributário",
+      "shortDescription": "Planejamento tributário estratégico para otimizar sua carga fiscal com segurança jurídica e compliance total"
     },
     "gestao360": {
       "name": "GESTÃO360",
-      "description": "Suporte à gestão executiva"
+      "description": "Suporte à gestão executiva",
+      "shortDescription": "Controladoria estratégica com BI personalizado, indicadores gerenciais e suporte consultivo para tomada de decisão"
     },
     "bpoFinanceiro": {
       "name": "BPO Financeiro",
-      "description": "Terceirização financeira"
+      "description": "Terceirização financeira",
+      "shortDescription": "Terceirização completa do back-office financeiro com controle de contas, fluxo de caixa e gestão de pagamentos"
     },
     "precifica360": {
       "name": "PRECIFICA360",
-      "description": "Análise de margem e precificação"
+      "description": "Análise de margem e precificação",
+      "shortDescription": "Consultoria especializada em formação de preços, análise de margem e estratégia comercial para maximizar resultados"
     },
     "holding360": {
       "name": "HOLDING360",
-      "description": "Estrutura patrimonial"
+      "description": "Estrutura patrimonial",
+      "shortDescription": "Estruturação de holdings patrimoniais e familiares com planejamento sucessório e proteção patrimonial"
     },
     "contabilidade": {
       "name": "Contabilidade",
-      "description": "Serviços contábeis especializados"
+      "description": "Serviços contábeis especializados",
+      "shortDescription": "Contabilidade consultiva especializada em Lucro Real com atendimento próximo e entregas dentro do prazo"
     }
   },
   "segments": {
@@ -202,6 +210,21 @@
     "expansaoPatrimonial": "Expansão Patrimonial",
     "industrias": "Indústrias",
     "multinacionais": "Multinacionais",
+    "complexStructure": {
+      "name": "Estrutura Complexa"
+    },
+    "intensiveOperation": {
+      "name": "Operação Intensiva"
+    },
+    "specializedServices": {
+      "name": "Serviços Especializados"
+    },
+    "assetExpansion": {
+      "name": "Expansão Patrimonial"
+    },
+    "multinationals": {
+      "name": "Multinacionais"
+    },
     "technology": {
       "name": "Tecnologia"
     },
@@ -212,10 +235,18 @@
       "name": "Educação"
     },
     "industry": {
-      "name": "Indústria"
+      "name": "Indústrias"
     },
     "commerce": {
       "name": "Comércio e Serviços"
+    }
+  },
+  "components": {
+    "relatedSolutions": {
+      "title": "Outras Soluções que Podem Interessar",
+      "subtitle": "Continue explorando nossas soluções integradas",
+      "button": "Saiba Mais",
+      "viewAll": "Ver Todas as Soluções"
     }
   },
   "common": {
@@ -231,6 +262,78 @@
   "hero": {
     "tagline": "Contabilidade estratégica para empresas que planejam crescer",
     "subtitle": "47 anos transformando obrigações fiscais em oportunidades de negócio"
+  },
+  "solutionsPage": {
+    "hero": {
+      "title": "Soluções Estratégicas",
+      "subtitle": "Metodologias especializadas para cada desafio da sua empresa no regime de Lucro Real"
+    },
+    "cta": {
+      "title": "Qual solução se encaixa no seu desafio?",
+      "description": "Converse com nossos especialistas e encontre a metodologia ideal para sua empresa",
+      "primaryButton": "Falar com Especialista",
+      "secondaryButton": "Solicitar Diagnóstico"
+    }
+  },
+  "segmentsPage": {
+    "hero": {
+      "title": "Segmentos Atendidos",
+      "subtitle": "Soluções especializadas por perfil estratégico e setor de atuação"
+    },
+    "tabs": {
+      "profile": "Por Perfil Estratégico",
+      "sector": "Por Setor"
+    },
+    "profile": {
+      "complexStructure": {
+        "title": "Estrutura Complexa",
+        "description": "Empresas com múltiplas entidades, CNPJs, sócios ou operações que exigem governança e visão consolidada"
+      },
+      "intensiveOperation": {
+        "title": "Operação Intensiva",
+        "description": "Alto volume de transações, notas fiscais e movimentações que demandam automação e controles robustos"
+      },
+      "specializedServices": {
+        "title": "Serviços com Alta Complexidade",
+        "description": "Setores regulados ou com alta exigência técnica: saúde, educação, tecnologia e serviços especializados"
+      },
+      "assetExpansion": {
+        "title": "Expansão Patrimonial e Familiar",
+        "description": "Grupos familiares, holdings e empresas em processo de estruturação patrimonial e sucessória"
+      }
+    },
+    "sector": {
+      "industry": {
+        "title": "Indústrias",
+        "description": "Manufatura, produção e transformação industrial"
+      },
+      "multinationals": {
+        "title": "Multinacionais e Grupos Internacionais",
+        "description": "Empresas com operações cross-border e complexidade fiscal"
+      },
+      "technology": {
+        "title": "Tecnologia e Plataformas Digitais",
+        "description": "Startups, SaaS, fintechs e empresas de tecnologia"
+      },
+      "healthcare": {
+        "title": "Saúde - Clínicas e Laboratórios",
+        "description": "Estabelecimentos de saúde e diagnóstico"
+      },
+      "education": {
+        "title": "Educação e Serviços Especializados",
+        "description": "Instituições de ensino e serviços profissionais"
+      },
+      "commerce": {
+        "title": "Comércio e Serviços",
+        "description": "Varejo, atacado, restaurantes e serviços profissionais"
+      }
+    },
+    "cta": {
+      "title": "Seu segmento tem desafios únicos",
+      "description": "Conheça nossas soluções especializadas para seu setor de atuação",
+      "primaryButton": "Falar com Especialista",
+      "secondaryButton": "Ver Casos de Sucesso"
+    }
   },
   "segmentPages": {
     "estruturaComplexa": {

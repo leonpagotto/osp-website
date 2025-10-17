@@ -115,17 +115,17 @@ export default function Contabilidade() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="contabilidade"
-        relatedSlugs={['osp360', 'bpo-financeiro', 'gestao360']}
-      />
-
       <CTASection
         title={t('solutionPages.contabilidade.cta.title')}
         description={t('solutionPages.contabilidade.cta.description')}
         primaryButton={{ text: t('solutionPages.contabilidade.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.contabilidade.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="contabilidade"
+        relatedSlugs={['osp360', 'bpo-financeiro', 'gestao360']}
       />
     </div>
   );

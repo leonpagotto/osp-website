@@ -13,7 +13,7 @@
   "home": {
     "hero": {
       "title": "Accounting intelligence for decisions that transform businesses",
-      "subtitle": "The technical and advisory arm of companies under Real Profit regime",
+      "subtitle": "The technical and advisory arm of companies under Real Profit regime — headquartered in Campinas, with national operations and international presence",
       "primaryCTA": "Talk to a Specialist",
       "secondaryCTA": "Free Diagnostic",
       "stats": {
@@ -164,35 +164,43 @@
   "solutions": {
     "osp360": {
       "name": "OSP360",
-      "description": "Complete strategic diagnostic"
+      "description": "Complete strategic diagnostic",
+      "shortDescription": "360° business diagnostic with tax, financial and operational analysis to identify savings and efficiency opportunities"
     },
     "fundar360": {
       "name": "FUNDAR360",
-      "description": "Business structuring"
+      "description": "Business structuring",
+      "shortDescription": "Complete company formation structuring with tax planning from the start and support through all stages"
     },
     "tributa360": {
       "name": "TRIBUTA360",
-      "description": "Tax planning"
+      "description": "Tax planning",
+      "shortDescription": "Strategic tax planning to optimize your tax burden with legal security and full compliance"
     },
     "gestao360": {
       "name": "GESTÃO360",
-      "description": "Executive management support"
+      "description": "Executive management support",
+      "shortDescription": "Strategic controllership with custom BI, management indicators and advisory support for decision-making"
     },
     "bpoFinanceiro": {
       "name": "Financial BPO",
-      "description": "Financial outsourcing"
+      "description": "Financial outsourcing",
+      "shortDescription": "Complete financial back-office outsourcing with account control, cash flow and payment management"
     },
     "precifica360": {
       "name": "PRECIFICA360",
-      "description": "Margin analysis and pricing"
+      "description": "Margin analysis and pricing",
+      "shortDescription": "Specialized consulting in pricing, margin analysis and commercial strategy to maximize results"
     },
     "holding360": {
       "name": "HOLDING360",
-      "description": "Asset structure"
+      "description": "Asset structure",
+      "shortDescription": "Asset and family holding structuring with succession planning and asset protection"
     },
     "contabilidade": {
       "name": "Accounting",
-      "description": "Specialized accounting services"
+      "description": "Specialized accounting services",
+      "shortDescription": "Advisory accounting specialized in taxable income with close service and on-time deliveries"
     }
   },
   "segments": {
@@ -202,6 +210,21 @@
     "expansaoPatrimonial": "Asset Expansion",
     "industrias": "Industries",
     "multinacionais": "Multinationals",
+    "complexStructure": {
+      "name": "Complex Structure"
+    },
+    "intensiveOperation": {
+      "name": "Intensive Operations"
+    },
+    "specializedServices": {
+      "name": "Specialized Services"
+    },
+    "assetExpansion": {
+      "name": "Asset Expansion"
+    },
+    "multinationals": {
+      "name": "Multinationals"
+    },
     "technology": {
       "name": "Technology"
     },
@@ -212,10 +235,18 @@
       "name": "Education"
     },
     "industry": {
-      "name": "Industry"
+      "name": "Industries"
     },
     "commerce": {
       "name": "Commerce & Services"
+    }
+  },
+  "components": {
+    "relatedSolutions": {
+      "title": "Other Solutions That Might Interest You",
+      "subtitle": "Continue exploring our integrated solutions",
+      "button": "Learn More",
+      "viewAll": "View All Solutions"
     }
   },
   "common": {
@@ -231,6 +262,78 @@
   "hero": {
     "tagline": "Strategic accounting for companies planning to grow",
     "subtitle": "47 years transforming tax obligations into business opportunities"
+  },
+  "solutionsPage": {
+    "hero": {
+      "title": "Strategic Solutions",
+      "subtitle": "Specialized methodologies for every challenge your company faces under the taxable income regime"
+    },
+    "cta": {
+      "title": "Which solution fits your challenge?",
+      "description": "Talk to our specialists and find the ideal methodology for your company",
+      "primaryButton": "Talk to a Specialist",
+      "secondaryButton": "Request Diagnostic"
+    }
+  },
+  "segmentsPage": {
+    "hero": {
+      "title": "Served Segments",
+      "subtitle": "Specialized solutions by strategic profile and industry sector"
+    },
+    "tabs": {
+      "profile": "By Strategic Profile",
+      "sector": "By Sector"
+    },
+    "profile": {
+      "complexStructure": {
+        "title": "Complex Structure",
+        "description": "Companies with multiple entities, tax IDs, partners, or operations requiring governance and consolidated view"
+      },
+      "intensiveOperation": {
+        "title": "Intensive Operation",
+        "description": "High volume of transactions, invoices, and movements demanding automation and robust controls"
+      },
+      "specializedServices": {
+        "title": "Highly Complex Services",
+        "description": "Regulated sectors or high technical requirements: healthcare, education, technology, and specialized services"
+      },
+      "assetExpansion": {
+        "title": "Asset & Family Expansion",
+        "description": "Family groups, holdings, and companies in asset structuring and succession planning process"
+      }
+    },
+    "sector": {
+      "industry": {
+        "title": "Manufacturing",
+        "description": "Manufacturing, production, and industrial transformation"
+      },
+      "multinationals": {
+        "title": "Multinationals & International Groups",
+        "description": "Companies with cross-border operations and tax complexity"
+      },
+      "technology": {
+        "title": "Technology & Digital Platforms",
+        "description": "Startups, SaaS, fintechs, and technology companies"
+      },
+      "healthcare": {
+        "title": "Healthcare - Clinics & Labs",
+        "description": "Healthcare and diagnostic establishments"
+      },
+      "education": {
+        "title": "Education & Specialized Services",
+        "description": "Educational institutions and professional services"
+      },
+      "commerce": {
+        "title": "Commerce & Services",
+        "description": "Retail, wholesale, restaurants, and professional services"
+      }
+    },
+    "cta": {
+      "title": "Your segment has unique challenges",
+      "description": "Discover our specialized solutions for your industry",
+      "primaryButton": "Talk to a Specialist",
+      "secondaryButton": "View Success Stories"
+    }
   },
   "segmentPages": {
     "estruturaComplexa": {

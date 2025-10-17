@@ -78,17 +78,17 @@ export default function BPOFinanceiro() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="bpo-financeiro"
-        relatedSlugs={['gestao360', 'osp360', 'contabilidade']}
-      />
-
       <CTASection
         title={t('solutionPages.bpoFinanceiro.cta.title')}
         description={t('solutionPages.bpoFinanceiro.cta.description')}
         primaryButton={{ text: t('solutionPages.bpoFinanceiro.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.bpoFinanceiro.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="bpo-financeiro"
+        relatedSlugs={['gestao360', 'osp360', 'contabilidade']}
       />
     </div>
   );

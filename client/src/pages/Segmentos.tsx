@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import SegmentCard from "@/components/SegmentCard";
 import CTASection from "@/components/CTASection";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTranslation } from "react-i18next";
 import {
   Network,
   Zap,
@@ -10,23 +11,20 @@ import {
   Building,
   Factory,
   Globe,
-  Sprout,
   Cpu,
   ShoppingCart,
-  Hammer,
-  Truck,
   Heart,
-  Users,
 } from "lucide-react";
 
 export default function Segmentos() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("perfil");
 
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Segmentos Atendidos"
-        subtitle="Soluções especializadas por perfil estratégico e setor de atuação"
+        title={t('segmentsPage.hero.title')}
+        subtitle={t('segmentsPage.hero.subtitle')}
         showGradient={false}
       />
 
@@ -34,8 +32,8 @@ export default function Segmentos() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-              <TabsTrigger value="perfil" data-testid="tab-perfil">Por Perfil Estratégico</TabsTrigger>
-              <TabsTrigger value="setor" data-testid="tab-setor">Por Setor</TabsTrigger>
+              <TabsTrigger value="perfil" data-testid="tab-perfil">{t('segmentsPage.tabs.profile')}</TabsTrigger>
+              <TabsTrigger value="setor" data-testid="tab-setor">{t('segmentsPage.tabs.sector')}</TabsTrigger>
             </TabsList>
 
             {/* Por Perfil Estratégico */}
@@ -43,26 +41,26 @@ export default function Segmentos() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <SegmentCard
                   icon={Network}
-                  title="Estrutura Complexa"
-                  description="Empresas com múltiplas entidades, CNPJs, sócios ou operações que exigem governança e visão consolidada"
+                  title={t('segmentsPage.profile.complexStructure.title')}
+                  description={t('segmentsPage.profile.complexStructure.description')}
                   href="/segmentos/estrutura-complexa"
                 />
                 <SegmentCard
                   icon={Zap}
-                  title="Operação Intensiva"
-                  description="Alto volume de transações, notas fiscais e movimentações que demandam automação e controles robustos"
+                  title={t('segmentsPage.profile.intensiveOperation.title')}
+                  description={t('segmentsPage.profile.intensiveOperation.description')}
                   href="/segmentos/operacao-intensiva"
                 />
                 <SegmentCard
                   icon={GraduationCap}
-                  title="Serviços com Alta Complexidade"
-                  description="Setores regulados ou com alta exigência técnica: saúde, educação, tecnologia e serviços especializados"
+                  title={t('segmentsPage.profile.specializedServices.title')}
+                  description={t('segmentsPage.profile.specializedServices.description')}
                   href="/segmentos/servicos-especializados"
                 />
                 <SegmentCard
                   icon={Building}
-                  title="Expansão Patrimonial e Familiar"
-                  description="Grupos familiares, holdings e empresas em processo de estruturação patrimonial e sucessória"
+                  title={t('segmentsPage.profile.assetExpansion.title')}
+                  description={t('segmentsPage.profile.assetExpansion.description')}
                   href="/segmentos/expansao-patrimonial"
                 />
               </div>
@@ -73,63 +71,39 @@ export default function Segmentos() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <SegmentCard
                   icon={Factory}
-                  title="Indústrias"
-                  description="Manufatura, produção e transformação industrial"
+                  title={t('segmentsPage.sector.industry.title')}
+                  description={t('segmentsPage.sector.industry.description')}
                   href="/segmentos/industrias"
                 />
                 <SegmentCard
                   icon={Globe}
-                  title="Multinacionais e Grupos Internacionais"
-                  description="Empresas com operações cross-border e complexidade fiscal"
+                  title={t('segmentsPage.sector.multinationals.title')}
+                  description={t('segmentsPage.sector.multinationals.description')}
                   href="/segmentos/multinacionais"
                 />
                 <SegmentCard
-                  icon={Sprout}
-                  title="Agro e Distribuição"
-                  description="Agronegócio, distribuição e cadeia de suprimentos"
-                  href="/segmentos/agro"
-                />
-                <SegmentCard
                   icon={Cpu}
-                  title="Tecnologia e Plataformas Digitais"
-                  description="Startups, SaaS, fintechs e empresas de tecnologia"
+                  title={t('segmentsPage.sector.technology.title')}
+                  description={t('segmentsPage.sector.technology.description')}
                   href="/segmentos/tecnologia"
                 />
                 <SegmentCard
-                  icon={ShoppingCart}
-                  title="eCommerce, Comércio e Atacado"
-                  description="Varejo físico, online e operações atacadistas"
-                  href="/segmentos/comercio"
-                />
-                <SegmentCard
-                  icon={Hammer}
-                  title="Construção Civil e Incorporação"
-                  description="Construtoras, incorporadoras e engenharia"
-                  href="/segmentos/construcao"
-                />
-                <SegmentCard
-                  icon={Truck}
-                  title="Transporte, Logística e Frotas"
-                  description="Transportadoras, logística e gestão de frotas"
-                  href="/segmentos/logistica"
-                />
-                <SegmentCard
                   icon={Heart}
-                  title="Saúde - Clínicas e Laboratórios"
-                  description="Estabelecimentos de saúde e diagnóstico"
+                  title={t('segmentsPage.sector.healthcare.title')}
+                  description={t('segmentsPage.sector.healthcare.description')}
                   href="/segmentos/saude"
                 />
                 <SegmentCard
                   icon={GraduationCap}
-                  title="Educação e Serviços Especializados"
-                  description="Instituições de ensino e serviços profissionais"
+                  title={t('segmentsPage.sector.education.title')}
+                  description={t('segmentsPage.sector.education.description')}
                   href="/segmentos/educacao"
                 />
                 <SegmentCard
-                  icon={Users}
-                  title="Grupos Patrimoniais e Famílias"
-                  description="Holdings familiares e gestão patrimonial"
-                  href="/segmentos/grupos-familiares"
+                  icon={ShoppingCart}
+                  title={t('segmentsPage.sector.commerce.title')}
+                  description={t('segmentsPage.sector.commerce.description')}
+                  href="/segmentos/comercio-servicos"
                 />
               </div>
             </TabsContent>
@@ -138,10 +112,10 @@ export default function Segmentos() {
       </section>
 
       <CTASection
-        title="Seu segmento tem desafios únicos"
-        description="Conheça nossas soluções especializadas para seu setor de atuação"
-        primaryButton={{ text: "Falar com Especialista", href: "/contato" }}
-        secondaryButton={{ text: "Ver Casos de Sucesso", href: "/resultados" }}
+        title={t('segmentsPage.cta.title')}
+        description={t('segmentsPage.cta.description')}
+        primaryButton={{ text: t('segmentsPage.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('segmentsPage.cta.secondaryButton'), href: "/resultados" }}
       />
     </div>
   );

@@ -91,17 +91,17 @@ export default function FUNDAR360() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="fundar360"
-        relatedSlugs={['osp360', 'tributa360', 'holding360']}
-      />
-
       <CTASection
         title={t('solutionPages.fundar360.cta.title')}
         description={t('solutionPages.fundar360.cta.description')}
         primaryButton={{ text: t('solutionPages.fundar360.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.fundar360.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="fundar360"
+        relatedSlugs={['osp360', 'tributa360', 'holding360']}
       />
     </div>
   );

@@ -88,17 +88,17 @@ export default function TRIBUTA360() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="tributa360"
-        relatedSlugs={['osp360', 'precifica360', 'gestao360']}
-      />
-
       <CTASection
         title={t('solutionPages.tributa360.cta.title')}
         description={t('solutionPages.tributa360.cta.description')}
         primaryButton={{ text: t('solutionPages.tributa360.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.tributa360.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="tributa360"
+        relatedSlugs={['osp360', 'precifica360', 'gestao360']}
       />
     </div>
   );

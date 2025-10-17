@@ -151,17 +151,17 @@ export default function OSP360() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="osp360"
-        relatedSlugs={['tributa360', 'gestao360', 'bpo-financeiro']}
-      />
-
       <CTASection
         title={t('solutionPages.osp360.cta.title')}
         description={t('solutionPages.osp360.cta.description')}
         primaryButton={{ text: t('solutionPages.osp360.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.osp360.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="osp360"
+        relatedSlugs={['tributa360', 'gestao360', 'bpo-financeiro']}
       />
     </div>
   );

@@ -91,17 +91,17 @@ export default function GESTAO360() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="gestao360"
-        relatedSlugs={['osp360', 'bpo-financeiro', 'tributa360']}
-      />
-
       <CTASection
         title={t('solutionPages.gestao360.cta.title')}
         description={t('solutionPages.gestao360.cta.description')}
         primaryButton={{ text: t('solutionPages.gestao360.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.gestao360.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="gestao360"
+        relatedSlugs={['osp360', 'bpo-financeiro', 'tributa360']}
       />
     </div>
   );

@@ -89,9 +89,21 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="text-2xl font-bold text-primary mb-4" aria-label="OSP Logo">OSP</div>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-muted-foreground mb-6">
               {t('footer.tagline')}
             </p>
+            
+            {/* Company Links */}
+            <nav aria-label={t('footer.companyNav')} className="mb-6">
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">{t('nav.about')}</Link></li>
+                <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">{t('nav.results')}</Link></li>
+                <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">{t('nav.blog')}</Link></li>
+                <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">{t('footer.careers')}</Link></li>
+              </ul>
+            </nav>
+            
+            {/* Social Media */}
             <nav aria-label={t('footer.socialMedia')}>
               <div className="flex space-x-4">
                 <a 
@@ -128,25 +140,21 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Company & Segments Column */}
+          {/* Segments Column */}
           <div>
-            <nav aria-label={t('footer.companyNav')}>
-              <h4 className="font-semibold mb-4">{t('footer.company')}</h4>
-              <ul className="space-y-2 text-sm mb-6">
-                <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">{t('nav.about')}</Link></li>
-                <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">{t('nav.results')}</Link></li>
-                <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">{t('nav.blog')}</Link></li>
-                <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">{t('footer.careers')}</Link></li>
-              </ul>
-            </nav>
 
             <nav aria-label={t('footer.segmentsNav')}>
               <h4 className="font-semibold mb-4">{t('footer.segments')}</h4>
               <ul className="space-y-2 text-sm">
+                <li><Link href="/segmentos/estrutura-complexa" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-estrutura">{t('segments.complexStructure.name')}</Link></li>
+                <li><Link href="/segmentos/operacao-intensiva" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-operacao">{t('segments.intensiveOperation.name')}</Link></li>
+                <li><Link href="/segmentos/servicos-especializados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-servicos">{t('segments.specializedServices.name')}</Link></li>
+                <li><Link href="/segmentos/expansao-patrimonial" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-expansao">{t('segments.assetExpansion.name')}</Link></li>
+                <li><Link href="/segmentos/industrias" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-industrias">{t('segments.industry.name')}</Link></li>
+                <li><Link href="/segmentos/multinacionais" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-multinacionais">{t('segments.multinationals.name')}</Link></li>
                 <li><Link href="/segmentos/tecnologia" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-tecnologia">{t('segments.technology.name')}</Link></li>
                 <li><Link href="/segmentos/saude" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-saude">{t('segments.health.name')}</Link></li>
                 <li><Link href="/segmentos/educacao" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-educacao">{t('segments.education.name')}</Link></li>
-                <li><Link href="/segmentos/industrias" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-industrias">{t('segments.industry.name')}</Link></li>
                 <li><Link href="/segmentos/comercio-servicos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-comercio">{t('segments.commerce.name')}</Link></li>
               </ul>
             </nav>

@@ -157,17 +157,17 @@ export default function HOLDING360() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="holding360"
-        relatedSlugs={['fundar360', 'tributa360', 'osp360']}
-      />
-
       <CTASection
         title={t('solutionPages.holding360.cta.title')}
         description={t('solutionPages.holding360.cta.description')}
         primaryButton={{ text: t('solutionPages.holding360.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.holding360.cta.secondaryButton'), href: "/resultados" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="holding360"
+        relatedSlugs={['fundar360', 'tributa360', 'osp360']}
       />
     </div>
   );

@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import SolutionCard from "@/components/SolutionCard";
 import CTASection from "@/components/CTASection";
+import { useTranslation } from "react-i18next";
 import {
   Target,
   Building2,
@@ -17,11 +18,13 @@ import {
 } from "lucide-react";
 
 export default function Solucoes() {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Soluções Estratégicas"
-        subtitle="Metodologias especializadas para cada desafio da sua empresa no regime de Lucro Real"
+        title={t('solutionsPage.hero.title')}
+        subtitle={t('solutionsPage.hero.subtitle')}
         showGradient={false}
       />
 
@@ -30,50 +33,50 @@ export default function Solucoes() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <SolutionCard
               icon={Compass}
-              title="OSP360"
-              description="Diagnóstico estratégico completo em 45 dias para identificar riscos, oportunidades e definir plano de ação"
+              title={t('solutions.osp360.name')}
+              description={t('solutions.osp360.description')}
               href="/solucoes/osp360"
             />
             <SolutionCard
               icon={Rocket}
-              title="FUNDAR360"
-              description="Estruturação técnica, societária e tributária para novos negócios ou reestruturação empresarial"
+              title={t('solutions.fundar360.name')}
+              description={t('solutions.fundar360.description')}
               href="/solucoes/fundar360"
             />
             <SolutionCard
               icon={Scale}
-              title="TRIBUTA360"
-              description="Planejamento tributário estratégico e migração segura para Lucro Real com máxima eficiência fiscal"
+              title={t('solutions.tributa360.name')}
+              description={t('solutions.tributa360.description')}
               href="/solucoes/tributa360"
             />
             <SolutionCard
               icon={LayoutDashboard}
-              title="GESTÃO360"
-              description="Relatórios executivos, KPIs e BI personalizado para suporte à decisão estratégica"
+              title={t('solutions.gestao360.name')}
+              description={t('solutions.gestao360.description')}
               href="/solucoes/gestao360"
             />
             <SolutionCard
               icon={DollarSign}
-              title="BPO Financeiro"
-              description="Terceirização completa da gestão financeira: tesouraria, fluxo de caixa e conciliação bancária"
+              title={t('solutions.bpoFinanceiro.name')}
+              description={t('solutions.bpoFinanceiro.description')}
               href="/solucoes/bpo-financeiro"
             />
             <SolutionCard
               icon={PieChart}
-              title="PRECIFICA360"
-              description="Diagnóstico de margem, análise de custos e precificação estratégica para máxima rentabilidade"
+              title={t('solutions.precifica360.name')}
+              description={t('solutions.precifica360.description')}
               href="/solucoes/precifica360"
             />
             <SolutionCard
               icon={HomeIcon}
-              title="HOLDING360"
-              description="Estruturação patrimonial, proteção de ativos e planejamento sucessório para grupos familiares"
+              title={t('solutions.holding360.name')}
+              description={t('solutions.holding360.description')}
               href="/solucoes/holding360"
             />
             <SolutionCard
               icon={FileText}
-              title="Contabilidade OSP"
-              description="Serviços contábeis especializados: Standard, Consultiva e Lucro Real com atendimento diferenciado"
+              title={t('solutions.contabilidade.name')}
+              description={t('solutions.contabilidade.description')}
               href="/solucoes/contabilidade"
             />
           </div>
@@ -81,10 +84,10 @@ export default function Solucoes() {
       </section>
 
       <CTASection
-        title="Qual solução se encaixa no seu desafio?"
-        description="Converse com nossos especialistas e encontre a metodologia ideal para sua empresa"
-        primaryButton={{ text: "Falar com Especialista", href: "/contato" }}
-        secondaryButton={{ text: "Solicitar Diagnóstico", href: "/solucoes/osp360" }}
+        title={t('solutionsPage.cta.title')}
+        description={t('solutionsPage.cta.description')}
+        primaryButton={{ text: t('solutionsPage.cta.primaryButton'), href: "/contato" }}
+        secondaryButton={{ text: t('solutionsPage.cta.secondaryButton'), href: "/solucoes/osp360" }}
       />
     </div>
   );

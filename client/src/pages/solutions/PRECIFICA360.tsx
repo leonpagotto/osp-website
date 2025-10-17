@@ -91,17 +91,17 @@ export default function PRECIFICA360() {
         </div>
       </section>
 
-      <RelatedSolutions 
-        currentSlug="precifica360"
-        relatedSlugs={['tributa360', 'gestao360', 'osp360']}
-      />
-
       <CTASection
         title={t('solutionPages.precifica360.cta.title')}
         description={t('solutionPages.precifica360.cta.description')}
         primaryButton={{ text: t('solutionPages.precifica360.cta.primaryButton'), href: "/contato" }}
         secondaryButton={{ text: t('solutionPages.precifica360.cta.secondaryButton'), href: "/contato" }}
         variant="accent"
+      />
+
+      <RelatedSolutions 
+        currentSlug="precifica360"
+        relatedSlugs={['tributa360', 'gestao360', 'osp360']}
       />
     </div>
   );
