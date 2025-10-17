@@ -26,18 +26,36 @@ export async function setupVite(app: Express, server: Server) {
     allowedHosts: true as const,
   };
 
+  const resolvedConfig =
+    typeof viteConfig === "function"
+      ? await viteConfig({
+          command: "serve",
+          mode: process.env.NODE_ENV ?? "development",
+        })
+      : viteConfig;
+
   const vite = await createViteServer({
-    ...viteConfig,
+    ...resolvedConfig,
     configFile: false,
     customLogger: {
       ...viteLogger,
+      warn: (msg, options) => {
+        // Suppress known non-critical PostCSS warning
+        if (msg.includes('did not pass the `from` option')) {
+          return;
+        }
+        viteLogger.warn(msg, options);
+      },
       error: (msg, options) => {
         viteLogger.error(msg, options);
         // Don't exit on error - let the server keep running
         // process.exit(1);
       },
     },
-    server: serverOptions,
+    server: {
+      ...(resolvedConfig?.server ?? {}),
+      ...serverOptions,
+    },
     appType: "custom",
   });
 

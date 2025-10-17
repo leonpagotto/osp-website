@@ -1,5 +1,25 @@
 import { useTranslation } from 'react-i18next';
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import TestimonialCard from "@/components/TestimonialCard";
+
+function AnimatedTestimonial({ index }: { index: number }) {
+  const { t } = useTranslation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className={`scroll-animate ${isVisible ? 'visible' : ''} animate-delay-${index * 100}`}
+    >
+      <TestimonialCard
+        quote={t(`home.testimonials.items.${index}.quote`)}
+        author={t(`home.testimonials.items.${index}.author`)}
+        company={t(`home.testimonials.items.${index}.company`)}
+        role={t(`home.testimonials.items.${index}.role`)}
+      />
+    </div>
+  );
+}
 
 export default function TestimonialsSection() {
   const { t } = useTranslation();
@@ -15,17 +35,7 @@ export default function TestimonialsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[0, 1, 2].map((index) => (
-            <div
-              key={index}
-              className={`scroll-animate animate-delay-${index * 100}`}
-            >
-              <TestimonialCard
-                quote={t(`home.testimonials.items.${index}.quote`)}
-                author={t(`home.testimonials.items.${index}.author`)}
-                company={t(`home.testimonials.items.${index}.company`)}
-                role={t(`home.testimonials.items.${index}.role`)}
-              />
-            </div>
+            <AnimatedTestimonial key={index} index={index} />
           ))}
         </div>
       </div>
