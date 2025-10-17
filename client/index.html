@@ -39,6 +39,19 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" crossorigin="anonymous">
     </noscript>
+    
+    <!-- Progressive Enhancement: Enable scroll animations only if supported -->
+    <script>
+      (function() {
+        // Check if animations should be enabled
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var supportsIntersectionObserver = 'IntersectionObserver' in window;
+        
+        if (supportsIntersectionObserver && !prefersReducedMotion) {
+          document.documentElement.classList.add('scroll-animations-enabled');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

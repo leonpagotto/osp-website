@@ -19,10 +19,10 @@ export default function TechPartnersSection() {
   const partners = ["TOTVS", "SAP", "Sankhya", "Omie", "Power BI", "Qlik", "Tableau", "Conta Azul"];
   
   return (
-    <section className="py-20 bg-card">
+    <section className="py-20 bg-card" aria-labelledby="technology-heading">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-section-mobile md:text-section mb-4">{t('home.technology.title')}</h2>
+          <h2 id="technology-heading" className="text-section-mobile md:text-section mb-4">{t('home.technology.title')}</h2>
           <p className="text-body-lg text-muted-foreground">
             {t('home.technology.subtitle')}
           </p>

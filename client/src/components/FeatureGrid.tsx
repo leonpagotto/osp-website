@@ -24,8 +24,8 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
     >
       <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 via-primary/10 to-accent/10 flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-primary/10 hover-scale transition-all duration-200">
         <div className="relative">
-          <Icon className="h-7 w-7 text-primary" strokeWidth={2.5} />
-          <div className="absolute inset-0 bg-gradient-primary-vivid opacity-50 blur-xl" />
+          <Icon className="h-7 w-7 text-primary" strokeWidth={2.5} aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-primary-vivid opacity-50 blur-xl" aria-hidden="true" />
         </div>
       </div>
       <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
