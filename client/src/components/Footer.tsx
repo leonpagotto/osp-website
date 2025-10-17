@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Loader2 } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Loader2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useTranslation } from 'react-i18next';
@@ -96,10 +96,12 @@ export default function Footer() {
             {/* Company Links */}
             <nav aria-label={t('footer.companyNav')} className="mb-6">
               <ul className="space-y-2 text-sm">
+                <li><Link href="/" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-home">{t('nav.home')}</Link></li>
                 <li><Link href="/sobre-nos" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-sobre">{t('nav.about')}</Link></li>
                 <li><Link href="/resultados" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-resultados">{t('nav.results')}</Link></li>
                 <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-blog">{t('nav.blog')}</Link></li>
                 <li><Link href="/faca-parte" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-carreiras">{t('footer.careers')}</Link></li>
+                <li><Link href="/contato" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-contato">{t('nav.contact')}</Link></li>
               </ul>
             </nav>
             
@@ -135,6 +137,16 @@ export default function Footer() {
                   aria-label={t('footer.facebookLabel')}
                 >
                   <Facebook className="h-5 w-5" aria-hidden="true" />
+                </a>
+                <a 
+                  href="https://wa.me/5519999999999" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover-elevate active-elevate-2 p-2 rounded-md" 
+                  data-testid="link-whatsapp"
+                  aria-label={t('footer.whatsappLabel')}
+                >
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 </a>
               </div>
             </nav>
