@@ -129,7 +129,12 @@ export default function Home() {
       <CTASection
         title={t('home.cta.title')}
         description={t('home.cta.description')}
-        primaryButton={{ text: t('home.cta.primaryButton'), href: "/contato" }}
+        primaryButton={{ 
+          text: t('home.cta.primaryButton'), 
+          href: "https://api.whatsapp.com/send?phone=5519993216091&text=Olá!%20Vim%20pelo%20site%20da%20OSP%20e%20gostaria%20de%20falar%20com%20um%20especialista",
+          isExternal: true,
+          icon: "whatsapp"
+        }}
         secondaryButton={{ text: t('home.cta.secondaryButton'), href: "/solucoes/osp360" }}
         variant="accent"
       />

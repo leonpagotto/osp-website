@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 
 interface CTASectionProps {
@@ -8,10 +8,13 @@ interface CTASectionProps {
   primaryButton: {
     text: string;
     href: string;
+    isExternal?: boolean;
+    icon?: "arrow" | "whatsapp";
   };
   secondaryButton?: {
     text: string;
     href: string;
+    isExternal?: boolean;
   };
   variant?: "default" | "accent";
 }
@@ -24,6 +27,14 @@ export default function CTASection({
   variant = "default",
 }: CTASectionProps) {
   const bgClass = variant === "accent" ? "bg-primary/5" : "bg-card";
+  const PrimaryIcon = primaryButton.icon === "whatsapp" ? MessageCircle : ArrowRight;
+
+  const PrimaryButtonContent = () => (
+    <Button size="lg" className="w-full sm:w-auto" data-testid="button-cta-primary">
+      {primaryButton.text}
+      <PrimaryIcon className="ml-2 h-5 w-5" />
+    </Button>
+  );
 
   return (
     <section className={`py-20 ${bgClass}`}>
@@ -32,18 +43,29 @@ export default function CTASection({
           <h2 className="text-section-mobile md:text-section mb-4">{title}</h2>
           <p className="text-body-lg text-muted-foreground mb-8">{description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={primaryButton.href}>
-              <Button size="lg" className="w-full sm:w-auto" data-testid="button-cta-primary">
-                {primaryButton.text}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            {secondaryButton && (
-              <Link href={secondaryButton.href}>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto" data-testid="button-cta-secondary">
-                  {secondaryButton.text}
-                </Button>
+            {primaryButton.isExternal ? (
+              <a href={primaryButton.href} target="_blank" rel="noopener noreferrer">
+                <PrimaryButtonContent />
+              </a>
+            ) : (
+              <Link href={primaryButton.href}>
+                <PrimaryButtonContent />
               </Link>
+            )}
+            {secondaryButton && (
+              secondaryButton.isExternal ? (
+                <a href={secondaryButton.href} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto" data-testid="button-cta-secondary">
+                    {secondaryButton.text}
+                  </Button>
+                </a>
+              ) : (
+                <Link href={secondaryButton.href}>
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto" data-testid="button-cta-secondary">
+                    {secondaryButton.text}
+                  </Button>
+                </Link>
+              )
             )}
           </div>
         </div>
