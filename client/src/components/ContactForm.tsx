@@ -37,7 +37,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // Submit to Firestore
+      // Submit to Firestore (which will trigger Cloud Function to sync to CRM)
       await submitContactForm(formData);
       
       // Show success message

@@ -10,6 +10,10 @@ export interface ContactFormData {
   role?: string;
   email: string;
   phone: string;
+  purpose: string;
+  sector: string;
+  employees?: string;
+  taxRegime?: string;
   message: string;
 }
 
