@@ -64,18 +64,25 @@ export default function Header() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.overflowX = 'hidden';
+      document.documentElement.style.overflowX = 'hidden';
     } else {
       document.body.style.overflow = '';
+      document.body.style.overflowX = '';
+      document.documentElement.style.overflowX = '';
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.style.overflowX = '';
+      document.documentElement.style.overflowX = '';
     };
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <>
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
             <img 
@@ -202,22 +209,24 @@ export default function Header() {
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
+      </div>
+    </header>
 
-        {/* Mobile Menu Overlay */}
-        {mobileMenuOpen && (
-          <div 
-            className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-[60]"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-hidden="true"
-          />
-        )}
-
-        {/* Mobile Sidebar Menu */}
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
         <div 
-          className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-background border-l border-border shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
+          className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-[60]"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile Sidebar Menu */}
+      <div 
+        className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-background border-l border-border shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
           {/* Sidebar Header */}
           <div className="flex items-center justify-between p-4 border-b border-border">
             <div className="flex items-center gap-2">
@@ -371,7 +380,6 @@ export default function Header() {
             </div>
           </nav>
         </div>
-      </div>
-    </header>
+    </>
   );
 }
