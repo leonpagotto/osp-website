@@ -253,13 +253,12 @@ export default function Header() {
             <div className="flex-1 py-4 px-4 space-y-1">
               <Link 
                 href="/" 
-                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                className={`text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] block ${
                   isActive("/") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
                 }`}
                 data-testid="link-mobile-home"
               >
                 {t('nav.home')}
-                <ChevronRight className="h-5 w-5" />
               </Link>
               
               {/* Soluções Dropdown */}
@@ -329,49 +328,47 @@ export default function Header() {
 
               <Link 
                 href="/resultados" 
-                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                className={`text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] block ${
                   isActive("/resultados") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
                 }`}
                 data-testid="link-mobile-resultados"
               >
                 {t('nav.results')}
-                <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
                 href="/sobre-nos" 
-                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                className={`text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] block ${
                   isActive("/sobre-nos") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
                 }`}
                 data-testid="link-mobile-sobre-nos"
               >
                 {t('nav.about')}
-                <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
                 href="/blog" 
-                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                className={`text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] block ${
                   isActive("/blog") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
                 }`}
                 data-testid="link-mobile-blog"
               >
                 {t('nav.blog')}
-                <ChevronRight className="h-5 w-5" />
               </Link>
               <Link 
                 href="/contato" 
-                className={`flex items-center justify-between text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] ${
+                className={`text-base font-medium py-3 px-4 rounded-lg transition-colors min-h-[48px] block ${
                   isActive("/contato") ? "bg-primary text-primary-foreground" : "hover:bg-accent"
                 }`}
                 data-testid="link-mobile-contato"
               >
                 {t('nav.contact')}
-                <ChevronRight className="h-5 w-5" />
               </Link>
             </div>
 
             {/* Sidebar Footer CTA */}
-            <div className="p-4 border-t border-border space-y-3">
-              <LanguageSwitcher />
+            <div className="p-4 border-t border-border space-y-4">
+              <div className="pb-2">
+                <LanguageSwitcher />
+              </div>
               <Link href="/contato">
                 <Button className="w-full min-h-[52px] text-base font-semibold" size="lg" data-testid="button-mobile-contact">
                   {t('common.contact')}
