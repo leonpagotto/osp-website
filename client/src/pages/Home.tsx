@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
+import ContactForm from "@/components/ContactForm";
 import { SEOHead } from "@/components/SEO/SEOHead";
 import { StructuredData, createOrganizationSchema, createLocalBusinessSchema } from "@/components/SEO/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -132,6 +133,21 @@ export default function Home() {
         secondaryButton={{ text: t('home.cta.secondaryButton'), href: "/solucoes/osp360" }}
         variant="accent"
       />
+
+      {/* Contact Form Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-section-mobile md:text-section mb-4">{t('contact.hero.title')}</h2>
+              <p className="text-body-lg text-muted-foreground">
+                {t('contact.hero.subtitle')}
+              </p>
+            </div>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

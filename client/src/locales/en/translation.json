@@ -492,6 +492,36 @@
       "email": "Email",
       "phone": "Phone / WhatsApp",
       "phonePlaceholder": "(00) 00000-0000",
+      "purpose": "Contact Reason",
+      "purposePlaceholder": "Select a reason",
+      "purposeOptions": {
+        "openCompany": "Start a Company",
+        "changeAccountant": "Change Accountant",
+        "consulting": "Consulting",
+        "other": "Other"
+      },
+      "sector": "Industry / Sector",
+      "sectorPlaceholder": "Select a sector",
+      "sectorOptions": {
+        "other": "Other"
+      },
+      "employees": "Number of Employees",
+      "employeesPlaceholder": "Select (optional)",
+      "employeesOptions": {
+        "1-10": "1 to 10 employees",
+        "11-50": "11 to 50 employees",
+        "51-200": "51 to 200 employees",
+        "201-500": "201 to 500 employees",
+        "500+": "More than 500 employees"
+      },
+      "taxRegime": "Tax Regime",
+      "taxRegimePlaceholder": "Select (optional)",
+      "taxRegimeOptions": {
+        "simplesNacional": "Simples Nacional",
+        "lucroReal": "Lucro Real (Actual Profit)",
+        "lucroPresumido": "Lucro Presumido (Presumed Profit)",
+        "other": "Other"
+      },
       "message": "How can we help?",
       "messagePlaceholder": "Tell us about your challenges and goals...",
       "submit": "Send Message",
