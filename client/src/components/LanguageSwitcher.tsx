@@ -13,7 +13,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-export default function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  isMobileSidebar?: boolean;
+}
+
+export default function LanguageSwitcher({ isMobileSidebar = false }: LanguageSwitcherProps) {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
@@ -35,7 +39,11 @@ export default function LanguageSwitcher() {
           <span className="text-xs font-medium">{currentLanguage.abbr}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="z-[100]">
+      <DropdownMenuContent 
+        align="start" 
+        side={isMobileSidebar ? "top" : "bottom"}
+        className="z-[100]"
+      >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}

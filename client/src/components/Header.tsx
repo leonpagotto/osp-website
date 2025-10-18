@@ -366,8 +366,8 @@ export default function Header() {
 
             {/* Sidebar Footer CTA */}
             <div className="p-4 border-t border-border space-y-4">
-              <div className="pb-2">
-                <LanguageSwitcher />
+              <div className="pb-4">
+                <LanguageSwitcher isMobileSidebar={true} />
               </div>
               <Link href="/contato">
                 <Button className="w-full min-h-[52px] text-base font-semibold" size="lg" data-testid="button-mobile-contact">
